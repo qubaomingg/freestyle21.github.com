@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+    * Author:         BeiYuu
+    -->
+    <meta charset="utf-8" />
+    <title>Git时代的VIM不完全使用教程 | BeiYuu.com</title>
+    <meta name="generator" content="Jekyll" />
+    <meta name="author" content="BeiYuu" />
+    <meta name="description" content="BeiYuu's Blog" />
+    <link rel="stylesheet" href="/css/default.css" type="text/css" />
+    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="/atom.xml" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        var BYB = {};
+    </script>
+</head>
+<body>
+    <div id="head">
+    <div class='logo left'>
+        <a href="/" title="Home">BeiYuu.com</a>
+    </div>
+    <div id="header">
+        <div class="nav right">
+            <a href="/" title="Thoughts On Something">Blog</a>
+            <a href="/project" title="Projects Ongoing">Project</a>
+            <!--<a href="/wiki" title="Wiki" >Wiki</a>-->
+            <a href="/about" title="About BeiYuu" >About</a>
+            <a href="/atom.xml" rel="feed" title="Subscribes The Feed" target="_blank">RSS</a>
+        </div><!-- .nav -->
+    </div><!-- #header -->
+</div><!-- #head -->
+<div id="content">
+    <link rel="stylesheet" href="/js/prettify/prettify.css" />
+<div class="entry">
+
+    <h1><a href="/git-vim-tutorial" title="Git时代的VIM不完全使用教程">Git时代的VIM不完全使用教程</a></h1>
+    <p>2012-11-27 By <a href="http://beiyuu.com/about">BeiYuu</a></p>
+
+    <p>最近整理了VIM的配置，换上插件管理的神器-----<a href="https://github.com/gmarik/vundle">Vundle</a>，由他引发的VIM生态环境的改善，堪称完美。遂打算写一份简单的教程，分享Git时代VIM新世界的美丽动人之处。<strong>对VIM有基础的同学，可直接跳至插件管理部分。</strong></p>
+
+<h2>VIM的模式</h2>
+
+<p>第一次使用VIM，会觉得无所适从，他并不像记事本，你敲什么键就显示什么，理解VIM的需要明白他的两种模式：
+- 命令模式 (Command Mode)
+- 编辑模式 (Insert Mode)</p>
+
+<p>命令模式下，可以做移动、编辑操作；编辑模式则用来输入。键入<code>i</code>,<code>o</code>,<code>s</code>,<code>a</code>等即可进入编辑模式，后面解释原因。</p>
+
+<p>模式的设计是VIM和其他编辑器最不同的地方，优势和劣势也全基于此而生。</p>
+
+<h2>基本操作</h2>
+
+<p>以下介绍的键盘操作，都是大小写敏感的，并且要在<strong>命令模式</strong>下完成，需注意：</p>
+
+<h3>以字为单位的移动</h3>
+
+<ul>
+<li><code>h</code> 向左移动一个字</li>
+<li><code>j</code> 向下移动一行</li>
+<li><code>k</code> 向上</li>
+<li><code>l</code> 向右</li>
+</ul>
+
+
+<p>这四个键在右手最容易碰到几个位置，最为常用。</p>
+
+<h3>以词为单位的移动</h3>
+
+<ul>
+<li><code>w</code> 下一個word w(ord)</li>
+<li><code>W</code> 下一個word(跳过标点)</li>
+<li><code>b</code> 前一個word b(ackward)</li>
+<li><code>B</code> 前一个word(跳过标点)</li>
+<li><code>e</code> 跳到当前word的尾端 e(nd)</li>
+</ul>
+
+
+<h3>行移动</h3>
+
+<ul>
+<li><code>0</code> 跳到当前行的开头</li>
+<li><code>^</code> 跳到当前行第一个非空字符</li>
+<li><code>$</code> 跳到行尾</li>
+</ul>
+
+
+<p>助记：0(第0个字符),<code>^</code>和<code>$</code>含义同正则表达式</p>
+
+<h3>段落移动</h3>
+
+<ul>
+<li><code>{</code> 上一段(以空白行分隔)</li>
+<li><code>}</code> 下一段(以空白行分隔)</li>
+<li><code>%</code> 跳到当前对应的括号上(适用各种配对符号)</li>
+</ul>
+
+
+<h3>跳跃移动</h3>
+
+<ul>
+<li><code>/xxxx</code> 搜索xxxx，然后可以用<code>n</code>下一个，<code>N</code>上一个移动</li>
+<li><code>#</code> 向前搜索光标当前所在的字</li>
+<li><code>*</code> 向后搜索光标当前所在的字</li>
+<li><code>fx</code> 在当前行移动到光标之后第一个字符x的位置 f(ind)x</li>
+<li><code>gd</code> 跳到光标所在位置词(word)的定义位置 g(o)d(efine)</li>
+<li><code>gg</code> 到文档顶部</li>
+<li><code>G</code> 到文档底部</li>
+<li><code>:x</code> 跳到第x行(x是行号)</li>
+<li><code>ctrl+d</code> 向下翻页 d(down)</li>
+<li><code>ctrl+u</code> 向上翻页 u(p)</li>
+</ul>
+
+
+<h3>基本编辑</h3>
+
+<h4>修改</h4>
+
+<ul>
+<li><code>i</code> 在光标当前位置向前插入 i(nsert)</li>
+<li><code>I</code> 在本行第一个字符前插入</li>
+<li><code>a</code> 在光标当前位置向后插入 a(fter)</li>
+<li><code>A</code> 在本行末尾插入</li>
+<li><code>o</code> 向下插入一行</li>
+<li><code>O</code> 向上插入一行</li>
+<li><code>:w</code> 保存</li>
+<li><code>:q</code> 退出</li>
+<li><code>:wq</code> 保存并退出</li>
+</ul>
+
+
+<h4>删除</h4>
+
+<ul>
+<li><code>x</code> 删除当前字符</li>
+<li><code>dd</code> 删除当前行 d(elete)</li>
+<li><code>dw</code> 删除当前光标下的词 d(elete)w(ord)</li>
+</ul>
+
+
+<h4>复制粘贴</h4>
+
+<ul>
+<li><code>yy</code> 复制当前行 y(ank)</li>
+<li><code>yw</code> 复制当前光标下的词 y(ank)w(ord)</li>
+<li><code>p</code> 粘贴 p(aste)</li>
+<li><code>P</code> 粘贴在当前位置之前</li>
+</ul>
+
+
+<h2>进阶操作</h2>
+
+<p>限于篇幅，在这里我仅介绍下我非常常用的几个操作。</p>
+
+<h3>重复操作</h3>
+
+<p>因为VIM所有的操作都是原子化的，所以把这些操作程序化就非常简单了：</p>
+
+<ul>
+<li><code>5w</code> 相当于按五次<code>w</code>键；</li>
+<li><code>6j</code> 下移6行，相当于按六次j；</li>
+<li><code>3J</code> 大写J,本来是将下一行与当前行合并，加上数量，就是重复操作3次；</li>
+<li><code>6dw</code>和<code>d6w</code> 结果是一样，就是删除6个word；</li>
+<li>剩下的无数情况，自己类推吧。</li>
+</ul>
+
+
+<h3>高效编辑</h3>
+
+<ul>
+<li><code>di"</code> 光标在""之间，则删除""之间的内容</li>
+<li><code>yi(</code> 光标在()之间，则复制()之间的内容</li>
+<li><code>vi[</code> 光标在[]之间，则选中[]之间的内容</li>
+<li>以上三种可以自由组合搭配，效率奇高，i(nner)</li>
+<li><code>dtx</code> 删除字符直到遇见光标之后的第一个<code>x</code>字符</li>
+<li><code>ytx</code> 复制字符直到遇见光标之后的第一个<code>x</code>字符</li>
+</ul>
+
+
+<h3>标记和宏(macro)</h3>
+
+<ul>
+<li><code>ma</code> 将当前位置标记为a，26个字母均可做标记，<code>mb</code>、<code>mc</code>等等；</li>
+<li><code>'a</code> 跳转到a标记的位置；</li>
+<li>这是一组很好的文档内标记方法，在文档中跳跃编辑时很有用；</li>
+<li><code>qa</code> 将之后的所有键盘操作录制下来，直到再次在命令模式按下<code>q</code>，并存储在<code>a</code>中；</li>
+<li><code>@a</code> 执行刚刚记录在<code>a</code>里面的键盘操作；</li>
+<li><code>@@</code> 执行上一次的macro操作；</li>
+<li>宏操作是VIM最为神奇的操作之一，需要慢慢体会其强大之处；</li>
+</ul>
+
+
+<p>VIM的基本操作，可以挖掘的东西非常多，不仅仅需要记忆，更需要自己去探索总结，熟练之后，效率会大幅度提升。后面会给出一些参考链接。</p>
+
+<h2>插件管理</h2>
+
+<h3>Vundle</h3>
+
+<p>终于到这篇Blog我最想讨论的部分了。VIM的强大不仅仅体现在操作的高效率，更有强大而充沛的插件做支援，插件丰富了之后，就面临查找和管理的问题。</p>
+
+<p>在遇见<a href="https://github.com/gmarik/vundle">Vundle</a>之前，我用<a href="https://github.com/tpope/vim-pathogen">Pathogen</a>管理插件。Pathogen还算方便，只需要把相应插件，放在<code>bundle</code>目录下即可，不需要再像以前那样逐个放置单独的文件到相应目录，大大节省了劳动力，管理起来也一目了然，觉得还不错，至少比vimball那种需要执行命令安装的方式好一些。</p>
+
+<p>我真希望我早些遇见Vundle。Vundle受到Pathogen和Vimball的启发，于是有了现在的模样。Vundle的逻辑是这样的：</p>
+
+<ul>
+<li>在<a href="http://vim-scripts.org/vim/scripts.html">Vim Script</a>选好你想要的插件；</li>
+<li>在VIM的配置文件中写一句 <code>Bundle plugin_name</code>；</li>
+<li>执行一下Vundle的初始化命令，插件就装好了；</li>
+<li>升级和卸载也是同样的简单；</li>
+</ul>
+
+
+<p>完美的世界！</p>
+
+<h3>Vundle的配置</h3>
+
+<p><a href="https://github.com/gmarik/vundle">Vundle</a>的安装很简单：</p>
+
+<pre><code>git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+</code></pre>
+
+<p>然后写配置文件<code>.vimrc</code>：</p>
+
+<pre><code>set nocompatible    " be iMproved
+filetype off        " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" vim-scripts repos
+Bundle 'vim-plugin-foo'
+Bundle 'vim-plugin-bar'
+
+filetype plugin indent on    " required!
+</code></pre>
+
+<p>其中<code>Bundle</code>后面的内容，就是插件的名字，插件维护在<a href="http://vim-scripts.org/vim/scripts.html">Vim-Script.org</a>。</p>
+
+<p>然后，打开VIM之后，可以输入以下命令：</p>
+
+<pre><code>"安装插件:
+:BundleInstall
+
+"更新插件:
+:BundleInstall!
+
+"卸载不在列表中的插件:
+:BundleClean
+</code></pre>
+
+<p>现在大部分的插件都已经从<a href="http://www.vim.org/scripts/index.php">Vim.org</a>迁移到了<a href="http://vim-scripts.org/vim/scripts.html">Vim-Script.org</a>，而且很多作者也认领了自己的插件，直接在这个Github的项目下更新，一个比Vim.org更科学更有效的生态环境，就这样完美的形成了。</p>
+
+<p>在此非常严重的感谢vim-scripts.org的创建者<a href="https://github.com/bronson">Scott Bronson</a>，和<a href="https://github.com/gmarik/vundle">Vundle</a>的作者<a href="https://github.com/gmarik">gmarik</a>。他们的创新和分享精神，让这个世界又美好了一些。</p>
+
+<p>也感谢业界良心<a href="https://github.com/">Github</a>。Vim-Scripts.org整站就是用<a href="https://pages.github.com/">Github Pages</a>建立维护的，对于个人来说，这是很好的选择，有兴趣的同学可以参看我之前的博客：<a href="http://beiyuu.com/github-pages/">使用Github Pages建独立博客</a>。</p>
+
+<h2>插件介绍</h2>
+
+<p>有了Vundle，再装插件就是件享受的事情了。我常用的插件有：</p>
+
+<pre><code>#相较于Command-T等查找文件的插件，ctrlp.vim最大的好处在于没有依赖，干净利落
+Bundle 'ctrlp.vim'
+
+#在输入()，""等需要配对的符号时，自动帮你补全剩余半个
+Bundle 'AutoClose'
+
+#神级插件，ZenCoding可以让你以一种神奇而无比爽快的感觉写HTML、CSS
+Bundle 'ZenCoding.vim'
+
+#在()、""、甚至HTML标签之间快速跳转；
+Bundle 'matchit.zip'
+
+#显示行末的空格；
+Bundle 'ShowTrailingWhitespace'
+
+#JS代码格式化插件；
+Bundle '_jsbeautify'
+
+#用全新的方式在文档中高效的移动光标，革命性的突破
+Bundle 'EasyMotion'
+
+#自动识别文件编码；
+Bundle 'FencView.vim'
+
+#必不可少，在VIM的编辑窗口树状显示文件目录
+Bundle 'The-NERD-tree'
+
+#NERD出品的快速给代码加注释插件，选中，`ctrl+h`即可注释多种语言代码；
+Bundle 'The-NERD-Commenter'
+
+#解放生产力的神器，简单配置，就可以按照自己的风格快速输入大段代码。
+Bundle 'UltiSnips'
+
+#让代码更加易于纵向排版，以=或,符号对齐
+Bundle 'Tabular'
+
+#迄今位置最好的自动VIM自动补全插件了吧
+#Vundle的这个写法，是直接取该插件在Github上的repo
+Bundle 'Valloric/YouCompleteMe'
+</code></pre>
+
+<p>以上插件可以在<a href="http://vim-scripts.org/vim/scripts.html">vim-script.org</a>找到源码和文档，<a href="http://mattn.github.com/zencoding-vim/">ZenCoding</a>和<a href="http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/">EasyMotion</a>演示点链接,你会心动的。</p>
+
+<h2>.vimrc配置</h2>
+
+<p>因为配置不断在更新，所以放上我的配置的链接：<a href="https://github.com/beiyuu/vimfiles/blob/master/_vimrc">.vimrc配置</a></p>
+
+<h2>更多</h2>
+
+<p>VIM在一开始会觉得非常不习惯，一定要坚持下去，收获的会更多，不仅仅是在装大侠方面的哦~</p>
+
+<p>关于VIM的使用，这篇博客仅仅介绍了很小的一部分，网络上还有大量朋友总结的心得，常学常有收获：</p>
+
+<ul>
+<li><a href="http://overapi.com/vim/">Vim Cheat Sheet</a>，有VIM的各种助记图，可以作为桌面</li>
+<li><a href="http://www.vimer.cn/">Vimer的程序世界</a>，不错的站，博主持续钻研VIM各种技巧</li>
+<li><a href="http://hi.baidu.com/whqvzhjoixbbdwd/item/11315a5073667d0de6c4a5e9">网友狂人收集的vim资料链接</a></li>
+<li><a href="http://www.rayninfo.co.uk/vimtips.html">Best of Vim Tips</a></li>
+<li><a href="http://www.limboy.com/2009/05/30/vim-setting/">面向前端开发者和TextMate粉丝的vim配置</a></li>
+<li><a href="http://scmbob.org/vim_fdm.html">Vim代码折叠简介</a></li>
+<li><a href="http://blog.longwin.com.tw/2009/03/choose-vim-color-scheme-2009/">挑選 Vim 顏色(Color Scheme)</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb">vimium</a>，用VIM的操作习惯来控制Chrome的插件</li>
+</ul>
+
+
+    <!--如果您觉得有帮助，就尽情分享或者<a href="/about" target="_blank">关注我吧</a>：<br/>-->
+    <!--<a href='http://me.alipay.com/beiyuu' target="_blank" style="float:left;"><img src='https://img.alipay.com/sys/personalprod/style/mc/btn-index.png' style="display:inline" /></a>-->
+    <!--<div style="float:left;width:160px;">-->
+    <!--<iframe width="100%" height="75" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=75&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=0&isFans=0&uid=1855270953&verifier=375b89d6&colors=d6f3f7,F8F8F0,666666,0082cb,ecfbfd&dpc=1"></iframe>-->
+    <!--</div>-->
+    <!--<div id="jiathis_style_32x32" style="float:left;margin-left:20px;margin-top:35px;">-->
+        <!--<a class="jiathis_button_tsina"></a>-->
+        <!--<a class="jiathis_button_douban"></a>-->
+        <!--<a class="jiathis_button_tqq"></a>-->
+        <!--<a class="jiathis_button_renren"></a>-->
+        <!--<a class="jiathis_button_douban9dian"></a>-->
+        <!--<a class="jiathis_button_readitlater"></a>-->
+        <!--<a class="jiathis_button_instapaper"></a>-->
+        <!--<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>-->
+        <!--<a class="jiathis_counter_style"></a>-->
+    <!--</div>-->
+    <div style="clear:both"></div>
+</div><!-- .entry -->
+<div id="disqus_container"> 
+    <a href="#" class="comment" onclick="return false;">点击查看评论</a>
+    <div id="disqus_thread"></div>
+</div> 
+<script type="text/javascript">
+    $(document).ready(function(){
+
+            var isMobile = {
+                Android: function() {
+                    return navigator.userAgent.match(/Android/i);
+                }
+                ,BlackBerry: function() {
+                    return navigator.userAgent.match(/BlackBerry/i);
+                }
+                ,iOS: function() {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                }
+                ,Opera: function() {
+                    return navigator.userAgent.match(/Opera Mini/i);
+                }
+                ,Windows: function() {
+                    return navigator.userAgent.match(/IEMobile/i);
+                }
+                ,any: function() {
+                    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+                }
+            };
+
+
+
+        $('pre').addClass('prettyprint linenums') //添加Google code Hight需要的class
+
+        //***********************
+        //**评论的代码也删掉哦***
+        window.disqus_shortname = 'beiyuu'; // required: replace example with your forum shortname
+        $('#disqus_container .comment').on('click',function(){
+            $(this).html('加载中...');
+            var that = this;
+            $.getScript('http://' + disqus_shortname + '.disqus.com/embed.js',function(){$(that).remove()});
+        });
+        //**评论的代码也删掉哦***
+        //***********************
+
+        $('.entry a').each(function(index,element){
+            var href = $(this).attr('href');
+            if(href){
+                if(href.indexOf('#') == 0){
+                }else if ( href.indexOf('/') == 0 || href.toLowerCase().indexOf('beiyuu.com')>-1 ){
+                }else if ($(element).has('img').length){
+                }else{
+                    $(this).attr('target','_blank');
+                    $(this).addClass('external');
+                }
+            }
+        });
+
+        if($('h2').length > 2 && !isMobile.any()){
+            var h2 = [],h3 = [],tmpl = '<ul>',h2index = 0;
+
+            $.each($('h2,h3'),function(index,item){
+                if(item.tagName.toLowerCase() == 'h2'){
+                    var h2item = {};
+                    h2item.name = $(item).text();
+                    h2item.id = 'menuIndex'+index;
+                    h2.push(h2item);
+                    h2index++;
+                }else{
+                    var h3item = {};
+                    h3item.name = $(item).text();
+                    h3item.id = 'menuIndex'+index;
+                    if(!h3[h2index-1]){
+                        h3[h2index-1] = [];
+                    }
+                    h3[h2index-1].push(h3item);
+                }
+                item.id = 'menuIndex' + index
+            });
+
+            //添加h1
+            tmpl += '<li class="h1"><a href="#" data-top="0">'+$('h1').text()+'</a></li>';
+
+            for(var i=0;i<h2.length;i++){
+                tmpl += '<li><a href="#" data-id="'+h2[i].id+'">'+h2[i].name+'</a></li>';
+                if(h3[i]){
+                    for(var j=0;j<h3[i].length;j++){
+                        tmpl += '<li class="h3"><a href="#" data-id="'+h3[i][j].id+'">'+h3[i][j].name+'</a></li>';
+                    }
+                }
+            }
+            tmpl += '</ul>';
+
+            $('body').append('<div id="menuIndex"></div>');
+            $('#menuIndex').append($(tmpl)).delegate('a','click',function(e){
+                e.preventDefault();
+                var scrollNum = $(this).attr('data-top') || $('#'+$(this).attr('data-id')).offset().top;
+                //window.scrollTo(0,scrollNum-30);
+                $('body','html').animate({ scrollTop: scrollNum-30 }, 400, 'swing');
+            })
+
+            $(window).load(function(){
+                var scrollTop = [];
+                $.each($('#menuIndex li a'),function(index,item){
+                    if(!$(item).attr('data-top')){
+                        var top = $('#'+$(item).attr('data-id')).offset().top;
+                        scrollTop.push(top);
+                        $(item).attr('data-top',top);
+                    }
+                });
+
+                $(window).scroll(function(){
+                    var nowTop = $(window).scrollTop(),index,length = scrollTop.length;
+                    if(nowTop+60 > scrollTop[length-1]){
+                        index = length
+                    }else{
+                        for(var i=0;i<length;i++){
+                            if(nowTop+60 <= scrollTop[i]){
+                                index = i
+                                break;
+                            }
+                        }
+                    }
+                    $('#menuIndex li').removeClass('on')
+                    $('#menuIndex li').eq(index).addClass('on')
+                });
+            });
+
+            //用js计算屏幕的高度
+            $('#menuIndex').css('max-height',$(window).height()-80);
+        }
+
+        $.getScript('/js/prettify/prettify.js',function(){prettyPrint()});
+
+        $.getScript('http://v2.jiathis.com/code/jia.js',function(){})
+    });
+</script>
+
+</div><!-- #content --> 
+<div id="footer">
+    <div class="copyright right">
+        
+        <p>Design by <a href="http://beiyuu.com/about" title="BeiYuu" target="_blank">BeiYuu</a> &copy; 2013</p>
+        
+    </div>
+</div><!-- #footer -->
+
+
+    <!--*********************************************************-->
+    <!--*********************************************************-->
+    <!--*********************************************************-->
+    <!--****** 宝贝儿，看见这个时候，删掉下面的统计代码哦~ ******-->
+    <!--************* 再推荐下我的第一篇博客哦~~ ****************-->
+    <!--*********************************************************-->
+    <!--*********************************************************-->
+    <!--*********************************************************-->
+
+<script type="text/javascript" src="http://js.tongji.linezing.com/2727758/tongji.js"></script>
+<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2727758/tongji.gif"/></a></noscript>
+</body>
+</html>
