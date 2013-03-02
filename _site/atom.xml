@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
+<<<<<<< HEAD
    <title>freestyle21</title>
    <link href="http://freestyle21.github.com/atom.xml" rel="self" type="application/atom+xml"/>
    <link href="http://freestyle21.github.com" rel="alternate" type="text/html" />
@@ -8,6 +9,15 @@
    <id>http://freestyle21.github.com</id>
    <author>
      <name>freestyle21</name>
+=======
+   <title>BeiYuu.com</title>
+   <link href="http://beiyuu.com/atom.xml" rel="self" type="application/atom+xml"/>
+   <link href="http://beiyuu.com" rel="alternate" type="text/html" />
+   <updated>2013-02-28T14:00:02+08:00</updated>
+   <id>http://beiyuu.com</id>
+   <author>
+     <name>BeiYuu</name>
+>>>>>>> fd462b0464901c1325eabeafe1cc92736ae108e0
      <email></email>
    </author>
 
