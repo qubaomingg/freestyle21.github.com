@@ -1,0 +1,16 @@
+﻿auto: true
+markdown: rdiscount
+pygments: true
+paginate:         6
+permalink:        /:title
+
+title:            freestyle21
+url:              http://freestyle21.github.com
+feed:             /atom.xml
+author:
+    name:         freestyle21
+description:      "freestyle21\'s Blog"
+author_info:      <a href="http://freestyle21.github.com">freestyle21</a>
+
+copyright:
+    - Design by <a href="http://freestyle21.github.com/about" title="freestyle21" target="_blank">freestyle21</a> &copy; 2013
