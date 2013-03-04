@@ -1,45 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-<<<<<<< HEAD
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="freestyle21" />
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" media="screen, projection">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
     
-=======
-    <!--
-    * Author:         BeiYuu
-    -->
->>>>>>> fd462b0464901c1325eabeafe1cc92736ae108e0
-    <meta charset="utf-8" />
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="generator" content="Jekyll" />
-    <meta name="author" content="{{ site.author.name }}" />
-    <meta name="description" content="{{ site.description }}" />
-    <link rel="stylesheet" href="/css/default.css" type="text/css" />
-    <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript">
-        var BYB = {};
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9028210-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     </script>
-</head>
-<body>
-<<<<<<< HEAD
-    
+  </head>
+  <body id="{{ page.body_id }}">
     {{ content }}
-
-=======
-    {{ content }}
-
-    <!--*********************************************************-->
-    <!--*********************************************************-->
-    <!--*********************************************************-->
-    <!--****** 宝贝儿，看见这个时候，删掉下面的统计代码哦~ ******-->
-    <!--************* 再推荐下我的第一篇博客哦~~ ****************-->
-    <!--*********************************************************-->
-    <!--*********************************************************-->
-    <!--*********************************************************-->
-
->>>>>>> fd462b0464901c1325eabeafe1cc92736ae108e0
-<script type="text/javascript" src="http://js.tongji.linezing.com/2727758/tongji.js"></script>
-<noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2727758/tongji.gif"/></a></noscript>
-</body>
+  </body>
 </html>

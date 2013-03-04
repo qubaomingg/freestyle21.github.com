@@ -1,0 +1,45 @@
+---
+body_id: welcome
+layout: default
+title: freestyle21
+---
+<link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
+<header>
+  <h1>freestyle21</h1>
+</header>
+<section id="about">
+  <div id="mugshot">
+    <img src="images/me.jpg"/>
+  </div>
+  <p>
+    Hello. My name is <em>freestyle21</em>. I'm a<em>student</em> at <em><a href='http://www.uestc.edu.cn'>uestc</a></em> living in <em>chengdu</em>. I love follow<em>font-end &amp;fashion technique</em>. When not changing the world, I enjoy <em>basketball, skate, sing, &amp; chat</em>.
+  </p>
+</section>
+<section id="links">
+  You can follow me on 
+  <a href="http://weibo.com/2397364660" target='_blank'>weibo</a>, 
+  ogle my code at <a href="http://www.github.com/freestyle21" target='_blank'>GitHub</a>, 
+  talk synergy on <a id ='qq' href="#">qq</a>,
+  and stalk me on <a href="http://www.douban.com/people/62733481/" target='_blank'>douban</a>.
+  <script type="text/javascript">
+    document.getElementById('qq').onclick = function(){
+      alert('陆柒伍捌陆幺柒零捌，你懂得。')
+      return false;
+    }
+  </script>
+</section>
+<section id="writings">
+  <h2>Writings</h2>
+  <ul>
+  {% for post in site.posts %}
+    <li class="post">
+      <p>{{ post.date | date: "%b %d, %Y" }}</p>
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+<footer>
+  <p>© 2012 freestyle21</p>
+</footer>
+
