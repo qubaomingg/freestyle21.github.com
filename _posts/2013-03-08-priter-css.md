@@ -24,7 +24,7 @@ description: 翻译的文章，高效的CSS。
 
 一些的不常见的选择器包括伪类选择器(:hover)，很多复杂的CSS3和正则选择器，比如：first-child，[class ^= “grid-”].
 
-CSS选择器具有高效的继承性，引用Steve Souders的话， CSS选择器效率从低到高的排序如下：
+CSS选择器具有高效的继承性，引用Steve Souders的话， CSS选择器效率从高到低的排序如下：
 
 1. 	ID选择器 比如#header
 2.	类选择器 比如.promo
