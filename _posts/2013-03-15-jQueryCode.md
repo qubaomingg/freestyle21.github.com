@@ -101,12 +101,14 @@ category: blog
 	    prop = this.props[ --i ];  
 	    event[ prop ] = originalEvent[ prop ];  
 	} 	
+
 7、
 	// while检查下标i  
 	var i = arr.length;  
 	while( i-- ) {  
 	    obj[ arr[i] ] = deferred[ arr[i] ];  
 	}
+
 ### **通过闭包，返回前一作用域的参数**
 
 	//	闭包。返回的函数保持对guid的引用。
@@ -175,7 +177,9 @@ category: blog
 
 这里jQuery对象就是jQuery.fn.init对象
 
-如果执行new jQeury(),生成的jQuery对象会被抛弃，最后返回 jQuery.fn.init对象；因此可以直接调用jQuery( selector, context )，没有必要使用new关键字
+如果执行new jQeury(),生成的jQuery对象会被抛弃，最后返回 jQuery.fn.init对象;
+
+因此可以直接调用jQuery( selector, context )，没有必要使用new关键字
 还有一行代码如下：
 
 	jQuery.fn.init.prototype = jQuery.fn = jQuery.prototype
@@ -183,6 +187,7 @@ category: blog
 所有挂载到jQuery.fn的方法，相当于挂载到了jQuery.prototype，即挂载到了jQuery 函数上（一开始的 jQuery = function( selector, context ) ），但是最后都相当于挂载到了 jQuery.fn.init.prototype，即相当于挂载到了一开始的jQuery 函数返回的对象上，即挂载到了我们最终使用的jQuery对象上。
 
 这里的init函数里面执行了，我们平时接触具多的选择器。简单分析如下：
+
 	//如果传入一个DOM元素。。包装成jQuery对象，直接返回。
 	if ( selector.nodeType ) {
 		this.context = this[0] = selector;
@@ -236,6 +241,7 @@ category: blog
 		window.jQuery = window.$ = jQuery;
 
 	})(window);
+
 
 ## 结语
 
