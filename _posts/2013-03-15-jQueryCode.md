@@ -10,7 +10,12 @@ category: blog
 &nbsp;&nbsp;&nbsp;&nbsp;最近看了两遍jQuery源码，感觉只是看懂了jQuery的小部分小部分，不过仅此，就已经对john resig佩服的五体投地咯。。
 
 下面附上这位帅哥的靓照，记住吧，是他改变了世界。
+
+
 ![1](/images/jQueryCode/john-resig.png)
+
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;看的大多是实现的细节、技巧，整体的架构还是没有看出来。功力不够呀，还得慢慢修炼。jQuery真的是值得去读无数次的东西，每读一次，都会有不一样的收获。以后有空就多看看吧~
 
 &nbsp;&nbsp;&nbsp;&nbsp;研读优秀框架的源码，是从初级jser进阶到中级jser的捷径，可以学到好多优秀代码的风格。从代码可以看出一个程序员的水平呀~
@@ -18,7 +23,7 @@ category: blog
 &nbsp;&nbsp;&nbsp;&nbsp;现在把自己看出来的一些帅呆了的技巧，细节记录下来，一起分享。
 
 ##jQuery的细节技巧
-#### 巧用条件运算符
+### **巧用条件运算符**
 
 	trim: trim ?
 		function( text ) {
@@ -26,7 +31,6 @@ category: blog
 				"" :
 				trim.call( text );
 		} :
-
 		function( text ) {
 			return text == null ?
 				"" :
@@ -41,13 +45,13 @@ category: blog
 				!jQuery.isNaN( data ) ? parseFloat( data ) :
 					rbrace.test( data ) ? jQuery.parseJSON( data ) :
 					data;
-
-
 	for ( var i = one ? index : 0, max = one ? index + 1 : options.length; i < max; i++ ) {}
+
+
 
 多用点这种技巧，就不用满屏幕都是if & else 了。代码会变得简洁，轻巧。
 
-#### jQuery的循环遍历技巧
+### **jQuery的循环遍历技巧**
 
 下面列出一些自己看出的、常见的、平时代码中常用的循环技巧
 
@@ -103,7 +107,7 @@ category: blog
 	while( i-- ) {  
 	    obj[ arr[i] ] = deferred[ arr[i] ];  
 	}
-#### 通过闭包，返回前一作用域的参数
+### **通过闭包，返回前一作用域的参数**
 
 	//	闭包。返回的函数保持对guid的引用。
 	function a(){
@@ -114,7 +118,7 @@ category: blog
 	}
 	var defer = a();
 
-#### 一次实现多种方法
+###  **一次实现多种方法**
 
 	if ( rfxtypes.test(val) ) {
 		// 如果是toggle，则判断当前是否hidden，如果hidden则show，否则hide
@@ -161,7 +165,7 @@ category: blog
 
 通过each方法，实现n多方法。到此，除了惊叹还是惊叹。
 
-#### 实例化jQuery对象
+### **实例化jQuery对象**
 
 先看代码：
 
@@ -192,7 +196,7 @@ category: blog
 	//如果传入函数，则为ready开始.
 
 
-#### jQuery 巧妙避免ReferenceError
+### **jQuery 巧妙避免ReferenceError**
 在源码中，经常看到这样的代码：
 
 	args = args || [];
@@ -205,14 +209,6 @@ category: blog
 	}//这里和上面的条件运算符效果差不多。
 
 	name = jQuery.cssProps[ origName ] || origName;
-
-这个技巧，很多插件的开发者都学的淋漓精致，比如：
-	func( opt ) {
-？？	default = {
-			.....
-		};
-		opt = opt || default;
-	}
 
 在很多需要传入选项对象的函数中，如果用户自己传入，就用用户传进的；如果用户没有传值，则用开发者默认的参数。这样的代码很帅气有木有！
 
@@ -243,9 +239,15 @@ category: blog
 
 ## 结语
 
-以上分析，都只是jQuery的一些皮毛，还有很多很多没有发现，以后有时间，有机会再研究咯~总之没看一次，都会有很大的收获，成长。
+&nbsp;&nbsp;&nbsp;&nbsp;以上分析，都只是jQuery的一些皮毛，还有很多很多没有发现，以后有时间，有机会再研究咯~
+
+总之每看一次，都会有很大的收获，成长。
+
 最近状态不好，做事效率很低。以后看书码代码的时候，要关了qq，微博，河畔。。。
+
+
 离开用心，新的开始。虽然很多不舍，但必须面对，做出选择。对于有些人，应该就是永远不见，有些人，真舍不得。
+
 做喜欢的事，做好喜欢的事。加油，fs21~~
 
 
