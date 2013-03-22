@@ -12,9 +12,9 @@ category: blog
 
 参考文章如下(建议读者朋友用chrome看这些文章吧，不然的话会错过很多精彩哦~)：
 
-	[http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/][article1]
-	[http://benalman.com/news/2010/11/immediately-invoked-function-expression/][article2]
-	[http://dmitrysoshnikov.com/ecmascript/javascript-the-core/][article3]
+	[http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/](http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/)
+	[http://benalman.com/news/2010/11/immediately-invoked-function-expression/](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
+	[http://dmitrysoshnikov.com/ecmascript/javascript-the-core/](http://dmitrysoshnikov.com/ecmascript/javascript-the-core/)
 
 ## 语言特性
 
@@ -320,6 +320,3 @@ ECMAScript是一种面向对象语言，支持基于原型的委托式继承。
 
 
 [guide]:http://book.douban.com/subject/10549733/
-[article1]: http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/
-[article2]: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
-[article3]: http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
