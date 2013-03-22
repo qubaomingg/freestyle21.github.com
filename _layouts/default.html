@@ -27,18 +27,14 @@
     </script>
   </head>
   <body id="{{ page.body_id }}">
-    <!--[if ls IE 9]>
+   
+    <!--[if lt IE 8]>
         <div id = 'oldBrowser'>
             <p> 您的浏览器不支持css3和HTML5，为了您更好的浏览体验，请使用chrome或者firefox最新版本！</p>
-        </div>
-    <![endif]-->
-
-    <!--[if !IE]>
-      {{ content }}
-    <![endif]-->
-    <!--[if lt IE8]>
-      {{ content }}
-    <![endif]-->
+        </div><![endif]-->
+    <!--[if gte IE 9]> {{ content }}<![endif]-->
+    
+    <!--[if !IE]><!--> {{ content }} <!--<![endif]-->
     
   </body>
 </html>
