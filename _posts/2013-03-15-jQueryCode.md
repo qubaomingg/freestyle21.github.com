@@ -12,7 +12,7 @@ category: blog
 下面附上这位帅哥的靓照，记住吧，是他改变了世界。
 
 
-<div id = 'johnImg'>![1](/images/jQueryCode/john-resig.png)</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![1](/images/jQueryCode/john-resig.png)
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;看的大多是实现的细节、技巧，整体的架构还是没有看出来。功力不够呀，还得慢慢修炼。jQuery真的是值得去读无数次的东西，每读一次，都会有不一样的收获。以后有空就多看看吧~
