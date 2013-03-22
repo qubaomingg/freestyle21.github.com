@@ -28,10 +28,11 @@
   </head>
   <body id="{{ page.body_id }}">
    
-    <!--[if lt IE 8]>
+        <!--[if lt IE 9]>
         <div id = 'oldBrowser'>
             <p> 您的浏览器不支持css3和HTML5，为了您更好的浏览体验，请使用chrome或者firefox最新版本！</p>
-        </div><![endif]-->
+        </div>
+    <![endif]-->
     <!--[if gte IE 9]> {{ content }}<![endif]-->
     
     <!--[if !IE]><!--> {{ content }} <!--<![endif]-->
