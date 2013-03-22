@@ -7,8 +7,8 @@ description: Jekyll是一个简介的、特别针对博客平台的*静态网站
 
 ## 1、认识Jekyll
 
->Jekyll is a simple, blog aware, static site generator.。
->It takes a template directory (representing the raw form of a website), runs it through Markdown or Textile and Liquid converters, and produces a static website suitable for any web server.
+	Jekyll is a simple, blog aware, static site generator.。
+	It takes a template directory (representing the raw form of a website), runs it through Markdown or Textile and Liquid converters, and produces a static website suitable for any web server.
 
 &ensp;&ensp;&ensp;&ensp;上面是摘自github上Jekyll的[说明](https://github.com/mojombo/jekyll).简单的说，Jekyll 是一个简洁的、特别针对博客平台的**静态网站生成器**。它使用一个模板目录作为网站布局的基础框架，并在其上运行 Textile 、 Markdown 或 Liquid 标记语言的转换器，最终生成一个完整的静态Web站点。jekyll+markdown+Liquid成为很简单，很舒服的写作方式。
 
@@ -58,9 +58,9 @@ description: Jekyll是一个简介的、特别针对博客平台的*静态网站
 
 &ensp;&ensp;Jekyll使用Ruby编写的，所以要先配置Ruby环境，通过Ruby安装Jekyll。
 
-&ensp;&ensp;下载RubyInstaller，(我下载的是[rubyinstaller-1.9.3-p194.exe][rubydown])
+&ensp;&ensp;下载RubyInstaller，(我下载的是[rubyinstaller-1.9.3-p194.exe](http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.3-p194.exe])
 
-&ensp;&ensp;下载 DevKit(下载的是[DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe][devkitdown])
+&ensp;&ensp;下载 DevKit(下载的是[DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe](http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe])
 
  RubyInstaller安装开始的时候，有三个多选按钮，都选上~path神马的都会自动加上，不用担心。
 
@@ -100,47 +100,5 @@ description: Jekyll是一个简介的、特别针对博客平台的*静态网站
 如下如：
 ![jekyllstruct](/images/jekyll/serverauto.png)
 
-&ensp;&ensp;最后就是检验成果的时候了，在浏览器中输入：[localhost:4000][localhost],就可以看到你的页面在本地跑起来了。。
+&ensp;&ensp;最后就是检验成果的时候了，在浏览器中输入：[localhost:4000](http://localhost:4000),就可以看到你的页面在本地跑起来了。。
 这样以后调试就方便多了，在代码中修改后，只要ctrl+s保存一下，jekyll就会自动在浏览器里面更新了。。
-
-
-
-
-[rubydown]:	http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.3-p194.exe
-[devkitdown]:	http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe
-[localhost]: http://localhost:4000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

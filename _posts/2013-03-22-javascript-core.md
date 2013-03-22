@@ -12,9 +12,9 @@ category: blog
 
 参考文章如下(建议读者朋友用chrome看这些文章吧，不然的话会错过很多精彩哦~)：
 
->[http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/][article1]
->[http://benalman.com/news/2010/11/immediately-invoked-function-expression/][article2]
->[http://dmitrysoshnikov.com/ecmascript/javascript-the-core/][article3]
+	[http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/][article1]
+	[http://benalman.com/news/2010/11/immediately-invoked-function-expression/][article2]
+	[http://dmitrysoshnikov.com/ecmascript/javascript-the-core/][article3]
 
 ## 语言特性
 
@@ -84,9 +84,9 @@ JSON是设计成描述数据交换格式的，它也有自己的语法，这个�
 
 当进入执行上下文(代码执行之前)时，VO里已经包含了下列属性：
 
-+ 函数的所有形参(如果我们是在函数执行上下文中)；
-+ 所有函数声明(FunctionDeclaration, FD)
-+ 所有变量声明(var, VariableDeclaration)
+1. 函数的所有形参(如果我们是在函数执行上下文中)；
+2. 所有函数声明(FunctionDeclaration, FD)
+3. 所有变量声明(var, VariableDeclaration)
 
 
 另一个经典例子：
@@ -151,7 +151,7 @@ JSON是设计成描述数据交换格式的，它也有自己的语法，这个�
 	 
 	(foo.bar = foo.bar)(); // global
 	(false || foo.bar)(); // global
-	(foo.bar, foo.bar)(); // global?
+	(foo.bar, foo.bar)(); // global
 
 问题在于后面的三个调用，在应用一定的运算操作之后，在调用括号的左边的值不在是引用类型。
 
@@ -321,5 +321,5 @@ ECMAScript是一种面向对象语言，支持基于原型的委托式继承。
 
 [guide]:http://book.douban.com/subject/10549733/
 [article1]: http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/
-[article2]：http://benalman.com/news/2010/11/immediately-invoked-function-expression/
-[article3]：http://dmitrysoshnikov.com/ecmascript/javascript-the-core/
+[article2]: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+[article3]: http://dmitrysoshnikov.com/ecmascript/javascript-the-core/

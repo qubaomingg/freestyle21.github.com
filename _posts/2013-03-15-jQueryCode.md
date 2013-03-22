@@ -12,8 +12,7 @@ category: blog
 下面附上这位帅哥的靓照，记住吧，是他改变了世界。
 
 
-![1](/images/jQueryCode/john-resig.png)
-
+<div id = 'johnImg'>![1](/images/jQueryCode/john-resig.png)</div>
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;看的大多是实现的细节、技巧，整体的架构还是没有看出来。功力不够呀，还得慢慢修炼。jQuery真的是值得去读无数次的东西，每读一次，都会有不一样的收获。以后有空就多看看吧~
@@ -75,7 +74,6 @@ category: blog
 	} 
 
 4、
-	
 	// 遍历动态数组（事件），不能缓存length属性，j++之前先执行j--
 	for ( j = 0; j < eventType.length; j++ ) {  
 	eventType.splice( j--, 1 );  
@@ -88,7 +86,6 @@ category: blog
 这个细节要注意哈，稍不注意就会在这里折腾很久。动态数组不能缓存！
 
 5、
-
 	// 迭代过程中尽可能减少遍历次数（事件），从pos开始
 	for ( j = pos || 0; j < eventType.length; j++ ) {  
 	  
@@ -247,14 +244,14 @@ category: blog
 
 &nbsp;&nbsp;&nbsp;&nbsp;以上分析，都只是jQuery的一些皮毛，还有很多很多没有发现，以后有时间，有机会再研究咯~
 
-总之每看一次，都会有很大的收获，成长。
+&nbsp;&nbsp;&nbsp;&nbsp;总之每看一次，都会有很大的收获，成长。
 
-最近状态不好，做事效率很低。以后看书码代码的时候，要关了qq，微博，河畔。。。
+&nbsp;&nbsp;&nbsp;&nbsp;最近状态不好，做事效率很低。以后看书码代码的时候，要关了qq，微博，河畔。。。
 
 
-离开用心，新的开始。虽然很多不舍，但必须面对，做出选择。对于有些人，应该就是永远不见，有些人，真舍不得。
+&nbsp;&nbsp;&nbsp;&nbsp;离开用心，新的开始。虽然很多不舍，但必须面对，做出选择。对于有些人，应该就是永远不见，有些人，真舍不得。
 
-做喜欢的事，做好喜欢的事。加油，fs21~~
+&nbsp;&nbsp;&nbsp;&nbsp;做喜欢的事，做好喜欢的事。加油，fs21~~
 
 
 

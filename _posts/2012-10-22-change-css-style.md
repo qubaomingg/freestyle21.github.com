@@ -72,7 +72,7 @@ IE中使用的是obj.currentStyle方法，FF是用的是getComputedStyle 方法�
 
 	getstyle(".orig").display = "inline";
 
-+	总结：
+##总结：
 
 前面说的是怎样查询或修改外链的.css，不过，不行的是，我们不能这样做。
 在ie和firefox里面确实可以实现，不过我们不提倡。
