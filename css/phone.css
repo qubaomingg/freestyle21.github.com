@@ -324,3 +324,17 @@ strong {
   color: white;
   font-size: 30px;
 }
+@media screen and(max-width: 980px){
+    .content {
+      width: 90%;
+    }
+    #about {
+      width: 90%;
+    }
+    #links {
+      width: 90%;
+    }
+    #writings{
+      width: 90%;
+    }
+}
