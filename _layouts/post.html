@@ -17,24 +17,21 @@ body_id: post
 </article>
 <aside>
   <div class="content">
-    <div id="disqus_thread"></div>
+      <!-- Duoshuo Comment BEGIN -->
+    <div class="ds-thread"></div>
     <script type="text/javascript">
-      var disqus_identifier = "{{ page.id }}";
+      var duoshuoQuery = {short_name:"freestyle21"};
       (function() {
-       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-       dsq.src = 'http://michaeldwan.disqus.com/embed.js';
-       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       var timeid = setTimeout(removerss,3000);
-       function removerss(){
-          var rss = document.getElementById('dsq-pagination');
-          rss.setAttribute('style','display:none'); 
-       }
-       
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
       })();
-
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=michaeldwan">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+      </script>
+    <!-- Duoshuo Comment END -->
+    
   </div>
 </aside>
 <footer>
