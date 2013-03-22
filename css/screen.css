@@ -316,11 +316,11 @@ strong {
 
 #oldBrowser {
   width: 100%;
-  height: 500px;
-  background: #fc0;
+  height: 100px;
+  margin: 200px;
 }
 
 #oldBrowser p {
-  color: white;
-  font-size: 30px;
+  color: red;
+  font-size: 20px;
 }
