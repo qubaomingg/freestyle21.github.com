@@ -50,7 +50,7 @@ JSON是设计成描述数据交换格式的，它也有自己的语法，这个�
 
 **老版本的浏览器不支持这个对象，但你可以通过json2.js来实现同样的功能。**
 
-### 原型链 ###
+### 原型 ###
 * * *
 
 	function Animal (){  
@@ -75,6 +75,8 @@ JSON是设计成描述数据交换格式的，它也有自己的语法，这个�
 	var a = new A();
 	alert(a.x); // 10
 	alert(a.constructor === A); // false!
+
+让我们一起看下MDN上关于constructor的[解释](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/constructor)吧：
 
 prototype：Returns a reference to the Object function that created the instance's prototype. 
 
@@ -139,8 +141,8 @@ prototype：Returns a reference to the Object function that created the instance
 当进入执行上下文(代码执行之前)时，VO里已经包含了下列属性：
 
 1. 函数的所有形参(如果我们是在函数执行上下文中)；
-2. 所有函数声明(FunctionDeclaration, FD)
-3. 所有变量声明(var, VariableDeclaration)
+2. 所有函数声明(FunctionDeclaration, FD)；
+3. 所有变量声明(var, VariableDeclaration)；
 
 
 另一个经典例子：
