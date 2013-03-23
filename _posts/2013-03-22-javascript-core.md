@@ -64,6 +64,60 @@ JSON是设计成描述数据交换格式的，它也有自己的语法，这个�
 
 	//还有一个重要的细节需要注意的就是一定要维护自己的原型链,新手总会忘记这个！
 	cat.prototype.constructor = cat;
+	
+如果我们彻底改变函数的prototype属性（通过分配一个新的对象），那原始构造函数的引用就是丢失，这是因为我们创建的对象不包括constructor属性：
+
+	function A() {}
+	A.prototype = {
+	  x: 10
+	};
+ 
+	var a = new A();
+	alert(a.x); // 10
+	alert(a.constructor === A); // false!
+
+prototype：Returns a reference to the Object function that created the instance's prototype. 
+
+因此，对函数的原型引用需要手工恢复：
+
+	function A() {}
+	A.prototype = {
+	  constructor: A,
+	  x: 10
+	};
+ 
+	var a = new A();
+	alert(a.x); // 10
+	alert(a.constructor === A); // true
+
+然而，提交prototype属性不会影响已经创建对象的原型（只有在构造函数的prototype属性改变的时候才会影响到)，就是说新创建的对象才有有新的原型，而已创建对象还是引用到原来的旧原型（这个原型已经不能被再被修改了）。
+
+	function A() {}
+	A.prototype.x = 10;
+	 
+	var a = new A();
+	alert(a.x); // 10
+	 
+	A.prototype = {
+	  constructor: A,
+	  x: 20
+	  y: 30
+	};
+	 
+	// 对象a是通过隐式的[[Prototype]]引用从原油的prototype上获取的值
+	alert(a.x); // 10
+	alert(a.y) // undefined
+	 
+	var b = new A();
+	 
+	// 但新对象是从新原型上获取的值
+	alert(b.x); // 20
+	alert(b.y) // 30
+	
+因此，“动态修改原型将影响所有的对象都会拥有新的原型”是错误的，新原型仅仅在原型修改以后的新创建对象上生效。
+
+这里的主要规则是：对象的原型是对象的创建的时候创建的，并且在此之后不能修改为新的对象，如果依然引用到同一个对象，可以通过构造函数的显式prototype引用，对象创建以后，只能对原型的属性进行添加或修改。
+
 
 ### 变量对象 ###
 * * *
