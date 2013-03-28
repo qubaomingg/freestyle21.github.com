@@ -58,9 +58,9 @@ It takes a template directory (representing the raw form of a website), runs it 
 
 &ensp;&ensp;Jekyll使用Ruby编写的，所以要先配置Ruby环境，通过Ruby安装Jekyll。
 
-&ensp;&ensp;下载RubyInstaller，(我下载的是[rubyinstaller-1.9.3-p194.exe](http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.3-p194.exe])
+&ensp;&ensp;下载RubyInstaller，(我下载的是[rubyinstaller-1.9.3-p194.exe](http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.3-p194.exe)
 
-&ensp;&ensp;下载 DevKit(下载的是[DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe](http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe])
+&ensp;&ensp;下载 DevKit(下载的是[DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe](http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe)
 
  RubyInstaller安装开始的时候，有三个多选按钮，都选上~path神马的都会自动加上，不用担心。
 
@@ -98,7 +98,36 @@ It takes a template directory (representing the raw form of a website), runs it 
 	Jekyll --server --auto
 
 如下如：
+
 ![jekyllstruct](/images/jekyll/serverauto.png)
 
 &ensp;&ensp;最后就是检验成果的时候了，在浏览器中输入：[localhost:4000](http://localhost:4000),就可以看到你的页面在本地跑起来了。。
 这样以后调试就方便多了，在代码中修改后，只要ctrl+s保存一下，jekyll就会自动在浏览器里面更新了。。
+
+一般都在github里面写代码的，很久没有在本地调试了，这几天有点想法，想把博客改变一下样子。但是这次居然jekyll居然不听话了，各种报错，然后就是不断的找错误。。
+
+现在记录一下遇到的错误，以后不要在这里耽误时间了。
+
+>问题：Liquid error: incompatible character encodings: UTF-8 and IBM437”
+    
+	编码问题，直接在path里面添加：LC_ALL=en_US.UTF-8 和 LANG=en_US.UTF-8然后重启或者注销。
+	
+	还是不行的话就将 convertible.rb 的第29行改为：
+    
+        self.content = File.read(File.join(base, name), :encoding => "utf-8")
+        
+
+>问题：Liquid Exception: No such file or directory - python c:/Ruby193/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.7/lib/pygments/mentos.py in 2013-01-06-octopress.markdown
+
+    首先可以尝试一下更新Pygments，
+        把python里面的script目录加载path里面，然后就可以直接通过easy_install Pygments来安装了。
+        
+    其次Pygments是通过python来工作的，所以还要安装python。需要注意的是一定要把python的路径加到path下面。
+    
+
+
+    
+
+
+
+
