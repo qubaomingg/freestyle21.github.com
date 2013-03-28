@@ -11,7 +11,6 @@
 	
 	<item>
 	<title>路</title>
-	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
 	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
 	<link>http://freestyle21.cn/writings/road.html</link>
 	<guid isPermaLink="false">DD9DF4F4-233C-4E19-8312-1A61B5F1A9AF</guid>
@@ -19,7 +18,6 @@
 	
 	<item>
 	<title>浅谈JavaScript的语言特性</title>
-	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
 	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
 	<link>http://freestyle21.cn/writings/javascript-core.html</link>
 	<guid isPermaLink="false">DD9DF4F4-233C-4E19-8312-1A61B5F1A9AF</guid>
@@ -35,7 +33,6 @@
 
 	<item>
 	<title>邂逅Jekyll</title>
-	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
 	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
 	<link>http://freestyle21.cn/writings/learn-jekyll.html</link>
 	<guid isPermaLink="false">62188DFA-906E-45AE-B872-93E9E272593F</guid>
@@ -43,7 +40,6 @@
 
 	<item>
 	<title>淘宝UED的前端招聘测试题</title>
-	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
 	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
 	<link>http://freestyle21.cn/writings/taobao-uedtest.html</link>
 	<guid isPermaLink="false">21B25F04-BB8D-4A96-9223-B8E9993B6A32</guid>
@@ -51,7 +47,6 @@
 
 	<item>
 	<title>学会使用chrome的F12</title>
-	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
 	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
 	<link>http://freestyle21.cn/writings/learn-chromeF12.html</link>
 	<guid isPermaLink="false">E7C59E3B-4F87-43A2-AA3E-13426C603AF6</guid>
@@ -59,7 +54,6 @@
 
 	<item>
 	<title>关于js修改三种css样式的方法</title>
-	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
 	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
 	<link>http://freestyle21.cn/writings/change-css-style.html</link>
 	<guid isPermaLink="false">0E99AF3D-14FD-452F-A193-C84DDAF04FA4</guid>
