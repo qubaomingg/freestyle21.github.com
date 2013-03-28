@@ -1,174 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
-  <channel>
+	<channel>
 	<generator>RSS Wizard (Unlicensed) http://www.extralabs.net/</generator>
 	<language>en</language>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<title>freestyle21</title>
-	<description>freestyle21' blog. ä¸»è¦è®°å½•æŠ€æœ¯æˆé•¿åŽ†ç¨‹ï¼Œä¹Ÿå¸Œæœ›è®°å½•ç”Ÿæ´»ï¼Œ-_- !</description>
-	<link>freestyle21.cn</link>
+	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
+	<title></title>
+	<description></description>
+	<link>http://freestyle21.cn</link>
 	<docs>http://blogs.law.harvard.edu/tech/rss</docs>
-
+	
 	<item>
-	<title>??/a&gt;</title>
-	<description>Mar 27, 2013
-??/a&gt;</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/road.html</link>
-	<guid isPermaLink="false">D1517612-6B18-4F96-A040-5A7A2D23C1F7</guid>
+	<title>路</title>
+	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
+	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
+	<link>http://freestyle21.cn/writings/road.html</link>
+	<guid isPermaLink="false">DD9DF4F4-233C-4E19-8312-1A61B5F1A9AF</guid>
+	</item>
+	
+	<item>
+	<title>浅谈JavaScript的语言特性</title>
+	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
+	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
+	<link>http://freestyle21.cn/writings/javascript-core.html</link>
+	<guid isPermaLink="false">DD9DF4F4-233C-4E19-8312-1A61B5F1A9AF</guid>
 	</item>
 
 	<item>
-	<title>æµ…è°ˆJavaScriptçš„è¯­è¨€ç‰??/a&gt;</title>
-	<description>Mar 22, 2013
-æµ…è°ˆJavaScriptçš„è¯­è¨€ç‰??/a&gt;</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/javascript-core.html</link>
-	<guid isPermaLink="false">1BE99A37-CEBC-4FC4-A84A-D21A7BF0E9E1</guid>
+	<title>翻译-高效的CSS</title>
+	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
+	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
+	<link>http://freestyle21.cn/writings/efficient-css.html</link>
+	<guid isPermaLink="false">A87B3240-2330-4D93-997D-41D35012EC5C</guid>
 	</item>
 
 	<item>
-	<title>ä»ŽjQueryå­¦åˆ°çš„çš®??/a&gt;</title>
-	<description>Mar 15, 2013
-ä»ŽjQueryå­¦åˆ°çš„çš®??/a&gt;</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/jQueryCode.html</link>
-	<guid isPermaLink="false">8DAEE9DD-CAD1-44C8-B34B-AC09DCD33318</guid>
+	<title>邂逅Jekyll</title>
+	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
+	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
+	<link>http://freestyle21.cn/writings/learn-jekyll.html</link>
+	<guid isPermaLink="false">62188DFA-906E-45AE-B872-93E9E272593F</guid>
 	</item>
 
 	<item>
-	<title>ç¿»è¯‘-é«˜æ•ˆçš„CSS</title>
-	<description>Mar 08, 2013
-ç¿»è¯‘-é«˜æ•ˆçš„CSS</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/efficient-css.html</link>
-	<guid isPermaLink="false">59BF436F-7A90-4B3E-9697-E3FFDE48E724</guid>
+	<title>淘宝UED的前端招聘测试题</title>
+	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
+	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
+	<link>http://freestyle21.cn/writings/taobao-uedtest.html</link>
+	<guid isPermaLink="false">21B25F04-BB8D-4A96-9223-B8E9993B6A32</guid>
 	</item>
 
 	<item>
-	<title>é‚‚é€…Jekyll</title>
-	<description>Mar 02, 2013
-é‚‚é€…Jekyll</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/learn-jekyll.html</link>
-	<guid isPermaLink="false">E072031B-75E4-4637-950A-43A071782AFD</guid>
+	<title>学会使用chrome的F12</title>
+	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
+	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
+	<link>http://freestyle21.cn/writings/learn-chromeF12.html</link>
+	<guid isPermaLink="false">E7C59E3B-4F87-43A2-AA3E-13426C603AF6</guid>
 	</item>
 
 	<item>
-	<title>æ·˜å®UEDçš„å‰ç«¯æ‹›è˜æµ‹è¯•é¢˜</title>
-	<description>Jan 15, 2013
-æ·˜å®UEDçš„å‰ç«¯æ‹›è˜æµ‹è¯•é¢˜</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/taobao-uedtest.html</link>
-	<guid isPermaLink="false">BBCEC2DF-C653-4E32-91DE-1A74A402CE2A</guid>
+	<title>关于js修改三种css样式的方法</title>
+	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
+	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
+	<link>http://freestyle21.cn/writings/change-css-style.html</link>
+	<guid isPermaLink="false">0E99AF3D-14FD-452F-A193-C84DDAF04FA4</guid>
 	</item>
 
 	<item>
-	<title>å­¦ä¼šä½¿ç”¨chromeçš„F12</title>
-	<description>Dec 15, 2012
-å­¦ä¼šä½¿ç”¨chromeçš„F12</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/learn-chromeF12.html</link>
-	<guid isPermaLink="false">B5C47671-F2E5-45CB-BF16-F70609052928</guid>
-	</item>
-
-	<item>
-	<title>å…³äºŽjsä¿®æ”¹ä¸‰ç§cssæ ·å¼çš„æ–¹??/a&gt;</title>
-	<description>Oct 22, 2012
-å…³äºŽjsä¿®æ”¹ä¸‰ç§cssæ ·å¼çš„æ–¹??/a&gt;</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/change-css-style.html</link>
-	<guid isPermaLink="false">5E0038C5-3F8D-4747-8CA3-3BF4D104EDB9</guid>
-	</item>
-
-	<item>
-	<title>Javascriptä¸­çš„å„ç§æ‹¬å·</title>
-	<description>Oct 15, 2012
-Javascriptä¸­çš„å„ç§æ‹¬å·</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/blank-injs.html</link>
-	<guid isPermaLink="false">FB600A6A-E30E-4150-B4BD-4549BC167D80</guid>
-	</item>
-
-	<item>
-	<title>??/a&gt;</title>
-	<description>Mar 27, 2013
-??/a&gt;</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/road.html</link>
-	<guid isPermaLink="false">9556AE3B-3F4A-41C5-839A-6095AC914A08</guid>
-	</item>
-
-	<item>
-	<title>æµ…è°ˆJavaScriptçš„è¯­è¨€ç‰??/a&gt;</title>
-	<description>Mar 22, 2013
-æµ…è°ˆJavaScriptçš„è¯­è¨€ç‰??/a&gt;</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/javascript-core.html</link>
-	<guid isPermaLink="false">1AA806A7-6ED6-41DA-8A3C-4624361C53F8</guid>
-	</item>
-
-	<item>
-	<title>ä»ŽjQueryå­¦åˆ°çš„çš®??/a&gt;</title>
-	<description>Mar 15, 2013
-ä»ŽjQueryå­¦åˆ°çš„çš®??/a&gt;</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/jQueryCode.html</link>
-	<guid isPermaLink="false">732F3912-15A9-49F9-BA9C-AF66E8A787AC</guid>
-	</item>
-
-	<item>
-	<title>ç¿»è¯‘-é«˜æ•ˆçš„CSS</title>
-	<description>Mar 08, 2013
-ç¿»è¯‘-é«˜æ•ˆçš„CSS</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/efficient-css.html</link>
-	<guid isPermaLink="false">93AB9106-2852-48FA-893D-3F9B789570E8</guid>
-	</item>
-
-	<item>
-	<title>é‚‚é€…Jekyll</title>
-	<description>Mar 02, 2013
-é‚‚é€…Jekyll</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/learn-jekyll.html</link>
-	<guid isPermaLink="false">F5C02F16-0430-47B0-80DA-DDC0048E3239</guid>
-	</item>
-
-	<item>
-	<title>æ·˜å®UEDçš„å‰ç«¯æ‹›è˜æµ‹è¯•é¢˜</title>
-	<description>Jan 15, 2013
-æ·˜å®UEDçš„å‰ç«¯æ‹›è˜æµ‹è¯•é¢˜</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/taobao-uedtest.html</link>
-	<guid isPermaLink="false">84B7830C-2908-45E7-91BC-23A480930200</guid>
-	</item>
-
-	<item>
-	<title>å­¦ä¼šä½¿ç”¨chromeçš„F12</title>
-	<description>Dec 15, 2012
-å­¦ä¼šä½¿ç”¨chromeçš„F12</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/learn-chromeF12.html</link>
-	<guid isPermaLink="false">C367A9B0-8315-444B-A4FB-6053A62E8D13</guid>
-	</item>
-
-	<item>
-	<title>å…³äºŽjsä¿®æ”¹ä¸‰ç§cssæ ·å¼çš„æ–¹??/a&gt;</title>
-	<description>Oct 22, 2012
-å…³äºŽjsä¿®æ”¹ä¸‰ç§cssæ ·å¼çš„æ–¹??/a&gt;</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/change-css-style.html</link>
-	<guid isPermaLink="false">226C2E77-CA84-4C2D-9083-462112E55521</guid>
-	</item>
-
-	<item>
-	<title>Javascriptä¸­çš„å„ç§æ‹¬å·</title>
-	<description>Oct 15, 2012
-Javascriptä¸­çš„å„ç§æ‹¬å·</description>
-	<pubDate>28 Mar 2013 00:34:20 GMT</pubDate>
-	<link>freestyle21.cn//writings/blank-injs.html</link>
-	<guid isPermaLink="false">2333CFEC-9888-4F3B-B514-65576DEDE4B7</guid>
+	<title>Javascript中的各种括号</title>
+	<description>freestyle21' blog. 主要记录技术成长历程，也希望记录生活，-_- !</description>
+	<pubDate>28 Mar 2013 01:02:06 GMT</pubDate>
+	<link>http://freestyle21.cn/writings/blank-injs.html</link>
+	<guid isPermaLink="false">AAE7E48B-5B84-4421-BC4A-0B82C5C5E38F</guid>
 	</item>
 
 	</channel>
