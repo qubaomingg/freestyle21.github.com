@@ -108,7 +108,9 @@ It takes a template directory (representing the raw form of a website), runs it 
 
 现在记录一下遇到的错误，以后不要在这里耽误时间了。
 
->问题：Liquid error: incompatible character encodings: UTF-8 and IBM437”
+>问题：
+
+Liquid error: incompatible character encodings: UTF-8 and IBM437”
     
 	编码问题，直接在path里面添加：LC_ALL=en_US.UTF-8 和 LANG=en_US.UTF-8然后重启或者注销。
 	
@@ -117,7 +119,9 @@ It takes a template directory (representing the raw form of a website), runs it 
         self.content = File.read(File.join(base, name), :encoding => "utf-8")
         
 
->问题：Liquid Exception: No such file or directory - python c:/Ruby193/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.7/lib/pygments/mentos.py in 2013-01-06-octopress.markdown
+>问题：
+
+Liquid Exception: No such file or directory - python c:/Ruby193/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.7/lib/pygments/mentos.py in 2013-01-06-octopress.markdown
 
     首先可以尝试一下更新Pygments，
         把python里面的script目录加载path里面，然后就可以直接通过easy_install Pygments来安装了。
