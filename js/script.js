@@ -328,10 +328,11 @@
 		function JustGo() {
 			var newMusic = new MyMusic();
 			newMusic.initAudioSet();
+			newMusic.showWelTxt();	
 			newMusic.AutoPlay(true);
 			newMusic.handleClick();
 			newMusic.bindProgress();
-			newMusic.showWelTxt();	
+			
 		}
 		
 	});
