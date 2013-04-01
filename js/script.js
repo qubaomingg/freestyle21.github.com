@@ -83,7 +83,7 @@
 				$(document).on(events, selector, data, handler);  
 			*/
 			
-			$('.musiclistContain li').live('click', function() {
+			$('.musiclistContain li').bind('click', function() {
 				if($(this).hasClass('IamReady')) {
 					alert('你的网速不给力哦，等等吧，精彩总在后面！')
 					return false;
