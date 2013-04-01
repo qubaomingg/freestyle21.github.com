@@ -345,6 +345,15 @@
 			$("nav#main-nav").fadeOut(500);
 		}
 	});
+	$("#main-nav div.nav-item").on("click", function(e){
+		var targetElement = $(e.target).attr('data-target'),
+		targetElementOffset = $(targetElement).offset(),
+		targetHeight = targetElementOffset.top - 58,
+		windowOffsetTop = $(window).scrollTop(),
+		scrollSpeed = Math.abs(windowOffsetTop - targetHeight) / 5;
+		$('html,body').stop().animate({scrollTop: targetHeight}, scrollSpeed, "linear");
+	});
+
 	//响应快捷键
 	$(document).keypress(function(event) {  
 		//测试得到unicode码 空格32，右165 左162
