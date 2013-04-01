@@ -2,7 +2,7 @@
 layout: post
 title: 浅谈JavaScript的语言特性
 description: Javascript语言特性，闭包，作用域链，上下文，函数。
-category: blog
+category: frontend
 ---
 
 ## 前言 ##
