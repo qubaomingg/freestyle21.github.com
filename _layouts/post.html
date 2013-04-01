@@ -2,37 +2,40 @@
 layout: default
 body_id: post
 ---
-<article>
-  <div class="content">
-    <header>
-      <p><a href="/">freestyle21</a></p>
-      <h1>{{ page.title }}</h1>
-      <p class="date">{{ page.date | date: "%A, %B %d, %Y" }}</p>
-    </header>
-    <section>
-      {{ content }}
-    </section>
-  </div>
-</article>
-<aside>
-  <div class="content">
-   
-    <div class="ds-thread"></div>
-    <script type="text/javascript">
-        var duoshuoQuery = {short_name:"freestyle21"};
-        (function() {
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';ds.async = true;
-          ds.src = 'http://static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0] 
-          || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-        </script>
-  </div>
-</aside>
-<footer>
-  <div class="content">
-    <p>Copyright © 2012 freestyle21</p>
-  </div>
-</footer>
+<div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <p><a href="/">freestyle21</a></p>
+        <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+        <p class="date">{{ page.date | date: "%A, %B %d, %Y" }}</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          {{ content }}
+        </section>
+    </div>
+    <div id = 'MsgOrLink'>
+        <div class="MsgBody">
+            
+            <div class="ds-thread"></div>
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"freestyle21"};
+                (function() {
+                  var ds = document.createElement('script');
+                  ds.type = 'text/javascript';ds.async = true;
+                  ds.src = 'http://static.duoshuo.com/embed.js';
+                  ds.charset = 'UTF-8';
+                  (document.getElementsByTagName('head')[0] 
+                  || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+        </div>
+    </div>
+</div>
+<div id ='footer'>
+    <div class="footer">
+        <p>Copyright © 2012 freestyle21</p>
+    </div>
+</div>
+<script type="text/javascript" src = '/js/article.js'></script>
