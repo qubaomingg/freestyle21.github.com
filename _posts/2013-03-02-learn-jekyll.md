@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      邂逅Jekyll
-category: blog
+category: frontend
 description: Jekyll是一个简介的、特别针对博客平台的*静态网站*生成器。
 ---
 
