@@ -324,12 +324,16 @@
 				$('.musiclist li').eq(num).removeClass('IamReady');
 			}
 		}
-		var newMusic = new MyMusic();
-		newMusic.initAudioSet();
-		newMusic.AutoPlay(true);
-		newMusic.handleClick();
-		newMusic.bindProgress();
-		newMusic.showWelTxt();
+		window.onload = JustGo;
+		function JustGo = function() {
+			var newMusic = new MyMusic();
+			newMusic.initAudioSet();
+			newMusic.AutoPlay(true);
+			newMusic.handleClick();
+			newMusic.bindProgress();
+			newMusic.showWelTxt();	
+		}
+		
 	});
 
 	//导航条的隐藏与出现
