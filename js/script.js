@@ -17,14 +17,25 @@
 			for (var i = 0; i < this.musicArr.length; i++) {
 				this.audioSet['audio' + i] =  document.createElement('audio');
 				this.audioSet['audio' + i].src = this.musicArr[i];
-				this.audioSet['audio' + i].load();
-				this.audioSet['audio' + i].addEventListener('canplaythrough', callback = (function(now) {
+			};		
+			this.learLoad();
+			this.UpdateControl();
+		}
+		//控制加载顺序
+		MyMusic.prototype.learLoad = function() {
+			loadOne(0);
+			function loadOne(num) {
+				this.audio['audio' + num].load();
+				this.audio['audio' + num].addEventListener('canplaythrough', callback = (function(now) {
 					return function() {
 						changeLiStatus(now);
+						if( now <= 15) {
+							loadOne(++now);	
+						}
 					}
-				})(i));
-			};		
-			this.UpdateControl();
+				})(num));	
+			}
+			
 		}
 		//顺序播放 或取消顺序播放
 		MyMusic.prototype.AutoPlay = function() {
