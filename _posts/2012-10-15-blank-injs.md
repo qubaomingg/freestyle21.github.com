@@ -2,7 +2,7 @@
 layout: post
 title: Javascript中的各种括号
 description: 最近看ECMAScript262时，看了好多括号，索性一下弄清楚完。
-category: blog
+category: frontend
 ---
 
 &nbsp;&nbsp;&nbsp;平时总是遇到很多小括号跟在函数后面，没有机会深究。正如丁小倪所说，前端是一个涉足很深的职业，一个标签或一个属性都可以引申出很多东西。对每一个细节都要认真对待。
