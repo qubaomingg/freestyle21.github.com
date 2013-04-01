@@ -2,7 +2,7 @@
 layout: post
 title: 淘宝UED的前端招聘测试题
 description: 实现一个鼠标点击后产生的特殊效果。。
-category: blog
+category: frontend
 ---
 ## 引言
 
