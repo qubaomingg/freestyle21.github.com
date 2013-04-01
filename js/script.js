@@ -25,8 +25,8 @@
 		MyMusic.prototype.learLoad = function() {
 			loadOne(0);
 			function loadOne(num) {
-				this.audio['audio' + num].load();
-				this.audio['audio' + num].addEventListener('canplaythrough', callback = (function(now) {
+				$that.audio['audio' + num].load();
+				$that.audio['audio' + num].addEventListener('canplaythrough', callback = (function(now) {
 					return function() {
 						changeLiStatus(now);
 						if( now <= 15) {
