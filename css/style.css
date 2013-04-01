@@ -167,7 +167,7 @@ footer p {
 }
 .text-white-bg{display:inline-block;background-color:rgba(256, 256, 256, 0.9);padding:12px;margin:4px 10px;color:#000;}
 .no-rgba .text-white-bg{background-color:#ffffff;}
-.text-black-bg{display:inline-block;background-color:rgba(0, 0, 0, 0.8);padding:12px;color:#fff;}
+.text-black-bg{display:inline-block;*display:inline;background-color:rgba(0, 0, 0, 0.8);padding:12px;color:#fff;}
 .no-grba .text-black-bg{background-color:#000000;}
 .storyteller{width:150px;height:300px;float:left;margin:0px 5px;font-size:90%;}.storyteller .name{font-weight:bold;padding:5px 5px 0px 5px;display:inline-block;}
 .storyteller .desc{font-style:italic;border-bottom:1px solid #ccc;padding:0px 5px 10px 5px;}
