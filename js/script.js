@@ -23,8 +23,7 @@
 		}
 		//控制加载顺序
 		MyMusic.prototype.learLoad = function() {
-			loadOne(0);
-			function loadOne(num) {
+			var loadOne = function(num) {
 				$that.audio['audio' + num].load();
 				$that.audio['audio' + num].addEventListener('canplaythrough', callback = (function(now) {
 					return function() {
@@ -35,6 +34,7 @@
 					}
 				})(num));	
 			}
+			loadOne(0);
 			
 		}
 		//顺序播放 或取消顺序播放
