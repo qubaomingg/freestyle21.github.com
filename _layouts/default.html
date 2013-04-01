@@ -21,7 +21,8 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <!-- 脚本文件 -->
     <script src="/js/libs/modernizr-2.5.3.min.js"></script>
-    <script type="text/javascript" src='/js/jquery.js'></script>
+    <script type="text/javascript" src='/js/libs/jquery1.9.1.min.js'></script>
+    <script type="text/javascript" src='/js/libs/audio.min.js'></script>
     <!--[if IE]> 
     <script> 
       document.createElement("header"); 
@@ -32,6 +33,12 @@
     </script> 
     <![endif]--> 
     <!--[if lt IE 9]><script src=" http://html5shiv.googlecode.com/svn/trunk/html5.js "></script ><![endif]--> 
+    <!-- ie支持audio -->
+    <script>
+      audiojs.events.ready(function() {
+        var as = audiojs.createAll();
+      });
+    </script>
     <script type="text/javascript">
 
         //流量跟踪代码。
