@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      翻译-高效的CSS
-category: blog
+category: frontend
 description: 翻译的文章，高效的CSS。
 ---
 
