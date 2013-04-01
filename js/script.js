@@ -325,7 +325,7 @@
 			}
 		}
 		window.onload = JustGo;
-		function JustGo = function() {
+		function JustGo() {
 			var newMusic = new MyMusic();
 			newMusic.initAudioSet();
 			newMusic.AutoPlay(true);
