@@ -3,6 +3,7 @@ layout: post
 title: 关于js修改三种css样式的方法
 description: 用$('#myimg').style.left居然不能获取left属性，解释原因！
 category: frontend
+imgsrc: img/3way.jpg
 ---
 
 &nbsp;&nbsp;&nbsp;&nbsp;晚上随便写了一个demo，要用js通过特定的方式来修改图片的定位，还有width和height等，完成预想的动画。
