@@ -3,6 +3,7 @@ layout: post
 title: 学会使用chrome的F12
 description: 用了几年chrome，只是知道一些大体的简单应用，本文将教会你前端人常用的调试技能。
 category: frontend
+imgsrc: img/chrome.jpg
 ---
 
 &nbsp;&nbsp;&nbsp;&nbsp;学习前端以来，chrome一直都是最忠实的朋友，至于firefox和opera等都是传说中的东西，觉得他们的调试功能不太好看（不是不好=；=）。。所以，还是最钟情于chrome~
