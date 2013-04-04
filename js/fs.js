@@ -184,6 +184,7 @@ window.onload = function() {
 			$(this).text('惊喜');
 			Stop();
 		}
+		return false;
 		
 	});
 }
