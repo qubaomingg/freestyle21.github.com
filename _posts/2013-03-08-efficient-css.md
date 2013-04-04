@@ -2,6 +2,7 @@
 layout:     post
 title:      翻译-高效的CSS
 category: frontend
+imgsrc: img/efficient-css.jpeg
 description: 翻译的文章，高效的CSS。
 ---
 
