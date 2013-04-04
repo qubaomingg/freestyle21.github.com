@@ -2,7 +2,8 @@
 layout:     post
 title:      邂逅Jekyll
 category: frontend
-description: Jekyll是一个简介的、特别针对博客平台的*静态网站*生成器。
+description: Jekyll是一个简介的、特别针对博客平台的静态网站生成器。
+imgsrc: img/jekyll.png
 ---
 
 ## 1、认识Jekyll
