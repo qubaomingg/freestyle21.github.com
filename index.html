@@ -1,290 +1,55 @@
 ---
-body_id: welcome
 layout: default
 title: freestyle21
 ---
-
-<nav id="main-nav" style = 'display:none'>
-    <div class="container_24">
-      <div class="nav-item" data-target="#top" id="logo-small"><img src="images/me.png"></div>
-      <div class="nav-item" data-target="#directive">关于我</div>
-      <div class="nav-item" data-target="#disciplines">技术梦</div>
-      <div class="nav-item" data-target="#pathway">成长梦</div>
-      <div class="nav-item" data-target="#storytellers">我的歌</div>
-      <div class="nav-item" data-target="#work">留言</div>
-    </div>
-</nav>
-
-<section id="about-top">
-    <div class="full-wrap">
-      <div class="container_24">
-        <div class="large serif">
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
-        </div>
-      </div>  
-  
-    </div>
-</section>
-
-<section id="about-content">
-    <div class="white-bg" id="directive">
-       <div class="container_24">
-          <div class="grid_11">
-              <h1>关于</h1>
-              <div id = 'aboutMe'>
-                  <p>Hi , 我是 freestyle21. </p>
-                  <p>记住这个ID哦，我只有这一个名字~</p>
-                  <p>我喜欢篮球，科蜜，不过打的很渣，囧。。</p>
-                  <p>freestyle是街头篮球的意思 </P>
-                  <p>不过 , 喜欢她的人太多了</p>
-                  <p>所以加上了我喜欢的数字。</p>
-                  <p>进入 <a href="http://www.dreamfly.org">梦飞</a>之前，篮球是我生命中的一部分。</p>
-                  <p>之后，前端也是了，O(∩_∩)O~</p>
-              </div>  
-          </div>
-      <div class="grid_12 push_1">
-        <div class="grid_12 alpha omega">
-          <img id = 'me' src="images/me.jpg">
-          <p id='followMe'>find me : <br/>
-              <a href="http://weibo.com/21freestyle?wvr=5&" target='_blank'><img src="images/weibo.png"></a>
-              <a href="https://www.github.com/freestyle21" target='_blank'><img src="images/github.jpg"></a>
-              <a href="http://www.douban.com/people/62733481/" target='_blank'><img src="images/douban.png"></a>
-          </p>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-      <br/>
-      <br/>
-    </div>
-    </div>
-    <div class="photo-bar about-disciplines">
-      <div class="container_24 large">
-        <div class="photo-text">
-            <span class="text-black-bg">The highest state of love </span>
-            <br> 
-            <span class="text-black-bg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is reached once you get through those insipid days．</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="white-bg" id="disciplines">
-      <div class="container_24">
-        <h1>技术梦</h1>
-        <ul>
-              {% for post in site.categories.frontend%}
-            <li class="post">
-              <p>{{ post.date | date: "%b %d, %Y" }}</p>
-              <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-              <br/>
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ post.description }}</span>
-            </li>
-          {% endfor %}
-        </ul>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-    <div class="photo-bar pathway">
-      <div class="container_24 large">
-        <div class="photo-text small">
-          <p class="text-black-bg">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;唯有你愿意去相信，才能得到你想相信的。对的人终究会遇上，美好的人终究会遇到，只要让自己足够美好。努力让自己独立坚强，这样才能有底气告诉我爱的人，我爱他。---＜北京遇上西雅图＞ ——爱情不是依附，爱情是各自独立坚强，然后努力走到一起。
-            </p>
-        </div>
-      </div>
-    </div>
-    <div class="white-bg" id="pathway">
-      <div class="container_24 small">
-        <h1>成长梦</h1>
-        <ul>
-            {% for post in site.categories.life%}
-            <li class="post">
-              <p>{{ post.date | date: "%b %d, %Y" }}</p>
-              <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-              <br/>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{{ post.description }}</span>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-
-    <div class="photo-bar storytellers">
-      <div class="container_24 small">
-        <div class="photo-text">
-          <span class="text-black-bg">
-            科比：如果你比赛打得跟一坨屎一样，冲掉它，继续前进。</span>
-            <br/><br/>
-            <span class="text-black-bg">如果你的恋情狗血得像一坨屎，冲掉它，继续找下一段恋情。</span>
-            <br/>
-            <span class="text-black-bg">如果你考试分数像一坨屎，冲掉它，继续考下一场。</span>
-            <br/>
-            <span class="text-black-bg">如果你的工作烂得像一坨屎，冲掉它，继续找下一份工作...</span>
-          </div>
-      </div>
-    </div>
-
-    <div class="white-bg" id="storytellers">
-
-      <div class="container_24">
-
-        <h1>我的歌</h1>
-        <span class='musicDes'>每一首歌，在记忆里都会有一个人，一段情。【快捷键：n->下一首   p->前一首  空格+ctrl->暂停|播放】</span>
-        <div class='musiclistContain'>
-            <ul class='musiclist musicOne'>
-                <li class = 'IamReady' attr='0'>Because We Can  --Bon Jovi</li>
-                <li class = 'IamReady nowPlay' attr='1'>What Are Words --Chris Medina</li>
-                <li class = 'IamReady' attr='2'>Recovery --Eminem</li>
-                <li class = 'IamReady' attr='3'>Only Love --Trademark</li>
-                <li class = 'IamReady' attr='4'>Angel --Westlife</li>
-                <li class = 'IamReady' attr='5'>Home --Westlife</li>
-                <li class = 'IamReady' attr='6'>You Raise Me Up --Westlife</li>
-                <li class = 'IamReady' attr='7'>By My Side  --孙燕姿</li>
-            </ul>
-            <ul class='musiclist musicTwo'>
-                <li class = 'IamReady'attr='8'>会呼吸的痛 --梁静茹</li>
-                <li class = 'IamReady' attr='9'>你的背包 --陈奕迅</li>
-                <li class = 'IamReady' attr='10'>洋葱 --杨宗纬</li>
-                <li class = 'IamReady' attr='11'>依然爱你 --王力宏</li>
-                <li class = 'IamReady' attr='12'>领悟 --张杰</li>
-                <li class = 'IamReady' attr='13'>这就是爱 --张杰</li>
-                <li class = 'IamReady' attr='14'>勿忘心安 --张杰</li>
-                <li class = 'IamReady' attr='15'>第一夫人 --张杰</li>
-            </ul>
-        </div>
+<!-- article -->
+<div id="article">
+  <div class="article__descript">
+    <h2>成长梦，技术梦</h2>
+    <p>这里记载着帅气的博主的技术成长过程，也会时而发下生活的牢骚</p>
+  </div>
+  <div class="article__list">
+    <div id="artHori">
+      {% for post in site.posts %}
+      <div class="article">
+        <a target='blank' class = 'postsite' href="{{post.url}}"></a>
         
-
-      </div>
-      <div id='musicControl'>
-          <div class="panel" id="playPanel">
-              <div class="left-panel" id="leftPanel">
-                  <ul class="play-btn">
-                      <li class="prev">
-                          <a class="wg-button" hidefocus="true" title="上一首[←]"><span class="wg-button-inner"></span></a>
-                      </li>
-                      <li class="play" title="播放[空格键]">
-                          <a class="wg-button" hidefocus="true"><span class="wg-button-inner"></span></a>
-                      </li>
-                      <li class="pause" title="暂停">
-                          <a class="wg-button" hidefocus="true"><span class="wg-button-inner"></span></a>
-                      </li>
-                      <li class="next">
-                          <a class="wg-button nextSing" hidefocus="true" title="下一首[→]"><span class="wg-button-inner"></span></a>
-                      </li>
-                  </ul>
-              </div>
-              <div class="right-panel">
-                  <ul class="playmod" id="playMode">
-                      <li class="random-mode">
-                          <a hidefocus="true" title="随机播放" class="wg-button"><span class="wg-button-inner"></span></a>
-                      </li>
-                      <li class="single-mode">
-                          <a hidefocus="true" title="单曲播放" class="wg-button"><span class="wg-button-inner"></span></a>
-                      </li>
-                      <li class="list-mode">
-                          <a hidefocus="true" title="循环播放" class="select wg-button cur"><span class="wg-button-inner"></span></a>
-                      </li>
-                  </ul>
-                  <div class="volume" id="volumeWrap">
-                      <a class="mute wg-button" hidefocus="true" title="静音"><span class="wg-button-inner"></span></a>
-
-                      <div class="vol-slider-wrapper">
-                          <div id="volSlider" class="vol-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                          <div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 100%;"></div>
-                          <a class="ui-slider-handle ui-state-default ui-corner-all" hidefocus="true" style="left: 100%;">
-                            <span></span>
-                          </a>
-                        </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="main-panel">
-                  <div class="title-wrapper" id="playTitle">
-                      <div >
-                        <div class="title">
-                              <span class='singMeta'></span>
-                        </div>
-                  </div>
-                      
-                  </div>
-                  <div class="pane">
-                      <div class="time" id="timeWrap">
-                          <span class="curTime">00:23</span>
-                          <span class="split">/</span>
-                          <span class="totalTime">02:22</span>
-                      </div>
-                      <div class="progress-wrapper">
-                          <div id="progressSlider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
-                              <div class="ui-slider-left"></div>
-                              <div class="ui-slider-right"></div>
-                              <div class="ui-slider-range ui-widget-header ui-slider-range-min"></div>
-                              <div class="ui-slider-progressbar ui-widget-header"></div>
-                              <a class="ui-slider-handle ui-state-default ui-corner-all" hidefocus="true">
-                                <span></span>
-                              </a>
-                            </div>
-                      </div>
-                  </div>
-              </div>
+        <img src="{{ post.imgsrc }}">
+        <div name = 'test' class="artDetail">
+          <h3>{{post.title}}</h3>
+          <p>{{post.description}}</p>
         </div>
       </div>
-      </div>
-
+      {% endfor %}
     </div>
-
-    <div class="photo-bar work-with serif small">
-      <div class="container_24">
-          <div class="photo-text">
-
-            <div class="twitter-wrap">
-              有人问毕加索：“你的画,怎么看不懂啊？”毕加索说：“听过鸟叫吗？”“听过。”“好听吗？”“好听。”你听得懂吗？
-            <br/>
-            <br/> 
-              有人问余光中：李敖天天找你茬，你却从不回应，这是为什么呢？余沉吟片刻答：“天天骂我，说明他的成长不能没有我；而我不搭理，证明我的成长可以没有他。”
-          </div>
+  </div>
+  <span class="leftArrow">
+    <a href="#"></a>
+  </span>
+  <span class="rightArrow">
+    <a href="#"></a>
+  </span>
+</div>
+<!-- footer -->
+<div id="footer">
+  <div class="footer--center">
+    <div class="footLeft">
+      <div class="about">
+        <img src="img/me.jpg">
       </div>
+      <div class="contact">
+        <ul>
+          <li>一个老男人,今年22岁.</li>
+          <li>一枚程序员，Web前端！</li>
+          <li>一只科蜜，季后赛！</li>
+        </ul>
+      </div>    
     </div>
-    <div class="white-bg" id="work">
-
-      <div class="container_24">
-
-        <h1>留言</h1>
-
-        <div id='msgBody'>
-            <div class="ds-thread"></div>
-            <script type="text/javascript">
-                var duoshuoQuery = {short_name:"freestyle21"};
-                (function() {
-                  var ds = document.createElement('script');
-                  ds.type = 'text/javascript';ds.async = true;
-                  ds.src = 'http://static.duoshuo.com/embed.js';
-                  ds.charset = 'UTF-8';
-                  (document.getElementsByTagName('head')[0] 
-                  || document.getElementsByTagName('body')[0]).appendChild(ds);
-                })();
-            </script>
-        </div>
-        <div id='msgRead'>
-            <p>有什么想对我说的呢，内容不限哦~</p>
-            <p>在这里你可以问技术上的问题</p>
-            <p>也可以问感情上的问题，(～ o ～)~zZ</p>
-            <p>亲爱的朋友，如果想我了，就大胆说吧，<img src='images/shy.gif'> </p>
-           
-        </div>
-      <div class="clearfix"></div>
-      <hr>
-        <br>
-        <br>
-      </div>
-
+    <div class="footRight">
+      <h4>
+        <a target='blank' href="http://weibo.com/21freestyle?wvr=5&">微博</a>
+      </h4>
+      <p class="copyright">© FREESTYLE21 2012–2013</p>
     </div>
-    <div class="clearfix"></div>
-  </section>
-
-<footer>
-  <p>© 2012 freestyle21</p>
-</footer>
-<script src="js/script.js"></script>
+  </div>
+</div>

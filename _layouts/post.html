@@ -1,10 +1,9 @@
 ---
 layout: default
-body_id: post
 ---
+
 <div id = 'topTitle'>
     <div id = 'topMeta'>
-        <p><a href="/">freestyle21</a></p>
         <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
         <p class="date">{{ page.date | date: "%A, %B %d, %Y" }}</p>
     </div>
@@ -15,27 +14,22 @@ body_id: post
           {{ content }}
         </section>
     </div>
-    <div id = 'MsgOrLink'>
-        <div class="MsgBody">
-            
-            <div class="ds-thread"></div>
-            <script type="text/javascript">
-                var duoshuoQuery = {short_name:"freestyle21"};
-                (function() {
-                  var ds = document.createElement('script');
-                  ds.type = 'text/javascript';ds.async = true;
-                  ds.src = 'http://static.duoshuo.com/embed.js';
-                  ds.charset = 'UTF-8';
-                  (document.getElementsByTagName('head')[0] 
-                  || document.getElementsByTagName('body')[0]).appendChild(ds);
-                })();
-            </script>
-        </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
     </div>
 </div>
-<div id ='footer'>
-    <div class="footer">
-        <p>Copyright © 2012 freestyle21</p>
-    </div>
-</div>
-<script type="text/javascript" src = '/js/article.js'></script>
+

@@ -1,62 +1,91 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ page.title }}</title>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="freestyle21" />
+  <meta name="keywords" content="前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name="description" content="freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。">
+  <!-- link -->
+  <link rel="stylesheet" href="/css/font.css">
+  <link rel="stylesheet" href="/css/freestyle.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class="ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
     
-    <!-- meta信息 -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="author" content="freestyle21" />
-    <meta name="keywords" content="前端，前端技术，博客,freestyle21，javascript，html，css，FE">
-    <meta name="description" content="freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <div class="contain">
+    <!-- message -->
+    <div class="topMsg">
+      <span>Message</span>
+    </div>
+    <div class="rightMsg">
+      <div class="msgBefore">
+        <span>Message</span>
 
-    <!-- 样式文件 -->
-    <link rel="alternate" type="application/rss+xml" title="freestyle21的博客 RSS Feed" href="/rss/feed.xml">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px)" href="/css/phone.css" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-
-    <!-- 脚本文件 -->
-    <script src="/js/libs/modernizr-2.5.3.min.js"></script>
-    <script type="text/javascript" src='/js/libs/jquery1.9.1.min.js'></script>
-    <script type="text/javascript" src='/js/libs/audio.min.js'></script>
-    <!--[if IE]> 
-    <script> 
-      document.createElement("header"); 
-      document.createElement("footer"); 
-      document.createElement("nav"); 
-      document.createElement("article"); 
-      document.createElement("section"); 
-    </script> 
-    <![endif]--> 
-    <!--[if lt IE 9]><script src=" http://html5shiv.googlecode.com/svn/trunk/html5.js "></script ><![endif]--> 
-    <!-- ie支持audio -->
-    <script>
-      audiojs.events.ready(function() {
-        var as = audiojs.createAll();
-      });
-    </script>
-    <script type="text/javascript">
-
-        //流量跟踪代码。
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-39513595-1']);
-      _gaq.push(['_trackPageview']);
+        <p class="msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class="ds-thread"></div>
+      <script type="text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id="mainbody">
+      <!-- top -->
+      <div id="top">
+        <div class="header">
+          <a href="#" class="logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id="navigation">
+            <div class="tip">
+              <div class="jiao"></div>
+              <span class="nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul>
+              <li><a class = 'book' href="">读书</a><span class='gap'>/</span></li>
+              <li><a class = 'surprise' href="">惊喜</a><span class="gap">/</span></li>
+              <li><a class = 'msg' href="">留言</a><span class="gap">/</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{ content }}  
+    </div>
     
+  </div>
+  
+  <!-- script -->
+  <script src='/js/jquery.js'></script>
+  <script src='/js/easing.js'></script>
+  <script src='/js/fs.js'></script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
       (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+    })();
 
-    </script>
-  </head>
-  <body id="{{ page.body_id }}" class="about">
-  <!--[if lt IE 9]>
-    <div class="chromeframe">
-        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
-    </div>
-  <![endif]--> 
-    {{ content }}
-  </body>
+  </script>
+</body>
 </html>
