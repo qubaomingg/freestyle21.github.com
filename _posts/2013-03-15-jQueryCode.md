@@ -3,6 +3,7 @@ layout: post
 title: 从jQuery学到的皮毛
 description: 最近学习了jQuery的源码，感触很深，记录之。
 category: blog
+imgsrc: img/dream.jpg
 ---
 
 ##前言
