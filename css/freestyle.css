@@ -34,6 +34,8 @@ ul {
 	height: 45px;
 	background:#17181A;
 	border-bottom: 1px solid #000;
+	-ms-box-shadow: 0 1px 1px rgb(0, 0, 0, 0.05);
+	-o-box-shadow: 0 1px 1px rgb(0, 0, 0, 0.05);
 	-webkit-box-shadow: 0 1px 1px rgb(0, 0, 0, 0.05);
 	-moz-box-shadow: 0 1px 1px rgb(0, 0, 0, 0.05);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -63,6 +65,8 @@ ul {
 	font: 13px / 22px;
 	padding: 30px;
 	padding-top: 60px;
+	-o--box-shadow: -2px 0 2px rgba(0, 0, 0, 0.15);
+	-ms--box-shadow: -2px 0 2px rgba(0, 0, 0, 0.15);
 	-webkit-box-shadow: -2px 0 2px rgba(0, 0, 0, 0.15);
 	-moz-box-shadow: -2px 0 2px rgba(0, 0, 0, 0.15);
 	box-shadow: -2px 0 2px rgba(0, 0, 0, 0.15);
@@ -154,7 +158,10 @@ span.nobook {
 
 	background: #F8F8F8;
 }
-
+.ltie {
+	margin: 0 auto;
+	color:red;
+}
 .article__descript h2 {
 	font-size: 30px;
 	text-align: center;
@@ -176,7 +183,7 @@ span.nobook {
 
 .article__list {
 	height: 500px;
-	
+	position: relative;
 	overflow: hidden;
 }
 #artHori {
