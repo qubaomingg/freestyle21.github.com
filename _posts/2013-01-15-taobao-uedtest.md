@@ -24,6 +24,9 @@ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是�
 ## 实现
 下面是具体实现：
 
+
+
+<pre><code>
 	<form action = "./test2.html" method = 'post' name ='userColorForm' class='userColorForm'>
 	    <fieldset>
 	        <legend>MyValue</legend>    
@@ -50,9 +53,12 @@ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是�
 	    	<input type="submit" value='submit'>
 		</fieldset>
 	</form>
+</code></pre>
+	
 
 以上就是实现基本的html代码，把几个为radio的input隐藏了。
 
+<pre><code>
 	css：
 	.userColorForm fieldset{
 	      border: none;
@@ -88,9 +94,13 @@ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是�
 	      right: 0px;
 	      display: none;
 	}
+</code></pre>
+	
 把radio的input隐藏了，然后设置点边框。
 贴下js代码：
 	
+
+<pre><code>
 	$(document).ready(function(){
     	var UserColorSelect = function(){};
     	UserColorSelect.prototype = {
@@ -137,6 +147,8 @@ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是�
 		usercolorselect.changeStyle();
 		usercolorselect.updateRadio();
 	});        
+</code></pre>
+	
 
 &nbsp;&nbsp;&nbsp;&nbsp;上面的js代码中有一点需要注意，就是在点击事件中，一定要判断当前的div和上一个picColorSelect Div是否一样，可以节约一点点时间和空间。当然if（this._obj）是为了防止代码被乱拷，然后就不知怎么就崩了。。
 在test2.html中可以看到传过去的值是正确的：

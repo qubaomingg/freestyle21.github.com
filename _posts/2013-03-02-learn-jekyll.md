@@ -8,8 +8,12 @@ imgsrc: img/jekyll.png
 
 ## 1、认识Jekyll
 
-Jekyll is a simple, blog aware, static site generator.。
-It takes a template directory (representing the raw form of a website), runs it through Markdown or Textile and Liquid converters, and produces a static website suitable for any web server.
+
+<pre><code>
+	Jekyll is a simple, blog aware, static site generator.。
+	It takes a template directory (representing the raw form of a website), runs it through Markdown or Textile and Liquid converters, and produces a static website suitable for any web server.
+</code></pre>
+
 
 &ensp;&ensp;&ensp;&ensp;上面是摘自github上Jekyll的[说明](https://github.com/mojombo/jekyll).简单的说，Jekyll 是一个简洁的、特别针对博客平台的**静态网站生成器**。它使用一个模板目录作为网站布局的基础框架，并在其上运行 Textile 、 Markdown 或 Liquid 标记语言的转换器，最终生成一个完整的静态Web站点。jekyll+markdown+Liquid成为很简单，很舒服的写作方式。
 
@@ -21,11 +25,19 @@ It takes a template directory (representing the raw form of a website), runs it 
 &ensp;&ensp;保存Jekyll配置的文件。虽然绝大部分选项可以通过命令行参数指定，但将它们写入配置文件可以使你在每次执行时不必记住它们。
 比如里面写:
 
-    description:      "freestyle21\'s Blog"
+<pre><code>
+	description:      "freestyle21\'s Blog"
+</code></pre>
+
+    
 
 那么我们在源码中就可以通过下面这种方式去访问了：
 
-    site.description
+<pre><code>
+	site.description
+</code></pre>
+
+    
 
 ###_includes
 
@@ -67,36 +79,64 @@ It takes a template directory (representing the raw form of a website), runs it 
 
 解压DevKit，然后打开cmd，进入刚才的DevKit解压目录，输入以下命令：
 
+
+<pre><code>
 	Ruby dk.rb init
 	Ruby dk.rn install
+</code></pre>
+
 
 &ensp;&ensp;DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它就是用来模拟Linux平台下的make,gcc,sh来进行编译。但是这个方法目前仅支持通过RubyInstaller安装的Ruby。
 
 下面就可以安装Jekyll了：
 
+<pre><code>
 	gem install Jekyll
+</code></pre>
+	
 
 等待。。。这个时候不要关闭Git Bash。
 
 最后，我们可以检查一下安装Jekyll成功没有：
 	
+
+<pre><code>
 	Jekyll --version
+</code></pre>
+	
 
 如果输出下面的结果就说明我们成功了。。
-	
+
+<pre><code>
 	Jekyll 0.12.0
+</code></pre>
+	
+	
 
 接下来读者朋友可以把我的博客clone到本地，一般都clone到在C:\Users\Administrator这个目录下面：
 
+
+<pre><code>
 	git clone git://github.com./freestyle21/freestyle21.github.com.git
+</code></pre>
+	
 
 然后进入刚才的目录里面：
 
+<pre><code>
 	cd freestyle21.github.com
+</code></pre>
+
+	
 
 执行：
 
+
+<pre><code>
 	Jekyll --server --auto
+</code></pre>
+
+	
 
 如下如：
 
@@ -111,23 +151,43 @@ It takes a template directory (representing the raw form of a website), runs it 
 
 >问题：
 
-Liquid error: incompatible character encodings: UTF-8 and IBM437”
+<pre><code>
+	Liquid error: incompatible character encodings: UTF-8 and IBM437”
+</code></pre>
+
+
     
 	编码问题，直接在path里面添加：LC_ALL=en_US.UTF-8 和 LANG=en_US.UTF-8然后重启或者注销。
 	
 	还是不行的话就将 convertible.rb 的第29行改为：
     
-        self.content = File.read(File.join(base, name), :encoding => "utf-8")
+
+<pre><code>
+	self.content = File.read(File.join(base, name), :encoding => "utf-8")
+</code></pre>
+        
         
 
 >问题：
 
+
+    
+<pre><code>
 Liquid Exception: No such file or directory - python c:/Ruby193/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.7/lib/pygments/mentos.py in 2013-01-06-octopress.markdown
+</code></pre>
+
 
     首先可以尝试一下更新Pygments，
-        把python里面的script目录加载path里面，然后就可以直接通过easy_install Pygments来安装了。
+
+ <pre><code>
+把python里面的script目录加载path里面，然后就可以直接通过easy_install Pygments来安装了。
+</code></pre>
         
-    其次Pygments是通过python来工作的，所以还要安装python。需要注意的是一定要把python的路径加到path下面。
+        
+ <pre><code>
+其次Pygments是通过python来工作的，所以还要安装python。需要注意的是一定要把python的路径加到path下面。
+</code></pre>
+    
     
 
 

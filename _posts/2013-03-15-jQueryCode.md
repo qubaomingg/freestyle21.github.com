@@ -25,6 +25,7 @@ imgsrc: img/dream.jpg
 ##jQuery的细节技巧
 ### **巧用条件运算符**
 
+<pre><code>
 	trim: trim ?
 		function( text ) {
 			return text == null ?
@@ -36,9 +37,12 @@ imgsrc: img/dream.jpg
 				"" :
 				text.toString().replace( trimLeft, "" ).r出现eplace( trimRight, "" );
 	}
+</code></pre>	
+	
 
 这里用了一个条件运算符，如果String.trim存在的话就用，不存在就用自己实现的trim函数。在jQuery的源码中，用了大量的这种技巧,比如：
 
+<pre><code>
 	data = data === "true" ? true :
 				data === "false" ? false :
 				data === "null" ? null :
@@ -46,6 +50,8 @@ imgsrc: img/dream.jpg
 					rbrace.test( data ) ? jQuery.parseJSON( data ) :
 					data;
 	for ( var i = one ? index : 0, max = one ? index + 1 : options.length; i < max; i++ ) {}
+</code></pre>	
+	
 
 
 
@@ -56,25 +62,39 @@ imgsrc: img/dream.jpg
 下面列出一些自己看出的、常见的、平时代码中常用的循环技巧
 
 1、	
+
+<pre><code>
 	// 简单的for-in（事件）  
 	for ( type in events ) {  
 	  
 	} 
+</code></pre>	
+	
 2、
+
+<pre><code>
 	// 缓存length属性，避免每次都去查找length属性，稍微提升遍历速度  
 	for ( var j = 0, l = arrow.length; j < l; j++ ) {  
 	  
 	}  
+</code></pre>	
+
 
 3、
+
+<pre><code>
 	// 不比较下标，直接判断元素是否为true（强制类型转换）  
 	var elem;  
 	for ( var i = 0; elems[i]; i++ ) {  
 	    elem = elems[i];  
 	    // ...  
 	} 
+</code></pre>	
+	
 
 4、
+
+<pre><code>
 	// 遍历动态数组（事件），不能缓存length属性，j++之前先执行j--
 	for ( j = 0; j < eventType.length; j++ ) {  
 	eventType.splice( j--, 1 );  
@@ -84,31 +104,47 @@ imgsrc: img/dream.jpg
 	        results.splice( i--, 1 );  
 	    }  
 	}  
+</code></pre>	
+
 这个细节要注意哈，稍不注意就会在这里折腾很久。动态数组不能缓存！
 
 5、
+
+<pre><code>
 	// 迭代过程中尽可能减少遍历次数（事件），从pos开始
 	for ( j = pos || 0; j < eventType.length; j++ ) {  
 	  
 	} 
+</code></pre>	
+	
 
 
 6、
+
+<pre><code>
 	//倒序遍历，有利于浏览器优化，稍微提升遍历速度  
 	for ( var i = this.props.length, prop; i; ) {  
 	    prop = this.props[ --i ];  
 	    event[ prop ] = originalEvent[ prop ];  
 	} 	
+</code></pre>	
+	
 
 7、
+
+<pre><code>
 	// while检查下标i  
 	var i = arr.length;  
 	while( i-- ) {  
 	    obj[ arr[i] ] = deferred[ arr[i] ];  
 	}
+</code></pre>	
+	
 
 ### **通过闭包，返回前一作用域的参数**
 
+
+<pre><code>
 	//	闭包。返回的函数保持对guid的引用。
 	function a(){
 	    var guid = 1;
@@ -117,20 +153,28 @@ imgsrc: img/dream.jpg
 	    }
 	}
 	var defer = a();
+</code></pre>	
+	
 
 ###  **一次实现多种方法**
 
+
+<pre><code>
 	if ( rfxtypes.test(val) ) {
 		// 如果是toggle，则判断当前是否hidden，如果hidden则show，否则hide
 		// 如果不是toggle，说明val是hide/show之一
 		e[ val === "toggle" ? (hidden ? "show" : "hide") : val ]();
 
 	} else {。。。}
+</code></pre>	
+	
 	
 条件运算符 + 关联数组 一次实现三种方法，帅呆了！不过貌似这种方法平时用的不多。
 
 同样的思想还有一处：
 
+
+<pre><code>
 	jQuery.each(["live", "die"], function( i, name ) {
 		jQuery.fn[ name ] = function( types, data, fn, origSelector /* Internal Use Only */ ) {
 			
@@ -145,9 +189,15 @@ imgsrc: img/dream.jpg
 			return this;
 		};
 	});
+</code></pre>	
+	
+
+	
 
 一次性实现两个方法。。
 
+
+<pre><code>
 	jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblclick " +
 	    "mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
 	    "change select submit keydown keypress keyup error").split(" "), function( i, name ) {
@@ -162,6 +212,8 @@ imgsrc: img/dream.jpg
 	       jQuery.attrFn[ name ] = true;
 	    }
 	});
+</code></pre>	
+	
 
 通过each方法，实现n多方法。到此，除了惊叹还是惊叹。
 
@@ -169,9 +221,13 @@ imgsrc: img/dream.jpg
 
 先看代码：
 
+
+<pre><code>
 	jQuery = function( selector, context ) {
 		return new jQuery.fn.init( selector, context, rootjQuery );
 	}
+</code></pre>	
+	
 
 这里jQuery对象就是jQuery.fn.init对象
 
@@ -180,12 +236,17 @@ imgsrc: img/dream.jpg
 因此可以直接调用jQuery( selector, context )，没有必要使用new关键字
 还有一行代码如下：
 
+<pre><code>
 	jQuery.fn.init.prototype = jQuery.fn = jQuery.prototype
+</code></pre>	
+	
 
 所有挂载到jQuery.fn的方法，相当于挂载到了jQuery.prototype，即挂载到了jQuery 函数上（一开始的 jQuery = function( selector, context ) ），但是最后都相当于挂载到了 jQuery.fn.init.prototype，即相当于挂载到了一开始的jQuery 函数返回的对象上，即挂载到了我们最终使用的jQuery对象上。
 
 这里的init函数里面执行了，我们平时接触具多的选择器。简单分析如下：
 
+
+<pre><code>
 	//如果传入一个DOM元素。。包装成jQuery对象，直接返回。
 	if ( selector.nodeType ) {
 		this.context = this[0] = selector;
@@ -197,26 +258,37 @@ imgsrc: img/dream.jpg
 		//传入ID，直接document.getElementById()，然后包装成jQuery对象。
 	//选择器表达式，find...
 	//如果传入函数，则为ready开始.
+</code></pre>	
+	
 
 
 ### **jQuery 巧妙避免ReferenceError**
 在源码中，经常看到这样的代码：
 
+<pre><code>
 	args = args || [];
+</code></pre>	
+	
 
 这样可以确保args可用，一个避免null，underfined造成的ReferenceError的常见技巧。
 比如我们还可以看到这样的：
 
+
+<pre><code>
 	isArray: Array.isArray || function( obj ) {
 		return jQuery.type(obj) === "array";
 	}//这里和上面的条件运算符效果差不多。
 
 	name = jQuery.cssProps[ origName ] || origName;
+</code></pre>	
+	
 
 在很多需要传入选项对象的函数中，如果用户自己传入，就用用户传进的；如果用户没有传值，则用开发者默认的参数。这样的代码很帅气有木有！
 
 ##jQuery的实现框架
 
+
+<pre><code>
 	(function( window, undefined ) {	
 	    // 构造jQuery对象
 		var jQuery = function( selector, context ) {
@@ -239,6 +311,8 @@ imgsrc: img/dream.jpg
 		window.jQuery = window.$ = jQuery;
 
 	})(window);
+</code></pre>	
+	
 
 
 ## 结语

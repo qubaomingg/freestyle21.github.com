@@ -21,57 +21,81 @@ imgsrc: img/3way.jpg
 	
 IE中使用的是obj.currentStyle方法，FF是用的是getComputedStyle 方法。
 
+<pre><code>
 	function getDefaultStyle(obj,attribute){ 
                                
      return obj.currentStyle ? obj.currentStyle[attribute]
                 : document.defaultView.getComputedStyle(obj,false)[attribute];   
 	}
+</code></pre>
+
 
 或者：
 
+
+<pre><code>
 	function getDefault(obj){ 
  		 return obj.currentStyle ?  obj.currentStyle
         	:document.defaultView.getComputedStyle(obj,false);   
 	}
+</code></pre>
+	
 
 例子：
 使用javascript更改某个css class的属性... 
 
+
+<pre><code>
 	<style type="text/css"> 
 	    .orig { 
 	        display: none; 
 	    } 
 	</style>
+</code></pre>
+	
 
 你想要改变把他的display属性由none改为inline。 
 解决办法： 在IE里： 
 	
+<pre><code>
 	document.styleSheets[0].rules[0].style.display = "inline";
+</code></pre>
+	
 
 在firefox里：
 	
+<pre><code>
 	document.styleSheets[0].cssRules[0].style.display = "inline";
+</code></pre>
+	
 
 讨论： 可以做一个函数来搜索特定名字的style对象： 
 	
+
+<pre><code>
 	function getstyle(sname) { 
-	    for (var i=0;i<document.styleSheets.length;i++) { 
+	    for (var i=0;i< document.styleSheets.length;i++) { 
 	        var rules; 
 	        if (document.styleSheets[i].cssRules) { 
 	            rules = document.styleSheets[i].cssRules; 
 	        } else { 
 	            rules = document.styleSheets[i].rules; 
 	        } 
-	        for (var j=0;j<rules.length;j++) { 
+	        for (var j=0;j< rules.length;j++) { 
 	            if (rules[j].selectorText == sname) { 
 	                return rules[j].style; 
 	            } 
 	        } 
 	    } 
 	}
+</code></pre>
+	
 然后只要： 
 
+<pre><code>
 	getstyle(".orig").display = "inline";
+</code></pre>
+	
 
 ##总结：
 

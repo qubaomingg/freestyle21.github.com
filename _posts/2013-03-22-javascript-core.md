@@ -23,12 +23,18 @@ imgsrc: img/JavaScript.jpg
 * * *
 先看代码段：
 
-	 var f = function foo(){
-	     return typeof foo; // foo是在内部作用域内有效
-	  };
-	  // foo在外部用于是不可见的
-	  typeof foo; // "undefined"
-	  f(); // "function"
+
+<pre>
+	<code> 
+		var f = function foo(){
+		    return typeof foo; // foo是在内部作用域内有效
+		};
+		// foo在外部用于是不可见的
+		typeof foo; // "undefined"
+		f(); // "function"
+	</code>
+</pre>
+
 
 这里想说一点的就是，在函数表达式中的foo，只能在函数内部引用，外面是不能引用的。
 
@@ -41,11 +47,14 @@ JSON是设计成描述数据交换格式的，它也有自己的语法，这个�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ "prop": "val" } 这样的声明有可能是JavaScript对象字面量，也有可能是JSON字符串，取决于什么上下文使用它。如果是用在string上下文(用单引号或双引号引住，或者从text文件读取)的话，那它就是JSON字符串，如果是用在对象字面量上下文中，那它就是对象字面量。
 
-	// 这是JSON字符串
+
+<pre><code> 
+ 	// 这是JSON字符串
 	var foo = '{ "prop": "val" }';
 	 
 	// 这是对象字面量
 	var bar = { "prop": "val" };
+</code></pre>
 
 还有一点需要知道的是，JSON.parse用来将JSON字符串反序列化成对象，JSON.stringify用来将对象序列化成JSON字符串。
 
@@ -54,6 +63,7 @@ JSON是设计成描述数据交换格式的，它也有自己的语法，这个�
 ### 原型 ###
 * * *
 
+<pre><code> 
 	function Animal (){  
 		// ...
 	}
@@ -65,9 +75,12 @@ JSON是设计成描述数据交换格式的，它也有自己的语法，这个�
 
 	//还有一个重要的细节需要注意的就是一定要维护自己的原型链,新手总会忘记这个！
 	cat.prototype.constructor = cat;
+</code></pre>
+	
 	
 如果我们彻底改变函数的prototype属性（通过分配一个新的对象），那原始构造函数的引用就是丢失，这是因为我们创建的对象不包括constructor属性：
 
+<pre><code> 
 	function A() {}
 	A.prototype = {
 	  x: 10
@@ -76,6 +89,8 @@ JSON是设计成描述数据交换格式的，它也有自己的语法，这个�
 	var a = new A();
 	alert(a.x); // 10
 	alert(a.constructor === A); // false!
+</code></pre>
+	
 
 让我们一起看下MDN上关于constructor的[解释](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/constructor)吧：
 
@@ -83,6 +98,8 @@ prototype：Returns a reference to the Object function that created the instance
 
 因此，对函数的原型引用需要手工恢复：
 
+
+<pre><code>
 	function A() {}
 	A.prototype = {
 	  constructor: A,
@@ -92,9 +109,13 @@ prototype：Returns a reference to the Object function that created the instance
 	var a = new A();
 	alert(a.x); // 10
 	alert(a.constructor === A); // true
+</code></pre>
+	
 
 然而，提交prototype属性不会影响已经创建对象的原型（只有在构造函数的prototype属性改变的时候才会影响到)，就是说新创建的对象才有有新的原型，而已创建对象还是引用到原来的旧原型（这个原型已经不能被再被修改了）。
 
+
+<pre><code>
 	function A() {}
 	A.prototype.x = 10;
 	 
@@ -116,6 +137,8 @@ prototype：Returns a reference to the Object function that created the instance
 	// 但新对象是从新原型上获取的值
 	alert(b.x); // 20
 	alert(b.y) // 30
+</code></pre>
+	
 	
 因此，“动态修改原型将影响所有的对象都会拥有新的原型”是错误的，新原型仅仅在原型修改以后的新创建对象上生效。
 
@@ -128,6 +151,8 @@ prototype：Returns a reference to the Object function that created the instance
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在函数执行上下文中，VO(variable object)是不能直接访问的，此时由活动对象(activation object)扮演VO的角色。
 活动对象是在进入函数上下文时刻被创建的，它通过函数的arguments属性初始化。arguments属性的值是Arguments对象：
 
+
+<pre><code>
 	function foo(x, y, z) {
 	  // 声明的函数参数数量arguments (x, y, z)
 	  alert(foo.length); // 3
@@ -138,6 +163,8 @@ prototype：Returns a reference to the Object function that created the instance
 	  // 参数的callee是函数自身
 	  alert(arguments.callee === foo); // true
 	}
+</code></pre>
+	
 
 当进入执行上下文(代码执行之前)时，VO里已经包含了下列属性：
 
@@ -148,6 +175,7 @@ prototype：Returns a reference to the Object function that created the instance
 
 另一个经典例子：
 
+<pre><code>
 	alert(x); // function
 	 
 	var x = 10;
@@ -158,6 +186,8 @@ prototype：Returns a reference to the Object function that created the instance
 	function x() {};
 	 
 	alert(x); // 20
+</code></pre>
+	
 
 根据规范函数声明是在当进入上下文时填入的; 在进入上下文的时候还有一个变量声明“x”，那么正如我们在上面所说，**变量声明在顺序上跟在函数声明和形式参数声明之后**，而且在这个进入上下文阶段，变量声明不会干扰VO中已经存在的同名函数声明或形式参数声明。
 
@@ -165,6 +195,8 @@ prototype：Returns a reference to the Object function that created the instance
 
 变量相对于简单属性来说，变量有一个特性(attribute)：{DontDelete},这个特性的含义就是不能用delete操作符直接删除变量属性。
 
+
+<pre><code>
 	a = 10;
 	alert(window.a); // 10
 	alert(delete a); // true
@@ -182,7 +214,7 @@ prototype：Returns a reference to the Object function that created the instance
 	})();
 	alert(a); // 10
 	alert(b); // 全局变量 "b" 没有声明.
-
+</code></pre>	
 
 ### this
 * * *
@@ -190,13 +222,17 @@ prototype：Returns a reference to the Object function that created the instance
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在一个函数上下文中，this由调用者提供，由调用函数的方式来决定。如果调用括号()的左边是引用类型的值，this将设为引用类型值的base对象（base object），在其他情况下（与引用类型不同的任何其它属性），这个值为null。不过，实际不存在this的值为null的情况，因为当this的值为null的时候，其值会被隐式转换为全局对象。
 	
 
+<pre><code>
 	(function () {
 	  alert(this); // null => global
 	})();
+</code></pre>
 
 
 在这个例子中，我们有一个函数对象但不是引用类型的对象（它不是标示符，也不是属性访问器），相应地，this值最终设为全局对象。
 
+
+<pre><code>
 	var foo = {
 	    bar: function () {
 	      alert(this);
@@ -209,6 +245,8 @@ prototype：Returns a reference to the Object function that created the instance
 	(foo.bar = foo.bar)(); // global
 	(false || foo.bar)(); // global
 	(foo.bar, foo.bar)(); // global
+</code></pre>
+	
 
 问题在于后面的三个调用，在应用一定的运算操作之后，在调用括号的左边的值不在是引用类型。
 
@@ -220,12 +258,15 @@ prototype：Returns a reference to the Object function that created the instance
 
 正如我们知道的，局部变量、内部函数、形式参数储存在给定函数的激活对象中。
 
+<pre><code>
 	function foo() {
 	   function bar() {
 	      alert(this); // global
 	   }
 	   bar(); // the same as AO.bar()
 	}
+</code></pre>
+	
 
 活动对象总是作为this返回，值为null——（即伪代码的AO.bar()相当于null.bar()）。这里我们再次回到上面描述的例子，this设置为全局对象。
 
@@ -236,6 +277,8 @@ prototype：Returns a reference to the Object function that created the instance
 
 一个重要的例外，它涉及到通过函数构造函数创建的函数。
 
+
+<pre><code>
 	var x = 10;
 	function foo() {
 	   var y = 20;
@@ -248,8 +291,11 @@ prototype：Returns a reference to the Object function that created the instance
 	   barFn(); // 10, "y" is not defined
 	}
 	foo();
+</code></pre>
+	
 还有：
 
+<pre><code>
 	var x = 10, y = 10;
 	 
 	with ({x: 20}) {
@@ -262,6 +308,8 @@ prototype：Returns a reference to the Object function that created the instance
 	 
 	alert(x); // 10
 	alert(y); // 30
+</code></pre>
+	
 
 在进入上下文时发生了什么？标识符“x”和“y”已被添加到变量对象中。此外，在代码运行阶段作如下修改：
 
@@ -280,7 +328,8 @@ prototype：Returns a reference to the Object function that created the instance
 让我们看下这个问题：‘ 为何在函数创建后的立即调用中必须用圆括号来包围它？’，答案就是：表达式句子的限制就是这样的。
 
 按照标准，表达式语句不能以一个大括号 { 开始是因为他很难与代码块区分，同样，他也不能以函数关键字开始，因为很难与函数声明进行区分。即，所以，如果我们定义一个立即执行的函数，在其创建后立即按以下方式调用：
-		
+	
+<pre><code>
 	function () {
 	  ...
 	}();
@@ -290,6 +339,8 @@ prototype：Returns a reference to the Object function that created the instance
 	function foo() {
 	  ...
 	}();
+</code></pre>	
+	
 
 我们使用了函数声明，上述2个定义，解释器在解释的时候都会报错，但是可能有多种原因。
 
@@ -297,25 +348,32 @@ prototype：Returns a reference to the Object function that created the instance
 
 第二个例子，我们有一个名称为foo的一个函数声明正常创建，但是我们依然得到了一个语法错误——没有任何表达式的分组操作符错误。在函数声明后面他确实是一个分组操作符，而不是一个函数调用所使用的圆括号。所以如果我们声明如下代码：
 
+<pre><code>
 	// "foo" 是一个函数声明，在进入上下文的时候创建
 	alert(foo); // 函数
 	function foo(x) {
 	   alert(x);
 	}(1); // 这只是一个分组操作符，不是函数调用！
 	foo(10); // 这才是一个真正的函数调用，结果是10
+</code></pre>	
+	
 
 
 创建表达式最简单的方式就是用分组操作符括号，里边放入的永远是表达式，所以解释器在解释的时候就不会出现歧义。在代码执行阶段这个的function就会被创建，并且立即执行，然后自动销毁（如果没有引用的话）
 
+<pre><code>
 	(function foo(x) {
 	    alert(x);
 	})(1); // 这才是调用，不是分组操作符
+</code></pre>	
+	
 
 上述代码就是我们所说的在用括号括住一个表达式，然后通过（1）去调用。
 
 注意，下面一个立即执行的函数，周围的括号不是必须的，因为函数已经处在表达式的位置，解析器知道它处理的是在函数执行阶段应该被创建的FE，这样在函数创建后立即调用了函数。
 
 
+<pre><code>
 	var foo = {
 	  	bar: function (x) {
 	    	return x % 2 != 0 ? 'yes' : 'no';
@@ -323,6 +381,8 @@ prototype：Returns a reference to the Object function that created the instance
 	};
 	 
 	alert(foo.bar); // 'yes'
+</code></pre>	
+	
 
 就像我们看到的，foo.bar是一个字符串而不是一个函数，这里的函数仅仅用来根据条件参数初始化这个属性——它创建后并立即调用。
 
@@ -332,6 +392,7 @@ prototype：Returns a reference to the Object function that created the instance
 
 自由变量：
 
+<pre><code>
 	function testFn() {
 	   var localVar = 10;//对于innerFn函数来说，localVar就属于自由变量。
 	   function innerFn(innerParam) {
@@ -339,9 +400,12 @@ prototype：Returns a reference to the Object function that created the instance
 	   }
 	   return innerFn;
 	}
+</code></pre>	
+	
 
 闭包的静态作用域：
 
+<pre><code>
 	var z = 10;
 	
 	function foo() {
@@ -360,6 +424,8 @@ prototype：Returns a reference to the Object function that created the instance
 	    var z = 30;
 	    funArg(); // 10 – 静态作用域, 30 – 动态作用域
 	})(foo);
+</code></pre>	
+
 
 
 **理论**：因为作用域链，使得所有的函数都是闭包（与函数类型无关： 匿名函数，FE，NFE，FD都是闭包）。

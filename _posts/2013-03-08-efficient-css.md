@@ -95,30 +95,45 @@ ID选择器和类选择器在速度上的差异基本上没有关系。
 这就是为什么我对选择器的性能如此感兴趣的原因了：必须在web 标准最佳实践和速度之间的保持平衡。
 
 通常我们有：
-	
+
+<pre><code>
 	<ul id="social">
-	    <li><a href="#" class="twitter">Twitter</a></li>
-	    <li><a href="#" class="facebook">Facebook</a></li>
-	    <li><a href="#" class="dribble">Dribbble</a></li>
-	    <li><a href="#" class="gplus">Google+</a></li>
+		    <li><a href="#" class="twitter">Twitter</a></li>
+		    <li><a href="#" class="facebook">Facebook</a></li>
+		    <li><a href="#" class="dribble">Dribbble</a></li>
+		    <li><a href="#" class="gplus">Google+</a></li>
 	</ul>
+</code></pre>
+	
 
 CSS:
-	
+
+<pre><code>
 	#social a {}
+</code></pre>
+	
+	
 
 我们现在最好有：
 
+
+<pre><code>
 	<ul id="social">
 	    <li><a href="#" class="social-link twitter">Twitter</a></li>
 	    <li><a href="#" class="social-link facebook">Facebook</a></li>
 	    <li><a href="#" class="social-link dribble">Dribbble</a></li>
 	    <li><a href="#" class="social-link gplus">Google+</a></li>
 	</ul>
+</code></pre>
+
+	
 
 加上CSS：
 	
+<pre><code>
 	#social .social-link {}
+</code></pre>
+	
 
 这个新的关键选择器将会匹配更少的元素，这意味着浏览器能够很快的找到它们并渲染特定的样式，然后专注于下一件事。
 
@@ -130,20 +145,36 @@ CSS:
 
 现在我们知道了什么是关键选择器，还有它是大部分工作的来源，但是我们可以更乐观一点。拥有一个明确的关键选择器最大的好处就是你可以避免使用过度限制选择器。一个过度限制选择器可能像：
 
+
+<pre><code>
 	html body .wrapper #content a {}
+</code></pre>
+
+	
 
 这里的写的太多了，至少3个选择器是完全不需要的。它可以最多像这个样子：
 
+<pre><code>
 	#content a {}
+</code></pre>
+
+	
 
 这会发生什么呢？
 首先第一个意味着浏览器不得不寻找所有的 a 元素，然后检查他们是否在一个ID为”content”的元素中，然后如此循环直到HTML标签。这样造成了太多的我们不太想要的花费。了解了这个，我们得到一些更现实的例子：
 
+<pre><code>
 	#nav li a{}
+</code></pre>
+	
 
 变成这个：
-	
+
+
+<pre><code>
 	#nav a {}
+</code></pre>	
+	
 
 我们知道如果a在li里面，它也必定在#nav里面，所有我们可以马上把li从选择器组中拿掉。然后，既然我们知道在页面中只有一个ID为nav的元素，那么它依附的元素就是完全没有关系得了，我们也可以拿掉ul
 
@@ -162,7 +193,11 @@ CSS:
 
 它确实发生了，浏览器还是不得不去做我们讨论的所有工作，无论它们变得多快。即使你不需要或者甚至不想实践任何一个，但是它都是我们值得学习的知识。请记住选择器可能会让你付出很大代价，你应该避免盯着一个看。这意味着如果你发现你自己在写像这样的：
 
+
+<pre><code>
 	div:nth-of-type(3) ul:last-child li:nth-of-type(odd) *{ font-weight:bold }
+</code></pre>
+	
 
 这时，你可能就做错了。
 
