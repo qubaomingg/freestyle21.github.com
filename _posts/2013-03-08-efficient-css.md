@@ -96,14 +96,13 @@ ID选择器和类选择器在速度上的差异基本上没有关系。
 
 通常我们有：
 
-<pre><code>
 	<ul id="social">
-		    <li><a href="#" class="twitter">Twitter</a></li>
-		    <li><a href="#" class="facebook">Facebook</a></li>
-		    <li><a href="#" class="dribble">Dribbble</a></li>
-		    <li><a href="#" class="gplus">Google+</a></li>
+	    <li><a href="#" class="twitter">Twitter</a></li>
+	    <li><a href="#" class="facebook">Facebook</a></li>
+	    <li><a href="#" class="dribble">Dribbble</a></li>
+	    <li><a href="#" class="gplus">Google+</a></li>
 	</ul>
-</code></pre>
+
 	
 
 CSS:
@@ -116,17 +115,14 @@ CSS:
 
 我们现在最好有：
 
-
-<pre><code>
+	
 	<ul id="social">
 	    <li><a href="#" class="social-link twitter">Twitter</a></li>
 	    <li><a href="#" class="social-link facebook">Facebook</a></li>
 	    <li><a href="#" class="social-link dribble">Dribbble</a></li>
 	    <li><a href="#" class="social-link gplus">Google+</a></li>
 	</ul>
-</code></pre>
 
-	
 
 加上CSS：
 	

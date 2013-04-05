@@ -25,8 +25,6 @@ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是�
 下面是具体实现：
 
 
-
-<pre><code>
 	<form action = "./test2.html" method = 'post' name ='userColorForm' class='userColorForm'>
 	    <fieldset>
 	        <legend>MyValue</legend>    
@@ -53,7 +51,6 @@ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是�
 	    	<input type="submit" value='submit'>
 		</fieldset>
 	</form>
-</code></pre>
 	
 
 以上就是实现基本的html代码，把几个为radio的input隐藏了。
@@ -154,6 +151,7 @@ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是�
 在test2.html中可以看到传过去的值是正确的：
 
 ![final](/img/taobaoUED/final.jpg)
+
 
 兼容性方面，用的jquery，基本上没有什么问题；css中没有margin，自然也灭有ie6下的双边距。最后再ie6,7,8都测了，都没有问题~
  

@@ -8,16 +8,14 @@ imgsrc: img/jekyll.png
 
 ## 1、认识Jekyll
 
-
-<pre><code>
-	Jekyll is a simple, blog aware, static site generator.。
-	It takes a template directory (representing the raw form of a website), runs it through Markdown or Textile and Liquid converters, and produces a static website suitable for any web server.
-</code></pre>
+Jekyll is a simple, blog aware, static site generator.。
+It takes a template directory (representing the raw form of a website), runs it through Markdown or Textile and Liquid converters, and produces a static website suitable for any web server.
 
 
 &ensp;&ensp;&ensp;&ensp;上面是摘自github上Jekyll的[说明](https://github.com/mojombo/jekyll).简单的说，Jekyll 是一个简洁的、特别针对博客平台的**静态网站生成器**。它使用一个模板目录作为网站布局的基础框架，并在其上运行 Textile 、 Markdown 或 Liquid 标记语言的转换器，最终生成一个完整的静态Web站点。jekyll+markdown+Liquid成为很简单，很舒服的写作方式。
 
 一个典型的Jekyll站点通常具有如下结构：
+
 ![jekyllstruct](/img/jekyll/jekyllstruct.png)
 
 ###_config.yml
@@ -155,11 +153,10 @@ imgsrc: img/jekyll.png
 	Liquid error: incompatible character encodings: UTF-8 and IBM437”
 </code></pre>
 
-
     
-	编码问题，直接在path里面添加：LC_ALL=en_US.UTF-8 和 LANG=en_US.UTF-8然后重启或者注销。
-	
-	还是不行的话就将 convertible.rb 的第29行改为：
+编码问题，直接在path里面添加：LC_ALL=en_US.UTF-8 和 LANG=en_US.UTF-8然后重启或者注销。
+
+还是不行的话就将 convertible.rb 的第29行改为：
     
 
 <pre><code>
@@ -171,13 +168,9 @@ imgsrc: img/jekyll.png
 >问题：
 
 
-    
-<pre><code>
 Liquid Exception: No such file or directory - python c:/Ruby193/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.7/lib/pygments/mentos.py in 2013-01-06-octopress.markdown
-</code></pre>
 
-
-    首先可以尝试一下更新Pygments，
+首先可以尝试一下更新Pygments，
 
  <pre><code>
 把python里面的script目录加载path里面，然后就可以直接通过easy_install Pygments来安装了。

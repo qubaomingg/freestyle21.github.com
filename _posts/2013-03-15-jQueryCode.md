@@ -42,6 +42,7 @@ imgsrc: img/dream.jpg
 
 这里用了一个条件运算符，如果String.trim存在的话就用，不存在就用自己实现的trim函数。在jQuery的源码中，用了大量的这种技巧,比如：
 
+
 <pre><code>
 	data = data === "true" ? true :
 				data === "false" ? false :
@@ -50,9 +51,7 @@ imgsrc: img/dream.jpg
 					rbrace.test( data ) ? jQuery.parseJSON( data ) :
 					data;
 	for ( var i = one ? index : 0, max = one ? index + 1 : options.length; i < max; i++ ) {}
-</code></pre>	
-	
-
+</code></pre>
 
 
 多用点这种技巧，就不用满屏幕都是if & else 了。代码会变得简洁，轻巧。
@@ -72,6 +71,7 @@ imgsrc: img/dream.jpg
 	
 2、
 
+
 <pre><code>
 	// 缓存length属性，避免每次都去查找length属性，稍微提升遍历速度  
 	for ( var j = 0, l = arrow.length; j < l; j++ ) {  
@@ -81,6 +81,7 @@ imgsrc: img/dream.jpg
 
 
 3、
+
 
 <pre><code>
 	// 不比较下标，直接判断元素是否为true（强制类型转换）  
@@ -94,6 +95,7 @@ imgsrc: img/dream.jpg
 
 4、
 
+
 <pre><code>
 	// 遍历动态数组（事件），不能缓存length属性，j++之前先执行j--
 	for ( j = 0; j < eventType.length; j++ ) {  
@@ -106,9 +108,11 @@ imgsrc: img/dream.jpg
 	}  
 </code></pre>	
 
+
 这个细节要注意哈，稍不注意就会在这里折腾很久。动态数组不能缓存！
 
 5、
+
 
 <pre><code>
 	// 迭代过程中尽可能减少遍历次数（事件），从pos开始
@@ -174,15 +178,13 @@ imgsrc: img/dream.jpg
 同样的思想还有一处：
 
 
+
 <pre><code>
 	jQuery.each(["live", "die"], function( i, name ) {
 		jQuery.fn[ name ] = function( types, data, fn, origSelector /* Internal Use Only */ ) {
-			
 			if ( name === "die" && !types &&
 						origSelector && origSelector.charAt(0) === "." ) {
-
 				context.unbind( origSelector );
-
 				return this;
 			}
 			//....

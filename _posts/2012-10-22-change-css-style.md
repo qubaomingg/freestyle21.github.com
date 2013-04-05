@@ -8,14 +8,14 @@ imgsrc: img/3way.jpg
 
 &nbsp;&nbsp;&nbsp;&nbsp;晚上随便写了一个demo，要用js通过特定的方式来修改图片的定位，还有width和height等，完成预想的动画。
 
-+ 	遇到的问题是：
+##遇到的问题是：
 
 最开始在.css文件里面设置了图片的position：absolute；left等属性，现在想要把他的left设置为left -=left+temp；即要获取元素的left。
 
 之前没有细想，每次都是$("img").style.left就可以了，不过这次alert出来的居然是空字符串。
 现在想想 .style获取的应该是标签的style属性，然后依次获取其他子属性。所以.style.**只能获取行内样式。。于是想方设法的去搞到.css里面的属性。
 
-+	深入
+##深入
 
 **怎么才能获取 head中style的css 或者 .css文件中的属性呢？**
 	
@@ -23,9 +23,8 @@ IE中使用的是obj.currentStyle方法，FF是用的是getComputedStyle 方法�
 
 <pre><code>
 	function getDefaultStyle(obj,attribute){ 
-                               
-     return obj.currentStyle ? obj.currentStyle[attribute]
-                : document.defaultView.getComputedStyle(obj,false)[attribute];   
+		return obj.currentStyle ? obj.currentStyle[attribute]
+		    : document.defaultView.getComputedStyle(obj,false)[attribute];   
 	}
 </code></pre>
 
@@ -44,13 +43,10 @@ IE中使用的是obj.currentStyle方法，FF是用的是getComputedStyle 方法�
 例子：
 使用javascript更改某个css class的属性... 
 
-
 <pre><code>
-	<style type="text/css"> 
-	    .orig { 
-	        display: none; 
-	    } 
-	</style>
+    .orig { 
+        display: none; 
+    } 
 </code></pre>
 	
 
@@ -89,6 +85,7 @@ IE中使用的是obj.currentStyle方法，FF是用的是getComputedStyle 方法�
 	    } 
 	}
 </code></pre>
+
 	
 然后只要： 
 
