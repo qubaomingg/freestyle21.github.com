@@ -16,7 +16,7 @@ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是�
 
 小测试是这样的：就是把以前的radio变成图片。
 
-![question](/images/taobaoUED/question.jpg)
+![question](/img/taobaoUED/question.jpg)
 
 码代码之前先分析一下：
 
@@ -153,7 +153,8 @@ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是�
 &nbsp;&nbsp;&nbsp;&nbsp;上面的js代码中有一点需要注意，就是在点击事件中，一定要判断当前的div和上一个picColorSelect Div是否一样，可以节约一点点时间和空间。当然if（this._obj）是为了防止代码被乱拷，然后就不知怎么就崩了。。
 在test2.html中可以看到传过去的值是正确的：
 
-![final](/images/taobaoUED/final.jpg)
+![final](/img/taobaoUED/final.jpg)
+
 兼容性方面，用的jquery，基本上没有什么问题；css中没有margin，自然也灭有ie6下的双边距。最后再ie6,7,8都测了，都没有问题~
  
 最后代码都放在了[github](https://github.com/freestyle21/taobaoUEDTest)上面，欢迎吐槽~

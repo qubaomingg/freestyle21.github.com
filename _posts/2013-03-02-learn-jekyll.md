@@ -18,7 +18,7 @@ imgsrc: img/jekyll.png
 &ensp;&ensp;&ensp;&ensp;上面是摘自github上Jekyll的[说明](https://github.com/mojombo/jekyll).简单的说，Jekyll 是一个简洁的、特别针对博客平台的**静态网站生成器**。它使用一个模板目录作为网站布局的基础框架，并在其上运行 Textile 、 Markdown 或 Liquid 标记语言的转换器，最终生成一个完整的静态Web站点。jekyll+markdown+Liquid成为很简单，很舒服的写作方式。
 
 一个典型的Jekyll站点通常具有如下结构：
-![jekyllstruct](/images/jekyll/jekyllstruct.png)
+![jekyllstruct](/img/jekyll/jekyllstruct.png)
 
 ###_config.yml
 
@@ -58,7 +58,7 @@ imgsrc: img/jekyll.png
 
 ###其他文件/目录
 
-&ensp;&ensp;除了以上提到的文件之外，每一个其他的、不以下划线_开头的目录和文件都会被照原样传送到站点路径下。例如，你可以在网站根目录下面添加一个 css ,js,images目录，一个 favicon.ico ，等等等等。
+&ensp;&ensp;除了以上提到的文件之外，每一个其他的、不以下划线_开头的目录和文件都会被照原样传送到站点路径下。例如，你可以在网站根目录下面添加一个 css ,js,img目录，一个 favicon.ico ，等等等等。
 
 
 ##2、windows搭建Jekyll本地测试环境
@@ -140,7 +140,7 @@ imgsrc: img/jekyll.png
 
 如下如：
 
-![jekyllstruct](/images/jekyll/serverauto.png)
+![jekyllstruct](/img/jekyll/serverauto.png)
 
 &ensp;&ensp;最后就是检验成果的时候了，在浏览器中输入：[localhost:4000](http://localhost:4000),就可以看到你的页面在本地跑起来了。。
 这样以后调试就方便多了，在代码中修改后，只要ctrl+s保存一下，jekyll就会自动在浏览器里面更新了。。

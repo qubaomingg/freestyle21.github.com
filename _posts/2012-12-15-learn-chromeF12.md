@@ -16,8 +16,8 @@ imgsrc: img/chrome.jpg
 
 chrome很智能，他会自动记录各个文件请求返回和等待的时间（貌似大名鼎鼎的firebug也有），不过点击过后需要刷新一下页面。
 
-![1](/images/chromef12/1.jpg)
-![2](/images/chromef12/2.jpg)
+![1](/img/chromef12/1.jpg)
+![2](/img/chromef12/2.jpg)
 
 上面的4.3s就是从第一个请求道页面全部渲染结束所花费的时间。
 
@@ -25,13 +25,13 @@ chrome很智能，他会自动记录各个文件请求返回和等待的时间�
 
 注意这个Timeline的标签页不是指网络请求的时间响应情况哦（这个在Network标签页里查看），这个Timeline指的js执行时间、页面元素渲染时间：
 
-![3](/images/chromef12/3.jpg)
+![3](/img/chromef12/3.jpg)
 
 在上面点击后再点击红色的圆圈就可以了。
 
 +	Profiles
 
-![4](/images/chromef12/4.jpg)
+![4](/img/chromef12/4.jpg)
 
 
 这个工具可以分析js中每个函数执行的时间百分比。
