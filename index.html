@@ -3,19 +3,19 @@ layout: default
 title: freestyle21
 ---
 <!-- article -->
-<div id="article">
-  <div class="article__descript">
+<div id = "article">
+  <div class = "article__descript">
     <h2>成长梦，技术梦</h2>
     <p>这里记载着帅气的博主的技术成长过程，也会时而发下生活的牢骚</p>
   </div>
-  <div class="article__list">
-    <div id="artHori">
+  <div class = "article__list">
+    <div id = "artHori">
       {% for post in site.posts %}
-      <div class="article">
-        <a target='blank' class = 'postsite' href="{{post.url}}"></a>
+      <div class = "article">
+        <a target = 'blank' class  =  'postsite' href = "{{post.url}}"></a>
         
-        <img src="{{ post.imgsrc }}">
-        <div name = 'test' class="artDetail">
+        <img src = "{{ post.imgsrc }}">
+        <div name  =  'test' class = "artDetail">
           <h3>{{post.title}}</h3>
           <p>{{post.description}}</p>
         </div>
@@ -23,21 +23,21 @@ title: freestyle21
       {% endfor %}
     </div>
   </div>
-  <span class="leftArrow">
-    <a href="#"></a>
+  <span class = "leftArrow">
+    <a href = "#"></a>
   </span>
-  <span class="rightArrow">
-    <a href="#"></a>
+  <span class = "rightArrow">
+    <a href = "#"></a>
   </span>
 </div>
 <!-- footer -->
-<div id="footer">
-  <div class="footer--center">
-    <div class="footLeft">
-      <div class="about">
-        <img src="img/me.jpg">
+<div id = "footer">
+  <div class = "footer--center">
+    <div class = "footLeft">
+      <div class = "about">
+        <img src = "img/me.jpg">
       </div>
-      <div class="contact">
+      <div class = "contact">
         <ul>
           <li>一个老男人,今年22岁.</li>
           <li>一枚程序员，Web前端！</li>
@@ -45,11 +45,11 @@ title: freestyle21
         </ul>
       </div>    
     </div>
-    <div class="footRight">
+    <div class = "footRight">
       <h4>
-        <a target='blank' href="http://weibo.com/21freestyle?wvr=5&">微博</a>
+        <a target = 'blank' href = "http://weibo.com/21freestyle?wvr = 5&">微博</a>
       </h4>
-      <p class="copyright">© FREESTYLE21 2012–2013</p>
+      <p class = "copyright">© FREESTYLE21 2012–2013</p>
     </div>
   </div>
 </div>
