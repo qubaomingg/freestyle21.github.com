@@ -95,8 +95,6 @@ imgsrc: img/dream.jpg
 
 4、
 
-
-<pre><code>
 	// 遍历动态数组（事件），不能缓存length属性，j++之前先执行j--
 	for ( j = 0; j < eventType.length; j++ ) {  
 	eventType.splice( j--, 1 );  
@@ -106,20 +104,16 @@ imgsrc: img/dream.jpg
 	        results.splice( i--, 1 );  
 	    }  
 	}  
-</code></pre>	
 
 
 这个细节要注意哈，稍不注意就会在这里折腾很久。动态数组不能缓存！
 
 5、
 
-
-<pre><code>
 	// 迭代过程中尽可能减少遍历次数（事件），从pos开始
 	for ( j = pos || 0; j < eventType.length; j++ ) {  
 	  
 	} 
-</code></pre>	
 	
 
 
@@ -178,8 +172,6 @@ imgsrc: img/dream.jpg
 同样的思想还有一处：
 
 
-
-<pre><code>
 	jQuery.each(["live", "die"], function( i, name ) {
 		jQuery.fn[ name ] = function( types, data, fn, origSelector /* Internal Use Only */ ) {
 			if ( name === "die" && !types &&
@@ -191,8 +183,6 @@ imgsrc: img/dream.jpg
 			return this;
 		};
 	});
-</code></pre>	
-	
 
 	
 
