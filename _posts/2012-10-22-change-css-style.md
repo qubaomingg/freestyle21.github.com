@@ -67,8 +67,6 @@ IE中使用的是obj.currentStyle方法，FF是用的是getComputedStyle 方法�
 
 讨论： 可以做一个函数来搜索特定名字的style对象： 
 	
-
-<pre><code>
 	function getstyle(sname) { 
 	    for (var i=0;i< document.styleSheets.length;i++) { 
 	        var rules; 
@@ -84,8 +82,6 @@ IE中使用的是obj.currentStyle方法，FF是用的是getComputedStyle 方法�
 	        } 
 	    } 
 	}
-</code></pre>
-
 	
 然后只要： 
 
