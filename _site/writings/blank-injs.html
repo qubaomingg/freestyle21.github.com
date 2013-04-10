@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang = "en" manifest = '/css/fs.appcache'>
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+
+  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
+  <meta name = "keywords" content = "前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name = "description" content = "freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。"
+  <meta name="author" content="freestyle21" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
+  
+  <!-- link -->
+  <link rel = "stylesheet" href = "/css/font.css">
+  <link rel = "stylesheet" href = "/css/freestyle.css">
+  <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
+  <!-- 高亮插件 -->
+  <link rel="stylesheet" href="/styles/default.css">
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class = "ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
+    
+  <div class = "contain">
+    <!-- message -->
+    <div class = "topMsg">
+      <span>Message</span>
+    </div>
+    <div class = "rightMsg">
+      <div class = "msgBefore">
+        <span>Message</span>
+
+        <p class = "msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class = "ds-thread"></div>
+      <script type = "text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id = "mainbody">
+      <!-- top -->
+      <div id = "top">
+        <div class = "header">
+          <a href = "#" class = "logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id = "navigation">
+            <div class = "tip">
+              <div class = "jiao"></div>
+              <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul>
+              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
+              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <h1><a href="/writings/blank-injs.html">Javascript中的各种括号</a></h1>
+        <p class="date">Monday, October 15, 2012</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          <p>&#160;&#160;&#160;平时总是遇到很多小括号跟在函数后面，没有机会深究。正如丁小倪所说，前端是一个涉足很深的职业，一个标签或一个属性都可以引申出很多东西。对每一个细节都要认真对待。</p>
+
+<p>最近刚好在看ECMAScript262，又遇到这些问题。整理一下：</p>
+
+<h2 id='id1'>引入</h2>
+
+<p>先上一段代码：</p>
+<pre><code>
+	alert(foo);
+	function foo(x) {
+	  alert(x);
+	}(1); 
+	foo(10);
+</code></pre>
+<p>这里的(1)有点不懂。第一个alert（）把foo打印出来，里面没有(1)！ 他上面解释的是Group Operation.</p>
+
+<p>google了一下Group Operation：a means of controlling precedence(优先级) of evaluation in expressions.</p>
+
+<p>难道只是改变优先级？把括号去了只剩下1，结果也没有变化。所以，(1)应该和foo没有关系，即使放在很远的地方。是不是<em>1之类的呢？</em></p>
+
+<h2 id='id2'>深入</h2>
+
+<p>再看两个表达式：</p>
+<pre><code>
+	function () {   ... }();
+	function foo() {   ... }();
+</code></pre>
+<p>在全局代码（程序级别）中这样定义函数，解释器会以函数声明来处理，函数声明必须有name，否则编译器会报错。它看到了是以function开始的。 在第一个中，会抛出语法错误，原因是既然是个函数声明，则缺少函数名了（一个函数声明其名字是必须的）。 第二个中，看上去已经有了名字了（foo），应该会正确执行。然而，这里还是会抛出语法错误 —— <strong>组操作符内部缺少表达式。</strong> 这里要注意的是，这个例子中，函数声明后面的()会被当组操作符来处理，而非函数调用的()。不过如果给他加上void就不一样了哦。 最常规例子：</p>
+<pre><code>
+	(function(){
+	    alert("cftea");
+	})();
+</code></pre>
+<p>这个可以理解为：</p>
+<pre><code>
+	function foo(){
+    	alert(1);
+	}
+	foo();
+</code></pre>
+<p>这里只是让function先执行，也就是上面说的优先级吧。 还有可能的用法：</p>
+<pre><code>
+	(function(){
+	    alert("cftea");
+	})();
+	(function(){
+	    alert("cftea");
+	}());
+	void function(){
+	    alert("cftea");
+	}()
+</code></pre>
+<p>以上的括号，或者void的作用只是告诉编译器把函数当成FE（函数表达式）来处理而已 函数表达式中的函数名称在哪保存，可以去看下ECMAScript262-5中函数的部分。</p>
+
+<h2 id='id3'>括号对上下文作用域的影响</h2>
+<pre><code>
+	function Foo() {
+	    var a = 123;
+	    this.a = 456;
+	    (function() {
+	        alert(a); // 123
+	        alert(this.a); // undefined
+	    })();
+	}
+	var f = new Foo();
+</code></pre>
+<p>这里var a给Foo的活动对象增加了一个变量，this.a给Foo的base值增加了一个属性。 注意，在匿名函数中，this永远指向global。只有this指向global，他们之间的变量相互独立，都是相当于块级作用域的东西。</p>
+<pre><code>
+	function Foo() {
+	    var a = 123;
+	    this.a = 456;
+	    (function() {
+	        alert(a); // 123
+	        alert(this.a); // undefined
+	        this.b = 789;
+	    })();
+	    (function() {
+	        alert(this.b); // 789
+	    })();
+	}
+	var f = new Foo();
+	(function() {
+	    alert(this.b); // 789
+	})();
+</code></pre>
+<p>这说明用两个小括号括起来的都是位于一个执行上下文中的，都是在global中。 下面这里查找不到b变量，因为和前面的var b不是同一个，在不懂得”块级作用域里面“，查找不到后就在原型里面找，最终找到属性。</p>
+<pre><code>
+	function Foo() {
+	    (function() {
+	        this.b = 789;
+	    })();
+	    (function() {
+	        alert(this.b); // 789
+	        var b = 0;
+	        alert(b); // 0
+	    })();
+	}
+	var f = new Foo();
+	(function() {
+	    alert(this.b); // 789
+	    alert(b); // 789
+	})();
+</code></pre>
+        </section>
+    </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
+</div>
+
+  
+    </div>
+    
+  </div>
+  
+  <!-- script -->
+  <script src = '/js/jquery.js'></script>
+  <script src = '/js/easing.js'  defer = "defer"></script>
+  <script src = '/js/fs.js'  defer = "defer"></script>
+  
+  <script type = "text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' ==  document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

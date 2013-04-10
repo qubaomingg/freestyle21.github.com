@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang = "en" manifest = '/css/fs.appcache'>
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+
+  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
+  <meta name = "keywords" content = "前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name = "description" content = "freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。"
+  <meta name="author" content="freestyle21" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
+  
+  <!-- link -->
+  <link rel = "stylesheet" href = "/css/font.css">
+  <link rel = "stylesheet" href = "/css/freestyle.css">
+  <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
+  <!-- 高亮插件 -->
+  <link rel="stylesheet" href="/styles/default.css">
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class = "ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
+    
+  <div class = "contain">
+    <!-- message -->
+    <div class = "topMsg">
+      <span>Message</span>
+    </div>
+    <div class = "rightMsg">
+      <div class = "msgBefore">
+        <span>Message</span>
+
+        <p class = "msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class = "ds-thread"></div>
+      <script type = "text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id = "mainbody">
+      <!-- top -->
+      <div id = "top">
+        <div class = "header">
+          <a href = "#" class = "logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id = "navigation">
+            <div class = "tip">
+              <div class = "jiao"></div>
+              <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul>
+              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
+              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <h1><a href="/writings/jQueryCode.html">从jQuery学到的皮毛</a></h1>
+        <p class="date">Friday, March 15, 2013</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          <h2 id='id18'>前言</h2>
+
+<p>&#160;&#160;&#160;&#160;最近看了两遍jQuery源码，感觉只是看懂了jQuery的小部分小部分，不过仅此，就已经对john resig佩服的五体投地咯。。</p>
+
+<p>下面附上这位帅哥的靓照，记住吧，是他改变了世界。</p>
+
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<img alt='1' src='/img/jQueryCode/john-resig.png' /></p>
+
+<p>&#160;&#160;&#160;&#160;看的大多是实现的细节、技巧，整体的架构还是没有看出来。功力不够呀，还得慢慢修炼。jQuery真的是值得去读无数次的东西，每读一次，都会有不一样的收获。以后有空就多看看吧~</p>
+
+<p>&#160;&#160;&#160;&#160;研读优秀框架的源码，是从初级jser进阶到中级jser的捷径，可以学到好多优秀代码的风格。从代码可以看出一个程序员的水平呀~</p>
+
+<p>&#160;&#160;&#160;&#160;现在把自己看出来的一些帅呆了的技巧，细节记录下来，一起分享。</p>
+
+<h2 id='jquery'>jQuery的细节技巧</h2>
+
+<h3 id='id19'><strong>巧用条件运算符</strong></h3>
+<pre><code>
+	trim: trim ?
+		function( text ) {
+			return text == null ?
+				"" :
+				trim.call( text );
+		} :
+		function( text ) {
+			return text == null ?
+				"" :
+				text.toString().replace( trimLeft, "" ).r出现eplace( trimRight, "" );
+	}
+</code></pre>
+<p>这里用了一个条件运算符，如果String.trim存在的话就用，不存在就用自己实现的trim函数。在jQuery的源码中，用了大量的这种技巧,比如：</p>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;pre&gt;&lt;code&gt;
+	data = data === &quot;true&quot; ? true :
+				data === &quot;false&quot; ? false :
+				data === &quot;null&quot; ? null :
+				!jQuery.isNaN( data ) ? parseFloat( data ) :
+					rbrace.test( data ) ? jQuery.parseJSON( data ) :
+					data;
+	for ( var i = one ? index : 0, max = one ? index + 1 : options.length; i &lt; max; i++ ) {}
+&lt;/code&gt;&lt;/pre&gt;</pre>
+<p>多用点这种技巧，就不用满屏幕都是if &amp; else 了。代码会变得简洁，轻巧。</p>
+
+<h3 id='jquery'><strong>jQuery的循环遍历技巧</strong></h3>
+
+<p>下面列出一些自己看出的、常见的、平时代码中常用的循环技巧</p>
+
+<p>1、</p>
+<pre><code>
+	// 简单的for-in（事件）  
+	for ( type in events ) {  
+	  
+	} 
+</code></pre>
+<p>2、</p>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;pre&gt;&lt;code&gt;
+	// 缓存length属性，避免每次都去查找length属性，稍微提升遍历速度  
+	for ( var j = 0, l = arrow.length; j &lt; l; j++ ) {  
+	  
+	}  
+&lt;/code&gt;&lt;/pre&gt;</pre>
+<p>3、</p>
+<pre><code>
+	// 不比较下标，直接判断元素是否为true（强制类型转换）  
+	var elem;  
+	for ( var i = 0; elems[i]; i++ ) {  
+	    elem = elems[i];  
+	    // ...  
+	} 
+</code></pre>
+<p>4、</p>
+
+<pre><code>// 遍历动态数组（事件），不能缓存length属性，j++之前先执行j--
+for ( j = 0; j &lt; eventType.length; j++ ) {  
+eventType.splice( j--, 1 );  
+}  
+for ( var i = 1; i &lt; results.length; i++ ) {  
+    if ( results[i] === results[ i - 1 ] ) {  
+        results.splice( i--, 1 );  
+    }  
+}  </code></pre>
+
+<p>这个细节要注意哈，稍不注意就会在这里折腾很久。动态数组不能缓存！</p>
+
+<p>5、</p>
+
+<pre><code>// 迭代过程中尽可能减少遍历次数（事件），从pos开始
+for ( j = pos || 0; j &lt; eventType.length; j++ ) {  
+  
+} </code></pre>
+
+<p>6、</p>
+<pre><code>
+	//倒序遍历，有利于浏览器优化，稍微提升遍历速度  
+	for ( var i = this.props.length, prop; i; ) {  
+	    prop = this.props[ --i ];  
+	    event[ prop ] = originalEvent[ prop ];  
+	} 	
+</code></pre>
+<p>7、</p>
+<pre><code>
+	// while检查下标i  
+	var i = arr.length;  
+	while( i-- ) {  
+	    obj[ arr[i] ] = deferred[ arr[i] ];  
+	}
+</code></pre>
+<h3 id='id20'><strong>通过闭包，返回前一作用域的参数</strong></h3>
+<pre><code>
+	//	闭包。返回的函数保持对guid的引用。
+	function a(){
+	    var guid = 1;
+	    return function(){
+	        return guid++;
+	    }
+	}
+	var defer = a();
+</code></pre>
+<h3 id='id21'><strong>一次实现多种方法</strong></h3>
+<pre><code>
+	if ( rfxtypes.test(val) ) {
+		// 如果是toggle，则判断当前是否hidden，如果hidden则show，否则hide
+		// 如果不是toggle，说明val是hide/show之一
+		e[ val === "toggle" ? (hidden ? "show" : "hide") : val ]();
+
+	} else {。。。}
+</code></pre>
+<p>条件运算符 + 关联数组 一次实现三种方法，帅呆了！不过貌似这种方法平时用的不多。</p>
+
+<p>同样的思想还有一处：</p>
+
+<pre><code>jQuery.each([&quot;live&quot;, &quot;die&quot;], function( i, name ) {
+	jQuery.fn[ name ] = function( types, data, fn, origSelector /* Internal Use Only */ ) {
+		if ( name === &quot;die&quot; &amp;&amp; !types &amp;&amp;
+					origSelector &amp;&amp; origSelector.charAt(0) === &quot;.&quot; ) {
+			context.unbind( origSelector );
+			return this;
+		}
+		//....
+		return this;
+	};
+});</code></pre>
+
+<p>一次性实现两个方法。。</p>
+<pre><code>
+	jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblclick " +
+	    "mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
+	    "change select submit keydown keypress keyup error").split(" "), function( i, name ) {
+	    // Handle event binding
+	    jQuery.fn[ name ] = function( data, fn ) {
+	       return arguments.length > 0 ?
+	           this.bind( name, data, fn ) :
+	           this.trigger( name );
+	    };
+	    // 将事件名注册（添加）到jQuery.attrFn，当遇到对同名属性的操作时，转换为对事件接口的调用
+	    if ( jQuery.attrFn ) {
+	       jQuery.attrFn[ name ] = true;
+	    }
+	});
+</code></pre>
+<p>通过each方法，实现n多方法。到此，除了惊叹还是惊叹。</p>
+
+<h3 id='jquery'><strong>实例化jQuery对象</strong></h3>
+
+<p>先看代码：</p>
+<pre><code>
+	jQuery = function( selector, context ) {
+		return new jQuery.fn.init( selector, context, rootjQuery );
+	}
+</code></pre>
+<p>这里jQuery对象就是jQuery.fn.init对象</p>
+
+<p>如果执行new jQeury(),生成的jQuery对象会被抛弃，最后返回 jQuery.fn.init对象;</p>
+
+<p>因此可以直接调用jQuery( selector, context )，没有必要使用new关键字 还有一行代码如下：</p>
+<pre><code>
+	jQuery.fn.init.prototype = jQuery.fn = jQuery.prototype
+</code></pre>
+<p>所有挂载到jQuery.fn的方法，相当于挂载到了jQuery.prototype，即挂载到了jQuery 函数上（一开始的 jQuery = function( selector, context ) ），但是最后都相当于挂载到了 jQuery.fn.init.prototype，即相当于挂载到了一开始的jQuery 函数返回的对象上，即挂载到了我们最终使用的jQuery对象上。</p>
+
+<p>这里的init函数里面执行了，我们平时接触具多的选择器。简单分析如下：</p>
+<pre><code>
+	//如果传入一个DOM元素。。包装成jQuery对象，直接返回。
+	if ( selector.nodeType ) {
+		this.context = this[0] = selector;
+		this.length = 1;
+		return this;
+	}
+	//如果传入一个字符串
+		//如果字符串时一个类似"<a>hello</a>"样子的，直接生成。
+		//传入ID，直接document.getElementById()，然后包装成jQuery对象。
+	//选择器表达式，find...
+	//如果传入函数，则为ready开始.
+</code></pre>
+<h3 id='jquery_referenceerror'><strong>jQuery 巧妙避免ReferenceError</strong></h3>
+
+<p>在源码中，经常看到这样的代码：</p>
+<pre><code>
+	args = args || [];
+</code></pre>
+<p>这样可以确保args可用，一个避免null，underfined造成的ReferenceError的常见技巧。 比如我们还可以看到这样的：</p>
+<pre><code>
+	isArray: Array.isArray || function( obj ) {
+		return jQuery.type(obj) === "array";
+	}//这里和上面的条件运算符效果差不多。
+
+	name = jQuery.cssProps[ origName ] || origName;
+</code></pre>
+<p>在很多需要传入选项对象的函数中，如果用户自己传入，就用用户传进的；如果用户没有传值，则用开发者默认的参数。这样的代码很帅气有木有！</p>
+
+<h2 id='jquery'>jQuery的实现框架</h2>
+<pre><code>
+	(function( window, undefined ) {	
+	    // 构造jQuery对象
+		var jQuery = function( selector, context ) {
+		        return new jQuery.fn.init( selector, context, rootjQuery );
+		    }
+		// 工具函数 Utilities
+		// 异步队列 Deferred
+		// 浏览器测试 Support
+		// 数据缓存 Data
+		// 队列 queue
+		// 属性操作 Attribute
+		// 事件处理 Event
+		// 选择器 Sizzle
+		// DOM遍历
+		// DOM操作
+		// CSS操作
+		// 异步请求 Ajax
+		// 动画 FX
+		// 坐标和大小
+		window.jQuery = window.$ = jQuery;
+
+	})(window);
+</code></pre>
+<h2 id='id22'>结语</h2>
+
+<p>&#160;&#160;&#160;&#160;以上分析，都只是jQuery的一些皮毛，还有很多很多没有发现，以后有时间，有机会再研究咯~</p>
+
+<p>&#160;&#160;&#160;&#160;总之每看一次，都会有很大的收获，成长。</p>
+
+<p>&#160;&#160;&#160;&#160;最近状态不好，做事效率很低。以后看书码代码的时候，要关了qq，微博，河畔。。。</p>
+
+<p>&#160;&#160;&#160;&#160;离开用心，新的开始。虽然很多不舍，但必须面对，做出选择。对于有些人，应该就是永远不见，有些人，真舍不得。</p>
+
+<p>&#160;&#160;&#160;&#160;做喜欢的事，做好喜欢的事。加油，fs21~~</p>
+        </section>
+    </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
+</div>
+
+  
+    </div>
+    
+  </div>
+  
+  <!-- script -->
+  <script src = '/js/jquery.js'></script>
+  <script src = '/js/easing.js'  defer = "defer"></script>
+  <script src = '/js/fs.js'  defer = "defer"></script>
+  
+  <script type = "text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' ==  document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

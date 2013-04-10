@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang = "en" manifest = '/css/fs.appcache'>
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+
+  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
+  <meta name = "keywords" content = "前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name = "description" content = "freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。"
+  <meta name="author" content="freestyle21" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
+  
+  <!-- link -->
+  <link rel = "stylesheet" href = "/css/font.css">
+  <link rel = "stylesheet" href = "/css/freestyle.css">
+  <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
+  <!-- 高亮插件 -->
+  <link rel="stylesheet" href="/styles/default.css">
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class = "ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
+    
+  <div class = "contain">
+    <!-- message -->
+    <div class = "topMsg">
+      <span>Message</span>
+    </div>
+    <div class = "rightMsg">
+      <div class = "msgBefore">
+        <span>Message</span>
+
+        <p class = "msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class = "ds-thread"></div>
+      <script type = "text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id = "mainbody">
+      <!-- top -->
+      <div id = "top">
+        <div class = "header">
+          <a href = "#" class = "logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id = "navigation">
+            <div class = "tip">
+              <div class = "jiao"></div>
+              <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul>
+              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
+              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <h1><a href="/writings/taobao-uedtest.html">淘宝UED的前端招聘测试题</a></h1>
+        <p class="date">Tuesday, January 15, 2013</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          <h2 id='id7'>引言</h2>
+
+<p>&#160;&#160;&#160;&#160;最近考试完了，总算有时间做自己喜欢的事情，最嗨皮的是三天学了一学期的，居然全过了，(～ o ～)~zZ，关于上课和学习，从来都不觉得课堂上能够学到能用了，还是自己看最靠谱。。</p>
+
+<p>&#160;&#160;&#160;&#160;中午吃完饭后习惯性的浏览收藏夹里面的博客。不过似乎要过年了，F2Eer都变懒了~ taobaoUED有了更新，这个团队都是走在业界的前沿，每次都是最先尝试别人不愿意试的技术，赞~(≧▽≦)/~。 时光星球那个做的很炫，用SVG画的那些小星星，js控制的opacity。不过性能感觉略低，CPU从来没有下40%；还有下面还报了unsafe Javascript的错误，应该是父窗口有把Domain,protocol,port之类的改了，然后子窗口得不到父窗口的句柄。不过总体上还是很赞的~ 顺着首页进去，招聘的flash很简洁，很有新意~直接跳过交互和视觉，看了下前端的招聘。</p>
+
+<p>小测试是这样的：就是把以前的radio变成图片。</p>
+
+<p><img alt='question' src='/img/taobaoUED/question.jpg' /></p>
+
+<p>码代码之前先分析一下：</p>
+
+<p>&#160;&#160;&#160;&#160;radio不能加背景或图片，所以要实现上面这个效果，只能通过js控制dom样式来实现；要保证后端的同学能够得到用户的点击结果，所以带有radio的form又是不能少的，所有这里我们把它隐藏了。稍有难度的就是点击过后的红色边框效果，右下角有一个红色的勾。第一反应是把外围的红色看成一幅图，当成外围div的background。不过这样有一个问题，就是图片会把父div右下角勾挡住。最后决定把右下角的勾单独当成一个图片，然后定位到带有红色border的img右下角。当然也可以用svg或canvas来画出右下角的勾，不过这样兼容性又是各种蛋疼，先还是把图片的实现吧。</p>
+
+<h2 id='id8'>实现</h2>
+
+<p>下面是具体实现：</p>
+
+<pre><code>&lt;form action = &quot;./test2.html&quot; method = &#39;post&#39; name =&#39;userColorForm&#39; class=&#39;userColorForm&#39;&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;MyValue&lt;/legend&gt;    
+        &lt;div class = &#39;radioColorParent&#39;&gt;
+            &lt;input class = &#39;radioColor&#39; type = &quot;radio&quot; name =  &quot;userColor&quot; value = &quot;brown&quot; checked&gt; 棕色
+            &lt;input class = &#39;radioColor&#39; type = &quot;radio&quot; name = &quot;userColor&quot; value = &quot;yellow&quot;&gt; 黄色
+            &lt;input class = &#39;radioColor&#39; type = &quot;radio&quot; name = &quot;userColor&quot; value = &quot;purplishRed&quot;&gt; 紫红色
+        &lt;/div&gt;
+                                                                                                       
+        &lt;div class = &#39;picColor&#39;&gt; 
+	        &lt;div class = &#39;picColorImgParent&#39;&gt; 
+	          &lt;img class = &#39;picColorImg&#39; src = &quot;1.jpg&quot; alt = &quot;&quot;&gt;                  
+	          &lt;img class = &#39;picColorTriangle&#39; src=&quot;picColorTriangle.png&quot; alt=&quot;&quot;&gt;
+	        &lt;/div&gt;
+	        &lt;div class = &#39;picColorImgParent&#39;&gt; 
+	          &lt;img class = &#39;picColorImg&#39; src = &quot;1.jpg&quot; alt = &quot;&quot;&gt;   
+	          &lt;img class = &#39;picColorTriangle&#39;src=&quot;picColorTriangle.png&quot; alt=&quot;&quot;&gt;
+	          &lt;/div&gt;
+	        &lt;div class = &#39;picColorImgParent&#39;&gt; 
+	         &lt;img class = &#39;picColorImg&#39; src = &quot;3.jpg&quot; alt = &quot;&quot;&gt;          
+	         &lt;img class = &#39;picColorTriangle&#39;src=&quot;picColorTriangle.png&quot; alt=&quot;&quot;&gt;
+	        &lt;/div&gt;
+        &lt;/div&gt;
+    	&lt;input type=&quot;submit&quot; value=&#39;submit&#39;&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+
+<p>以上就是实现基本的html代码，把几个为radio的input隐藏了。</p>
+<pre><code>
+	css：
+	.userColorForm fieldset{
+	      border: none;
+	}
+	.userColorForm legend{
+	      display: none;
+	}
+	                                                                           
+	.radioColorParent{
+	      display: none;
+	}
+	.picColor{
+	      overflow: hidden;
+	}
+	div.picColorImgParent{
+	      float: left;
+	      padding-left: 10px;
+	      cursor: pointer;
+	      position: relative;
+	}
+	.picColorImg{
+	      width: 32px;
+	      height: 32px;
+	      border: 1px #c8c9cd solid;
+	}
+	img.picColorSelect{
+	      border: 2px #c40008 solid;
+	      border-top: 1px #c40008 solid;
+	}
+	.picColorTriangle{
+	      position: absolute;
+	      bottom: 4px;
+	      right: 0px;
+	      display: none;
+	}
+</code></pre>
+<p>把radio的input隐藏了，然后设置点边框。 贴下js代码：</p>
+<pre><code>
+	$(document).ready(function(){
+    	var UserColorSelect = function(){};
+    	UserColorSelect.prototype = {
+       		init: function(obj){
+	            this._obj = obj;
+	              this._obj.eq(0).find('img').eq(0)
+	                    .addClass('picColorSelect');                            
+	                    this._obj.eq(0).find('img').eq(1).css('display', 'inline-block');
+        	},
+	        //传入一个div对象，然后对他的两个img元素进行操作。
+	        changeStyle: function(){
+	          if(this._obj){
+	            this._obj.click(function(){
+	             var $OldParent = $('.picColorSelect').parent();
+	             if($OldParent !== this){
+	                  //处理上一个picColorSelect
+	                     $OldParent.find('img').eq(0)
+	                          .removeClass('picColorSelect');
+	                                                                                                          
+	                     $OldParent.find('img').eq(1)
+	                          .css('display','none');
+	                  //更新现在点的。
+	                       $(this).find('img').eq(0)
+	                            .addClass('picColorSelect');
+	                       $(this).find('img').eq(1)
+	                            .css('display','inline-block');    
+	              }
+	             });
+	            }
+	        },
+	        updateRadio:function(){
+	          if(this._obj){
+	              this._obj.click(function(){
+	                var whichNum = $(this).index();
+	                  $('.radioColor').eq(whichNum)
+	                      .attr('checked','true');
+	               });
+	          }
+	        }
+		}
+                                                                                 
+	  	usercolorselect = new UserColorSelect();
+		usercolorselect.init($('.picColorImgParent'));
+		usercolorselect.changeStyle();
+		usercolorselect.updateRadio();
+	});        
+</code></pre>
+<p>&#160;&#160;&#160;&#160;上面的js代码中有一点需要注意，就是在点击事件中，一定要判断当前的div和上一个picColorSelect Div是否一样，可以节约一点点时间和空间。当然if（this._obj）是为了防止代码被乱拷，然后就不知怎么就崩了。。 在test2.html中可以看到传过去的值是正确的：</p>
+
+<p><img alt='final' src='/img/taobaoUED/final.jpg' /></p>
+
+<p>兼容性方面，用的jquery，基本上没有什么问题；css中没有margin，自然也灭有ie6下的双边距。最后再ie6,7,8都测了，都没有问题~</p>
+
+<p>最后代码都放在了<a href='https://github.com/freestyle21/taobaoUEDTest'>github</a>上面，欢迎吐槽~</p>
+        </section>
+    </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
+</div>
+
+  
+    </div>
+    
+  </div>
+  
+  <!-- script -->
+  <script src = '/js/jquery.js'></script>
+  <script src = '/js/easing.js'  defer = "defer"></script>
+  <script src = '/js/fs.js'  defer = "defer"></script>
+  
+  <script type = "text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' ==  document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

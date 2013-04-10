@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang = "en" manifest = '/css/fs.appcache'>
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+
+  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
+  <meta name = "keywords" content = "前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name = "description" content = "freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。"
+  <meta name="author" content="freestyle21" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
+  
+  <!-- link -->
+  <link rel = "stylesheet" href = "/css/font.css">
+  <link rel = "stylesheet" href = "/css/freestyle.css">
+  <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
+  <!-- 高亮插件 -->
+  <link rel="stylesheet" href="/styles/default.css">
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class = "ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
+    
+  <div class = "contain">
+    <!-- message -->
+    <div class = "topMsg">
+      <span>Message</span>
+    </div>
+    <div class = "rightMsg">
+      <div class = "msgBefore">
+        <span>Message</span>
+
+        <p class = "msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class = "ds-thread"></div>
+      <script type = "text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id = "mainbody">
+      <!-- top -->
+      <div id = "top">
+        <div class = "header">
+          <a href = "#" class = "logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id = "navigation">
+            <div class = "tip">
+              <div class = "jiao"></div>
+              <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul>
+              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
+              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <h1><a href="/writings/efficient-css.html">翻译-高效的CSS</a></h1>
+        <p class="date">Friday, March 08, 2013</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          <h2 id='id10'>译言：</h2>
+
+<p>&ensp;&ensp;&ensp;&ensp;逛微博的时候看到 <a href='http://weibo.com/u/2093492691'>@程序员的那些事</a> 推荐的一篇CSS的文章。细细看了下，写的很不错，就翻译过来，与诸前端们共享~ 原文地址在<a href='http://csswizardry.com/2011/09/writing-efficient-css-selectors/'>这里</a>，由于第一次翻译文章，有不准确的地方欢迎留言讨论~~</p>
+
+<h2 id='id11'>译文：</h2>
+
+<p>高效的CSS已经不是一个新的话题了，也不是我一个非得重拾的话题，但它却是我在Sky公司工作之时，所感兴趣的，关注已久的话题。</p>
+
+<p>有很多人都忘记了，或在简单的说没有意识到，CSS在我们手中，既能很高效，也可以变得很低能。这很容易被忘记，尤其是当你意识到你会的太少，CSS代码效率很低的时候。</p>
+
+<p>下面的规则只真正被应用到那些速度要求很高，有成百上千的DOM元素被绘制在页面上的大型网站。但是，实践出真理，这和你是在创建下一个Facebook，还是写一个本地的展示页面都没有关系，多知道一点总是好的。</p>
+
+<h3 id='css'>CSS选择器：</h3>
+
+<p>对我们大多数人来说，CSS选择器并不陌生。最基本的选择器是元素选择器(比如div),ID选择器(比如#header)还有类选择器(比如.tweet)。</p>
+
+<p>一些的不常见的选择器包括伪类选择器(:hover)，很多复杂的CSS3和正则选择器，比如：first-child，<span>class ^= “grid-”</span>.</p>
+
+<p>CSS选择器具有高效的继承性，引用Steve Souders的话， CSS选择器效率从高到低的排序如下：</p>
+
+<ol>
+<li>ID选择器 比如#header</li>
+
+<li>类选择器 比如.promo</li>
+
+<li>元素选择器 比如 div</li>
+
+<li>兄弟选择器 比如 h2 + p</li>
+
+<li>子选择器 比如 li &gt; ul</li>
+
+<li>后代选择器 比如 ul a 7. 通用选择器 比如 *</li>
+
+<li>属性选择器 比如 <span>type = “text”</span></li>
+
+<li>伪类/伪元素选择器 比如 a:hover</li>
+</ol>
+
+<p>以上引用自<a href='http://stevesouders.com/'>Steve Souders</a>的Even Faster网站、</p>
+
+<p>我们不得不提的是，纵使ID选择器很快、高效，但是它也仅仅如此。从Steve Souders的CSS Test我们可以看出<a href='http://stevesouders.com/efws/CSS-selectors/CSScreate.php?n=1000&amp;sel=%23id&amp;body=background%3A+%23CFD&amp;ne=1000'>ID选择器</a>和<a href='http://stevesouders.com/efws/CSS-selectors/CSScreate.php?n=1000&amp;sel=.class&amp;body=background%3A+%23CFD&amp;ne=1000'>类选择器</a>在速度上的差异很小很小。</p>
+
+<p>在Windows系统上的Firefox 6上，我测得了一个简单类选择器的（reflow figure）重绘速度为10.9ms，而ID选择器为12.5ms，所以事实上ID比类选择器重绘要慢一点点。</p>
+
+<p>ID选择器和类选择器在速度上的差异基本上没有关系。</p>
+
+<p>在一个标签选择器(a)的测试上显示，它比类或ID选择器的速度慢了<a href='http://stevesouders.com/efws/CSS-selectors/CSScreate.php?n=1000&amp;sel=a&amp;body=background%3A+%23CFD&amp;ne=1000'>很多</a>。在一个嵌套很深的后代选择器的测试上，显示数据为<a href='http://stevesouders.com/efws/CSS-selectors/CSScreate.php?n=1000&amp;sel=div+div+div+div+div+div+a&amp;body=background%3A+%23CFD&amp;ne=1000'>440左右</a>！从这里我们可以看出ID/类选择器 和 元素/后代选择器中间的差异较大，但是相互之间的差异较小。</p>
+
+<p><strong>注意：</strong> 这些数据可能在不同计算机和浏览器中间的差异较大。强烈地建议大家在自己的机子上测试一下。</p>
+
+<h3 id='id12'>组合选择器</h3>
+
+<p>你可以有一个标准的选择器比如 #nav，来选择任何带有ID为&#8221;nav&#8221;的元素，或在你可以有一个组合选择器比如#nav a,来选择任何在ID为’nav’的元素里面的链接元素</p>
+
+<p>此刻，我们读这些是从左到右的方式。我们是先找到#nav，然后从它的里面找其他元素。但是浏览器解析这些不是这样的：浏览器解析选择器是从右到左的方式。</p>
+
+<p>在我们看来，#nav里面带了一个a，浏览器却是看到的a在#nav里面。这些细微的差异对选择器的效率有很大的影响，同时学这些差异也是很有价值的。</p>
+
+<p>如果想要知道更多浏览器这样解析的原因，请看<a href='http://stackoverflow.com/questions/5797014/why-do-browsers-match-CSS-selectors-from-right-to-left'>Stack Overflow</a>上的讨论</p>
+
+<p>浏览器从最右边的元素开始（它想要渲染的元素），然后用它的方式回溯DOM树比从DOM树的最高层开始选择向下寻找，甚至可能达不到最右边的选择器—关键的选择器要高效。</p>
+
+<p>这些对CSS选择器的效率有很大的影响。</p>
+
+<h3 id='id13'>关键选择器</h3>
+
+<p>关键选择器，正如前面讨论的一样，是一个复杂的CSS选择器中最右边部分。它是浏览器最先寻找的。</p>
+
+<p>现在我们回到讨论开始的地方，哪类选择器是最高效的？哪个是会影响选择器效率的关键选择器；写CSS代码的时候，关键选择器是能否高效的决定因素。 一个关键CSS选择器像这样：</p>
+
+<pre><code>#content .intro {..}</code></pre>
+
+<p>是不是高效选择器比如类选择器天生就高效？浏览器会寻找.intro的实例（可能会很多），然后沿着DOM树向上查找，确定刚才找到的实例是否在一个带有ID为”content”的容器里面。</p>
+
+<p>但是，下面的选择器就表现的不是那么好了：</p>
+
+<pre><code>#content * {..}</code></pre>
+
+<p>这个选择器所做的是选择所有在页面上的单个元素（是每个单个的元素），然后去看看它们是否有一个 #content 的父元素。这是一个非常不高效选择器因为它的关键选择器执行开销太大了。</p>
+
+<p>运用这些知识我们就可以在分类和选择元素的时候做出更好的选择。</p>
+
+<p>假设你有一个复杂的页面，它相当巨大并且在你的一个很大很大的站点上。在那个页面上有成百上千甚至上万的 a 标签。它还有一个小的社交链接区域放在一个ID为#social的Ul里面。我们假设它们是Twitter，Facebook，Dribbble还有Google+的链接吧。在这个页面上我们有四个社交链接和成百上千的其他链接。 下面的这个选择器就自然的不是那么高效和合理了：</p>
+
+<pre><code>#social a {…}</code></pre>
+
+<p>这里发生的情况是浏览器会在定位到#social区域下的四个链接之前得到页面上所有成千上万的链接。我们的关键选择器匹配了太多我们不感兴趣的其他元素。</p>
+
+<p>为了补救我们可以给每个在社交链接区域的 a 增加一个更特殊、明确的选择器 .social-link , 但是这好像有点违背我们的认知：当我们能用组合选择器的时候就不要放不必要的类标示在元素上。</p>
+
+<p>这就是为什么我对选择器的性能如此感兴趣的原因了：必须在web 标准最佳实践和速度之间的保持平衡。</p>
+
+<p>通常我们有：</p>
+
+<pre><code>&lt;ul id=&quot;social&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;twitter&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;facebook&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;dribble&quot;&gt;Dribbble&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;gplus&quot;&gt;Google+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+<p>CSS:</p>
+<pre><code>
+	#social a {}
+</code></pre>
+<p>我们现在最好有：</p>
+
+<pre><code>&lt;ul id=&quot;social&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;social-link twitter&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;social-link facebook&quot;&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;social-link dribble&quot;&gt;Dribbble&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;social-link gplus&quot;&gt;Google+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+<p>加上CSS：</p>
+<pre><code>
+	#social .social-link {}
+</code></pre>
+<p>这个新的关键选择器将会匹配更少的元素，这意味着浏览器能够很快的找到它们并渲染特定的样式，然后专注于下一件事。</p>
+
+<p>另外，事实上我们可以用.social-link{}更清晰的选择，而不是过分限制它。阅读下一部分你会原因…</p>
+
+<p>简单的重述一次，你的关键选择器会决定浏览器的工作量，因此，我们应该重视一下关键选择器</p>
+
+<h3 id='id14'>过度限制选择器</h3>
+
+<p>现在我们知道了什么是关键选择器，还有它是大部分工作的来源，但是我们可以更乐观一点。拥有一个明确的关键选择器最大的好处就是你可以避免使用过度限制选择器。一个过度限制选择器可能像：</p>
+<pre><code>
+	html body .wrapper #content a {}
+</code></pre>
+<p>这里的写的太多了，至少3个选择器是完全不需要的。它可以最多像这个样子：</p>
+<pre><code>
+	#content a {}
+</code></pre>
+<p>这会发生什么呢？ 首先第一个意味着浏览器不得不寻找所有的 a 元素，然后检查他们是否在一个ID为”content”的元素中，然后如此循环直到HTML标签。这样造成了太多的我们不太想要的花费。了解了这个，我们得到一些更现实的例子：</p>
+<pre><code>
+	#nav li a{}
+</code></pre>
+<p>变成这个：</p>
+<pre><code>
+	#nav a {}
+</code></pre>
+<p>我们知道如果a在li里面，它也必定在#nav里面，所有我们可以马上把li从选择器组中拿掉。然后，既然我们知道在页面中只有一个ID为nav的元素，那么它依附的元素就是完全没有关系得了，我们也可以拿掉ul</p>
+
+<p>过度限制选择器使浏览器工作比它实际需要的更繁重，花费的时间更多。我们可以删掉不必需的限制，来使我们的选择器更简单和高效。</p>
+
+<h3 id='id15'>这些真的需要吗？</h3>
+
+<p>最短的答案是:或许不是。</p>
+
+<p>最长的答案是：它取决于你正在搭建的站点。如果你正在为你的晋升而努力，那么就好好写出简单、高效的CSS代码吧，因为你可能不会感觉到它给你带来的改变。 如果你正在搭建下一个每个页面都以毫秒计算的Amazon网站，这样有时速度会很快，但有时可能不是。</p>
+
+<p>浏览器将会在解析CSS的速度上变得更好，甚至在手机端。在一个网站上，你不太可能会觉察到一个低效的CSS选择器，但是….</p>
+
+<h3 id='id16'>但是</h3>
+
+<p>它确实发生了，浏览器还是不得不去做我们讨论的所有工作，无论它们变得多快。即使你不需要或者甚至不想实践任何一个，但是它都是我们值得学习的知识。请记住选择器可能会让你付出很大代价，你应该避免盯着一个看。这意味着如果你发现你自己在写像这样的：</p>
+<pre><code>
+	div:nth-of-type(3) ul:last-child li:nth-of-type(odd) *{ font-weight:bold }
+</code></pre>
+<p>这时，你可能就做错了。</p>
+
+<p>现在，在高效选择器的世界我还是一个新人。所以如果我忘记了什么，或者你有需要补充的，请在评论里面留言。</p>
+
+<h3 id='id17'>更多高效选择器</h3>
+
+<p>我还不能完全介绍Steve Souders的网站和书籍，它们是如此之好，以至于值得你花更多时间来阅读和推荐。这个家伙只有他自己才了解自己！</p>
+        </section>
+    </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
+</div>
+
+  
+    </div>
+    
+  </div>
+  
+  <!-- script -->
+  <script src = '/js/jquery.js'></script>
+  <script src = '/js/easing.js'  defer = "defer"></script>
+  <script src = '/js/fs.js'  defer = "defer"></script>
+  
+  <script type = "text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' ==  document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

@@ -18,10 +18,10 @@ $(function() {
 				'-webkit-transition':'all 0.5s ease-in-out',
 				'-o-transition':'all 0.5s ease-in-out',
 				'-ms-transition':'all 0.5s ease-in-out',
-				'transform':'scale(1.5,1.5)',
-				'-webkit-transform':'scale(1.5,1.5)',
-				'-o-transform':'scale(1.5,1.5)',
-				'-ms-transform':'scale(1.5,1.5)'
+				'transform':'scale(1.2,1.2)',
+				'-webkit-transform':'scale(1.2,1.2)',
+				'-o-transform':'scale(1.2,1.2)',
+				'-ms-transform':'scale(1.2,1.2)'
 			});
 			$('.artDetail').eq(num).stop().fadeIn();
 		},
@@ -151,9 +151,14 @@ window.onload = function() {
 		audioSet['audio' + num] =  document.createElement('audio');
 		audioSet['audio' + num].src = musicArr[num];
 		audioSet['audio' + num].volume = 0.5;
+
 		audioSet['audio' + num].load();
 		audioSet['audio' + num].addEventListener('canplaythrough', callback = (function(now) {
 			return function() {
+				if(now == 0) {
+					AutoPlay(0);
+					bufferOneMusic(now + 1);
+				}
 				if( now < (musicArr.length - 1)) {
 					bufferOneMusic(now + 1);
 				}
@@ -162,13 +167,23 @@ window.onload = function() {
 		hasBuffer = true;
 	}
 	function AutoPlay(begin) {
-		nowplay = begin;
-		audioSet['audio' + begin].play();
-		$(audioSet['audio' + begin]).bind('ended', function() {
-			if(begin < (musicArr.length - 1)){
-				AutoPlay(begin + 1);
-			}
-		});
+		if(audioSet['audio' + begin].readyState === 4 ) {
+			audioSet['audio' + begin].play();	
+			$(audioSet['audio' + begin]).bind('ended', function() {
+				if(begin < (musicArr.length - 1)){
+					AutoPlay(begin + 1);
+					nowplay = begin +1;
+				}else {
+					AutoPlay(0);
+					nowplay = 0;
+				}
+			});
+		}else {
+			if(begin >= (musicArr.length - 1)) begin = -1;
+			arguments.callee(begin + 1);
+		}
+		
+		
 	}
 	function Stop() {
 		audioSet['audio' + nowplay].pause();
@@ -176,10 +191,15 @@ window.onload = function() {
 	$('.surprise').click(function() {
 		if($(this).text() == '惊喜') {
 			$(this).text('停止');
+			if(nowplay >= musicArr.length) {
+				nowplay = 0;
+			}
 			if(!hasBuffer) {
 				bufferOneMusic(nowplay);
-			}
-			AutoPlay(nowplay);	
+			}else {
+				AutoPlay(nowplay);
+			}	
+			
 		}else {
 			$(this).text('惊喜');
 			Stop();

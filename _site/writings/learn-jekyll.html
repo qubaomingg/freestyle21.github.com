@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang = "en" manifest = '/css/fs.appcache'>
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+
+  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
+  <meta name = "keywords" content = "前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name = "description" content = "freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。"
+  <meta name="author" content="freestyle21" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
+  
+  <!-- link -->
+  <link rel = "stylesheet" href = "/css/font.css">
+  <link rel = "stylesheet" href = "/css/freestyle.css">
+  <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
+  <!-- 高亮插件 -->
+  <link rel="stylesheet" href="/styles/default.css">
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class = "ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
+    
+  <div class = "contain">
+    <!-- message -->
+    <div class = "topMsg">
+      <span>Message</span>
+    </div>
+    <div class = "rightMsg">
+      <div class = "msgBefore">
+        <span>Message</span>
+
+        <p class = "msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class = "ds-thread"></div>
+      <script type = "text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id = "mainbody">
+      <!-- top -->
+      <div id = "top">
+        <div class = "header">
+          <a href = "#" class = "logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id = "navigation">
+            <div class = "tip">
+              <div class = "jiao"></div>
+              <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul>
+              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
+              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <h1><a href="/writings/learn-jekyll.html">邂逅Jekyll</a></h1>
+        <p class="date">Saturday, March 02, 2013</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          <h2 id='1jekyll'>1、认识Jekyll</h2>
+
+<p>Jekyll is a simple, blog aware, static site generator.。 It takes a template directory (representing the raw form of a website), runs it through Markdown or Textile and Liquid converters, and produces a static website suitable for any web server.</p>
+
+<p>&ensp;&ensp;&ensp;&ensp;上面是摘自github上Jekyll的<a href='https://github.com/mojombo/jekyll'>说明</a>.简单的说，Jekyll 是一个简洁的、特别针对博客平台的<strong>静态网站生成器</strong>。它使用一个模板目录作为网站布局的基础框架，并在其上运行 Textile 、 Markdown 或 Liquid 标记语言的转换器，最终生成一个完整的静态Web站点。jekyll+markdown+Liquid成为很简单，很舒服的写作方式。</p>
+
+<p>一个典型的Jekyll站点通常具有如下结构：</p>
+
+<p><img alt='jekyllstruct' src='/img/jekyll/jekyllstruct.png' /></p>
+
+<h3 id='configyml'><em>config.yml</em></h3>
+
+<p>&ensp;&ensp;保存Jekyll配置的文件。虽然绝大部分选项可以通过命令行参数指定，但将它们写入配置文件可以使你在每次执行时不必记住它们。 比如里面写:</p>
+<pre><code>
+	description:      "freestyle21\'s Blog"
+</code></pre>
+<p>那么我们在源码中就可以通过下面这种方式去访问了：</p>
+<pre><code>
+	site.description
+</code></pre>
+<h3 id='includes'><em>includes</em></h3>
+
+<p>该目录存放可以与_layouts和_posts混合、匹配并重用的文件。 用的不多，没有深入接触。。。</p>
+
+<h3 id='layouts'><em>layouts</em></h3>
+
+<p>&ensp;&ensp;该目录存放用来插入帖子的网页布局模板。页面布局基于类似博客平台的“一个帖子接一个帖子”的原则，通过YAML前置数据定义。Liquid标签用于在页面上插入帖子的文本内容。这个用的特多，可以大大减少代码量。</p>
+
+<h3 id='posts'><em>posts</em></h3>
+
+<p>&ensp;&ensp;该目录下存放的可以说成是你的“动态内容”。这些文件的格式很重要，它们的命名模式必须遵循 year-month-date-title.markdown。每一个帖子的固定链接URL可以作弹性的调整，但帖子的发布日期和转换所使用的标记语言会根据且仅根据文件名中的相应部分来识别。</p>
+
+<h3 id='site'><em>site</em></h3>
+
+<p>&ensp;&ensp;这里是Jekyll用以存放最终代码生成站点的根路径位置。也许把它加到你的.gitignore列表中会是个不错的主意。这个文件夹是Jekyll自动生成的，所以我们一般不用管。</p>
+
+<h3 id='id9'>其他文件/目录</h3>
+
+<p>&ensp;&ensp;除了以上提到的文件之外，每一个其他的、不以下划线_开头的目录和文件都会被照原样传送到站点路径下。例如，你可以在网站根目录下面添加一个 css ,js,img目录，一个 favicon.ico ，等等等等。</p>
+
+<h2 id='2windowsjekyll'>2、windows搭建Jekyll本地测试环境</h2>
+
+<p>&ensp;&ensp;你可以修改了代码，然后上传到github上面去，然后在刷新刷新看刚才改动的效果。不过如果能够坚持调试下来的不是大牛就是高富帅=-=。。于是在本地测试就师出有名了，改好了再上传到github上面，事半功倍。</p>
+
+<p>&ensp;&ensp;看了好多别人写的博客，不过都没有一次成功的，为了方便同仁和自己，把自己的过程记录下来吧。。中间遇到好多问题，反正各种google、stackoverflow。做好过后，那些问题也都忘了怎么解决的了，所以事后写博客质量不是很好，=-=||..好了，少扯蛋，多做事：</p>
+
+<h2 id='jekyll'>安装Jekyll</h2>
+
+<p>&ensp;&ensp;Jekyll使用Ruby编写的，所以要先配置Ruby环境，通过Ruby安装Jekyll。</p>
+
+<p>&ensp;&ensp;下载RubyInstaller，(我下载的是<a href='http://files.rubyforge.vm.bytemark.co.uk/rubyinstaller/rubyinstaller-1.9.3-p194.exe'>rubyinstaller-1.9.3-p194.exe</a></p>
+
+<p>&ensp;&ensp;下载 DevKit(下载的是<a href='http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe'>DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</a></p>
+
+<p>RubyInstaller安装开始的时候，有三个多选按钮，都选上~path神马的都会自动加上，不用担心。</p>
+
+<p>解压DevKit，然后打开cmd，进入刚才的DevKit解压目录，输入以下命令：</p>
+<pre><code>
+	Ruby dk.rb init
+	Ruby dk.rn install
+</code></pre>
+<p>&ensp;&ensp;DevKit是windows平台下编译和使用本地C/C++扩展包的工具。它就是用来模拟Linux平台下的make,gcc,sh来进行编译。但是这个方法目前仅支持通过RubyInstaller安装的Ruby。</p>
+
+<p>下面就可以安装Jekyll了：</p>
+<pre><code>
+	gem install Jekyll
+</code></pre>
+<p>等待。。。这个时候不要关闭Git Bash。</p>
+
+<p>最后，我们可以检查一下安装Jekyll成功没有：</p>
+<pre><code>
+	Jekyll --version
+</code></pre>
+<p>如果输出下面的结果就说明我们成功了。。</p>
+<pre><code>
+	Jekyll 0.12.0
+</code></pre>
+<p>接下来读者朋友可以把我的博客clone到本地，一般都clone到在C:\Users\Administrator这个目录下面：</p>
+<pre><code>
+	git clone git://github.com./freestyle21/freestyle21.github.com.git
+</code></pre>
+<p>然后进入刚才的目录里面：</p>
+<pre><code>
+	cd freestyle21.github.com
+</code></pre>
+<p>执行：</p>
+<pre><code>
+	Jekyll --server --auto
+</code></pre>
+<p>如下如：</p>
+
+<p><img alt='jekyllstruct' src='/img/jekyll/serverauto.png' /></p>
+
+<p>&ensp;&ensp;最后就是检验成果的时候了，在浏览器中输入：<a href='http://localhost:4000'>localhost:4000</a>,就可以看到你的页面在本地跑起来了。。 这样以后调试就方便多了，在代码中修改后，只要ctrl+s保存一下，jekyll就会自动在浏览器里面更新了。。</p>
+
+<p>一般都在github里面写代码的，很久没有在本地调试了，这几天有点想法，想把博客改变一下样子。但是这次居然jekyll居然不听话了，各种报错，然后就是不断的找错误。。</p>
+
+<p>现在记录一下遇到的错误，以后不要在这里耽误时间了。</p>
+
+<blockquote>
+<p>问题：</p>
+</blockquote>
+<pre><code>
+	Liquid error: incompatible character encodings: UTF-8 and IBM437”
+</code></pre>
+<p>编码问题，直接在path里面添加：LC_ALL=en_US.UTF-8 和 LANG=en_US.UTF-8然后重启或者注销。</p>
+
+<p>还是不行的话就将 convertible.rb 的第29行改为：</p>
+<pre><code>
+	self.content = File.read(File.join(base, name), :encoding => "utf-8")
+</code></pre>
+<blockquote>
+<p>问题：</p>
+</blockquote>
+
+<p>Liquid Exception: No such file or directory - python c:/Ruby193/lib/ruby/gems/1.9.1/gems/pygments.rb-0.3.7/lib/pygments/mentos.py in 2013-01-06-octopress.markdown</p>
+
+<p>首先可以尝试一下更新Pygments，</p>
+<pre><code>
+把python里面的script目录加载path里面，然后就可以直接通过easy_install Pygments来安装了。
+</code></pre><pre><code>
+其次Pygments是通过python来工作的，所以还要安装python。需要注意的是一定要把python的路径加到path下面。
+</code></pre>
+        </section>
+    </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
+</div>
+
+  
+    </div>
+    
+  </div>
+  
+  <!-- script -->
+  <script src = '/js/jquery.js'></script>
+  <script src = '/js/easing.js'  defer = "defer"></script>
+  <script src = '/js/fs.js'  defer = "defer"></script>
+  
+  <script type = "text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' ==  document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>

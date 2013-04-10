@@ -12,6 +12,9 @@ body {
 	width: 900px;
 	margin: 0 auto;
 }
+.ds-comment-header p {
+	color:white;
+}
 
 ul {
 	list-style: none;
