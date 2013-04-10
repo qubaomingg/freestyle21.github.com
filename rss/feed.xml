@@ -1,20 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rss version="2.0">
 <channel>
 <title>freestyle21的博客</title>
 <link>http://freestyle21.cn</link>
-<description>Content extracted by WizardRSS from http://freestyle21.cn</description>
-<item>
-<title>freestyle21的博客</title>
-<link>http://freestyle21.cn</link>
-<description>&lt;div class=&quot;msgBefore&quot; readability=&quot;1&quot;&gt;&amp;#13;
-        &lt;span&gt;Message&lt;/span&gt;&amp;#13;
-&amp;#13;
-        &lt;p class=&quot;msgBefore&quot;&gt;&amp;#13;
-          亲爱得朋友，有想对我说的，都可以留下~&amp;#13;
-          在这里你可以问技术上的问题，也可以讨论感情上的问题。。&amp;#13;
-          如果想我了，就大胆说吧， #^_^#&lt;/p&gt;  &amp;#13;
-      &lt;/div&gt;</description>
-</item>
+<description>freestyle21's blog</description>
 </channel>
+<item>
+    <title>路</title>
+    <link>http://freestyle21.cn/writings/road.html</link>
+    <description>停顿下来，思考人生</description>
+<item>
+    <title>淘宝UED的前端招聘测试题</title>
+    <link>http://freestyle21.cn/writings/taobao-uedtest.html</link>
+    <description>实现一个鼠标点击后的特殊效果</description>
+<item>
+    <title>学会使用chrome的F12</title>
+    <link>http://freestyle21.cn/writings/learn-chromeF12.html</link>
+    <description>用了几年chrome，但是知道一些简单的应用，本文将教会你一个前端人应会的技巧。</description>
+<item>
+    <title>浅谈JavaScript的语言特性</title>
+    <link>http://freestyle21.cn/writings/javascript-core.html</link>
+    <description>JavaScript的语言特性，作用域、上下文、闭包、函数</description>
+<item>
+    <title>从jQuery学到的皮毛</title>
+    <link>http://freestyle21.cn/writings/jQueryCode.html</link>
+    <description>最近在学jquery源码，感触很深，记录之。</description>
+<item>
+    <title>翻译-高效的CSS</title>
+    <link>http://freestyle21.cn/writings/efficient-css.html</link>
+    <description>翻译别人的文章。</description>
+<item>
+    <title>关于js修改三种css样式的方法</title>
+    <link>http://freestyle21.cn/writings/change-css-style.html</link>
+    <description>$('.left').style.left 不能获取left属性！</description>
+ </item>
+<item>
+    <title>Javascript中的各种括号</title>
+    <link>http://freestyle21.cn/writings/blank-injs.html</link>
+    <description>最近在看ECMAScript262，好多括号，索性弄完</description>
+ </item>
+ <item>
+    <title>邂逅Jekyll</title>
+    <link>http://freestyle21.cn/writings/learn-jekyll.html</link>
+    <description>jekyll 是一个静态的博客生成器。</description>
+ </item>
+ 
+</channel>
+
 </rss>
