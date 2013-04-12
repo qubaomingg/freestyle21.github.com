@@ -42,8 +42,6 @@ imgsrc: img/dream.jpg
 
 这里用了一个条件运算符，如果String.trim存在的话就用，不存在就用自己实现的trim函数。在jQuery的源码中，用了大量的这种技巧,比如：
 
-
-<pre><code>
 	data = data === "true" ? true :
 				data === "false" ? false :
 				data === "null" ? null :
@@ -51,7 +49,6 @@ imgsrc: img/dream.jpg
 					rbrace.test( data ) ? jQuery.parseJSON( data ) :
 					data;
 	for ( var i = one ? index : 0, max = one ? index + 1 : options.length; i < max; i++ ) {}
-</code></pre>
 
 
 多用点这种技巧，就不用满屏幕都是if & else 了。代码会变得简洁，轻巧。
@@ -71,14 +68,10 @@ imgsrc: img/dream.jpg
 	
 2、
 
-
-<pre><code>
 	// 缓存length属性，避免每次都去查找length属性，稍微提升遍历速度  
 	for ( var j = 0, l = arrow.length; j < l; j++ ) {  
 	  
 	}  
-</code></pre>	
-
 
 3、
 
