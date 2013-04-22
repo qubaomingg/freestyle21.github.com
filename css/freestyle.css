@@ -251,13 +251,13 @@ span.nobook {
 }
 .leftArrow {
 	left:120px;
-	top:430px;
+	top:250px;
 	background:url(../img/sprite.png) -216px -4px no-repeat;
 	display:inline-block;
 }
 .rightArrow {
-	left:1100px;
-	top:430px;
+	right:120px;
+	top:250px;
 	background:url(../img/sprite.png) -270px -4px no-repeat;
 }
 .leftArrow:hover,.rightArrow:hover {
