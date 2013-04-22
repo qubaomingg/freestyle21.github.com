@@ -196,7 +196,10 @@ span.nobook {
 #article {
 	position:relative;
 }
-
+.article__body {
+	width: 100%;
+	position: relative;
+}
 .article__list {
 	height: 500px;
 	position: relative;
