@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang = "en" manifest = '/css/fs.appcache'>
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+
+  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
+  <meta name = "keywords" content = "前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name = "description" content = "freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。"
+  <meta name="author" content="freestyle21" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
+  
+  <!-- link -->
+  <link rel = "stylesheet" href = "/css/font.css">
+  <link rel = "stylesheet" href = "/css/freestyle.css">
+  <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
+  <!-- 高亮插件 -->
+  <link rel="stylesheet" href="/styles/default.css">
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class = "ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
+    
+  <div class = "contain">
+    <!-- message -->
+    <div class = "topMsg">
+      <span>Message</span>
+    </div>
+    <div class = "rightMsg">
+      <div class = "msgBefore">
+        <span>Message</span>
+
+        <p class = "msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class = "ds-thread"></div>
+      <script type = "text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id = "mainbody">
+      <!-- top -->
+      <div id = "top">
+        <div class = "header">
+          <a href = "http://freestyle21.cn" class = "logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id = "navigation">
+            <div class = "tip">
+              <div class = "jiao"></div>
+              <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul>
+              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
+              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <h1><a href="/writings/mess.html">杂杂杂杂杂</a></h1>
+        <p class="date">Friday, April 12, 2013</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          <h1 id='id31'>套话</h1>
+
+<p>很久没有写博客了。</p>
+
+<p>最近在看高性能的两本书，本来想总结一下的，后来想想都是一些记忆的东西，高手们都比我先知道，写出来难免有点哗众。自己做好<a href='http://freestyleboy21.blog.163.com/blog/static/208406241201331032238272/'>笔记</a>就是了。</p>
+
+<p>明天笔试，没有想象中的紧张。不过为了对得起大猫哥和义哥，一定要考好考好呀~~</p>
+
+<p>这几天都在看笔试题，又重温了正则、原生js、原型那些，有点点容易混的地方，在最后。。</p>
+
+<p>好吧，承认越扯越远了。本文三部分：</p>
+
+<blockquote>
+<p>Barancvskiy的5道好玩的题；</p>
+</blockquote>
+
+<blockquote>
+<p>博客总结；</p>
+</blockquote>
+
+<blockquote>
+<p>关于js重复定义的问题</p>
+</blockquote>
+
+<h1 id='5'>5道小题</h1>
+
+<p>以前看过的英文的，前两天看大叔系列文章的时候看到，很不错。<a href='http://www.cnblogs.com/TomXu/archive/2012/02/10/2342098.html'>传送门</a>。</p>
+
+<p>感谢大叔的翻译~</p>
+
+<h3 id='id32'>第一题</h3>
+
+<pre><code>if (!(&quot;a&quot; in window)) {
+    var a = 1;
+}
+alert(a);</code></pre>
+
+<p>这里要考虑到变量函数声明提前，所以alert出来时undefined、</p>
+
+<p>解释：执行上下文分2个阶段：进入执行上下文和执行代码，在进入执行上下文的时候，创建变量对象VO里已经有了：函数的所有形参、所有的函数声明、所有的变量声明。</p>
+
+<h3 id='id33'>第二题</h3>
+
+<pre><code>var a = 1,
+    b = function a(x) {
+        x &amp;&amp; a(--x);
+    };
+alert(a);</code></pre>
+
+<p>alert出来1；</p>
+
+<p>记住：a只在新定义的函数作用域内有效，因为规范规定了标示符不能在外围的作用域内有效;</p>
+
+<p>有点不一样的就是可爱的IE中，<strong>函数表达式的表示符泄露到外部作用域</strong>。</p>
+
+<pre><code>var f = function g(){};
+typeof g; // &quot;function&quot;</code></pre>
+
+<h3 id='id34'>第三题</h3>
+
+<pre><code>function a(x) {
+  return x * 2;
+}
+var a;
+alert(a);</code></pre>
+
+<p>直接alert出func a的源码。不解释。</p>
+
+<h3 id='id35'>第四题</h3>
+
+<pre><code>function b(x, y, a) {
+    arguments[2] = 10;
+    alert(a);
+}
+b(1, 2, 3);</code></pre>
+
+<p>这里alert出来10，大叔的解释有点不太好。以前看过一篇英文文章，这个讲的比较透。</p>
+
+<p>其实arguments这个数组和形参，是通过实参联系起来的。这道题里面，实参3把arguments<span>2</span>和a联系起来了。 但是，如果</p>
+
+<pre><code>function b(x, y, a) {
+    arguments[2] = 10;
+    alert(a);
+}
+b(1, 2);</code></pre>
+
+<p>这样没有实参吧两个联系起来，他们就是独立的，完全不一样。所以alert出来的是undefined。‘</p>
+
+<h3 id='id36'>第五题</h3>
+
+<pre><code>function a() {
+    alert(this);
+}
+a.call(null);</code></pre>
+
+<p>这里就一个知识：根据ECMAScript262规范规定：如果第一个参数传入的对象调用者是null或者undefined的话，call方法将把全局对象（也就是window）作为this的值。</p>
+
+<p>再次感谢大叔~~</p>
+
+<h1 id='id37'>博客总结</h1>
+
+<p>你现在见到的是第三个风格的博客，不过还是不太满意，o(╯□╰)o</p>
+
+<p>这里总结下前面遇到的问题，长点记性。</p>
+
+<h4 id='id38'>一</h4>
+
+<p>这个问题被弄了好久，大概精简下来就是下面的样子：</p>
+
+<pre><code>&lt;a id=&quot;niyao&quot; href=&quot;http://freestyle21.cn&quot;&gt;freestyle21&lt;/a&gt;   
+&lt;div class=&quot;ni&quot;&gt;adfasdf&lt;/div&gt;
+&lt;script&gt;
+  	$(&quot;.ni&quot;).click(function() {
+	$(&quot;#niyao&quot;).click();
+
+});
+&lt;/script&gt;</code></pre>
+
+<p>这样居然不能点击！</p>
+
+<p>找了好久原因，但是就是不对。元素都找对了，方法也对了，就是不行。。然后各种测试，单步，还是无解。</p>
+
+<p>后来想到，$(&#8220;.ni&#8221;)返回的是集合对象，那么$(&#8220;#niyao&#8221;)返回的会不会也是集合对象呢？ 打印出来，果然是，如下</p>
+
+<p><img alt='1' src='/img/mess/Aset.png' /></p>
+
+<p>如果改成：</p>
+
+<pre><code>&lt;a id=&#39;niyao&#39; href=&quot;http://freestyle21.cn&quot;&gt;freestyle21&lt;/a&gt;  
+&lt;div class=&quot;ni&quot;&gt;adfasdf&lt;/div&gt;
+&lt;script&gt;
+$(&#39;.ni&#39;).click(function() {
+
+	$(&quot;#niyao&quot;)[0].click();
+
+});
+&lt;/script&gt;</code></pre>
+
+<p>就对了，原因是这样返回的是一个DOM对象，DOM对象的click（）可以直接触发成功。 而jq对象的click（）还有没有绑定事件：</p>
+
+<pre><code>console.log($(&#39;#niyao&#39;)[0]);
+console.log($(&#39;#niyao&#39;));</code></pre>
+
+<p><img alt='2' src='/img/mess/console.png' /></p>
+
+<p>这样做了过后，还是点击没得效果。无解。。</p>
+
+<p>在控制台里面吧这个标签打出来了，基本上最简单，<a href='http://freestyle21.cn' id='niyao' />还是没有反应，无解！</p>
+
+<p>后来，海洋也来帮我调，各种弄，没有办法，无解！</p>
+
+<p>无意间，他打开了留言的那个按钮，然后又是无意间，测试了一下点击，我注意到留言界面回去了！</p>
+
+<p><img alt='3' src='/img/mess/msg.png' /></p>
+
+<p>我想为什么会回去呢？</p>
+
+<p>我之前在mainBody上委托了事件，点击后留言会动画回去。然后马上去看委托的代码，有一个return false！</p>
+
+<p>这些找到原因了，当时的一个return false害死人！</p>
+
+<p>因为要实现，当留言在的时候，click mainBody才会回去，如果没有留言的时候，就会return false。</p>
+
+<p>要找到这个问题真的运气太好了，怎么可能想起很久以前的代码的return false会导致这个问题。。</p>
+
+<p>以后除了a标签之类的，还是少return false吧，还有委托事件，冒泡也要注意啊~</p>
+
+<h4 id='id39'>二</h4>
+
+<p><img alt='4' src='/img/mess/ulli.png' /></p>
+
+<p>注意$(this).index()相对于自己的父元素，第二个ul中li的序列还是0-7.</p>
+
+<p>另外，给每个li绑定事件极不高效，考虑在外层委托。</p>
+
+<h4 id='id40'>三</h4>
+
+<p><img alt='5' src='/img/mess/callback.png' /></p>
+
+<p>漂亮的回调函数</p>
+
+<h4 id='id41'>四</h4>
+
+<p><img alt='6' src='/img/mess/domerror.png' /></p>
+
+<p>DOM Exception11 因为还没有缓冲好，。</p>
+
+<p>另：transiform 一定要在 transition之后。</p>
+
+<h1 id='js'>关于js重复定义的问题</h1>
+
+<h4 id='id42'>热身</h4>
+
+<pre><code>function ni() {
+alert(&#39;sd&#39;);
+} 
+function ni() {
+alert(&#39;2&#39;);
+}
+alert(ni);//2
+var a = document.getElementById(&#39;div1&#39;);
+
+a.onclick = function() {
+ni();//sd,2    alert出来两个
+};</code></pre>
+
+<p>另外，以前的一篇<a href='http://freestyle21.cn/writings/javascript-core.html'>文章</a></p>
+
+<pre><code>alert(x); // function
+var x = 10;
+alert(x); // 10
+x = 20;
+function x() {};
+alert(x); // 20</code></pre>
+
+<h4 id='id43'>基本类型覆盖</h4>
+
+<pre><code>var a=3;  
+function changea(){  
+    alert(a);  
+}  
+alert(a);//3  
+var a=4;//作用域链保存的a已经修改  
+alert(a);//4  
+changea();//4  </code></pre>
+
+<h4 id='id44'>引用类型覆盖</h4>
+
+<pre><code>var a=new Object();  
+a.name=&quot;oldname&quot;;  
+var b=a;  
+alert(b.name);//弹出是“oldname”  
+var a=new Object();//作用域链保存的a已经修改  
+a.name=&quot;newName&quot;;  
+alert(b.name);//弹出是“oldname”  </code></pre>
+
+<h4 id='id45'>函数覆盖</h4>
+
+<pre><code>function a(){  
+    return &quot;oldFunction\n&quot;;  
+}  
+document.write(a());  
+function a(){  
+    return &quot;newFunction\n&quot;;  
+}  
+document.write(a());  //都是newFunction</code></pre>
+
+<h4 id='id46'>混合</h4>
+
+<pre><code>document.write(a());//forthFunction  
+function a()  {  
+    return &quot;firstFunction\n&quot;;  
+}  
+document.write(a();//forthFunction  
+var a=function()  {  
+    return &quot;thirdFunction\n&quot;;  
+}  
+function a() {  
+    return &quot;secondFunction\n&quot;;  
+}  
+document.write(a());//thirdFunction  
+function a(){  
+    return &quot;forthFunction\n&quot;;  
+}  
+var a=function() {  
+    return &quot;fifthFunction\n&quot;;  
+}  
+document.write(a());//fifthFunction  </code></pre>
+
+<p>总结到此，各位看官自己抚摸下F12，再理解一下就好了。</p>
+        </section>
+    </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
+</div>
+
+  
+    </div>
+    
+  </div>
+  
+  <!-- script -->
+  <script src = '/js/jquery.js'></script>
+  <script src = '/js/easing.js'  defer = "defer"></script>
+  <script src = '/js/fs.js'  defer = "defer"></script>
+  
+  <script type = "text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' ==  document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>
