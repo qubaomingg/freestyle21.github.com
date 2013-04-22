@@ -33,6 +33,9 @@ ul {
 	margin-top: 20px;
 }
 /* message */
+#ds-thread #ds-reset .ds-comment-body p{
+	color:#A1A1AC;
+}
 .contain {
 	width:100%;
 }
