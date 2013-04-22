@@ -9,6 +9,10 @@ html{
 	filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);   
 	filter:gray;
 }
+body{
+	filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);   
+	filter:gray;
+}
 /* reset */
 * {
 	margin: 0;
