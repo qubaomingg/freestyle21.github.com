@@ -3,32 +3,34 @@ layout: default
 title: freestyle21
 ---
 <!-- article -->
-<div id = "article">
+<div id = "article" style='background:red'>
   <div class = "article__descript">
     <h2>成长梦，技术梦</h2>
     <p>这里记载着帅气的博主的技术成长过程，也会时而发下生活的牢骚</p>
   </div>
-  <div class = "article__list">
-    <div id = "artHori">
-      {% for post in site.posts %}
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "{{post.url}}"></a>
-        
-        <img src = "{{ post.imgsrc }}">
-        <div name  =  'test' class = "artDetail">
-          <h3>{{post.title}}</h3>
-          <p>{{post.description}}</p>
+  <div class="article__body" >
+    <div class = "article__list">
+      <div id = "artHori">
+        {% for post in site.posts %}
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "{{post.url}}"></a>
+          
+          <img src = "{{ post.imgsrc }}">
+          <div name  =  'test' class = "artDetail">
+            <h3>{{post.title}}</h3>
+            <p>{{post.description}}</p>
+          </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
+    <span class = "leftArrow">
+      <a href = "#"></a>
+    </span>
+    <span class = "rightArrow">
+      <a href = "#"></a>
+    </span>  
   </div>
-  <span class = "leftArrow">
-    <a href = "#"></a>
-  </span>
-  <span class = "rightArrow">
-    <a href = "#"></a>
-  </span>
 </div>
 <!-- footer -->
 <div id = "footer">
