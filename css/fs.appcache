@@ -1,20 +1,20 @@
-CACHE MANIFEST
+#CACHE MANIFEST
 # 2013-04-05 v2.2.9
-/css/font.css
-/favicon.ico
-/js/fs.js
-/js/jquery.js
-/js/easing.js
-/img/3way.jpg
-/img/chrome.jpg
-/img/dream.jpg
-/img/efficient-css.jpeg
-/img/JavaScript.jpg
-/img/jekyll.png
-/img/justing.jpg
-/img/me.jpg
-/img/road.jpg
-/img/sprite.png
-/img/ued.jpg
-NETWORK:
-*
+#/css/font.css
+#/favicon.ico
+#/js/fs.js
+#/js/jquery.js
+#/js/easing.js
+#/img/3way.jpg
+#/img/chrome.jpg
+#/img/dream.jpg
+#/img/efficient-css.jpeg
+#/img/JavaScript.jpg
+#/img/jekyll.png
+#/img/justing.jpg
+#/img/me.jpg
+#/img/road.jpg
+#/img/sprite.png
+#/img/ued.jpg
+#NETWORK:
+#*
