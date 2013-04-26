@@ -1,3 +1,17 @@
+html{   
+	filter: grayscale(100%);    
+	-webkit-filter: grayscale(100%);    
+	-moz-filter: grayscale(100%);   
+	-ms-filter: grayscale(100%);    
+	-o-filter: grayscale(100%); 
+	-webkit-filter: grayscale(1);
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");  
+	filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);   	
+}
+body{
+	filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);   
+	filter:gray;
+}
 /* reset */
 * {
 	margin: 0;
@@ -12,6 +26,9 @@ body {
 	width: 900px;
 	margin: 0 auto;
 }
+.ds-comment-header p {
+	color:white;
+}
 
 ul {
 	list-style: none;
@@ -20,6 +37,9 @@ ul {
 	margin-top: 20px;
 }
 /* message */
+#ds-thread #ds-reset .ds-comment-body p{
+	color:#A1A1AC;
+}
 .contain {
 	width:100%;
 }
@@ -106,8 +126,8 @@ ul {
 	/* navigation */
 .tip {
 	position:absolute;
-	left:-174px;
-	bottom:42px;
+	left:-144px;
+	bottom:73px;
 	display:none;
 }
 .jiao {
@@ -115,7 +135,7 @@ ul {
 	width: 0;
 	position: relative;
 	top: -6px;
-	left: 190px;
+	left: 163px;
 	border-left:10px solid transparent;
 	border-top: 10px solid transparent;
 	border-right: 10px solid transparent;
@@ -129,10 +149,6 @@ span.nobook {
 	padding: 7px;
 	background:#EEE9E9;
 	border-radius:12px;
-}
-.gap {
-	color:#D0D0DA;
-	padding-left: 20px;
 }
 #navigation {
 	float: right;
@@ -180,7 +196,10 @@ span.nobook {
 #article {
 	position:relative;
 }
-
+.article__body {
+	width: 100%;
+	position: relative;
+}
 .article__list {
 	height: 500px;
 	position: relative;
@@ -199,6 +218,8 @@ span.nobook {
 	height: 210px;
 	background:white;
 	position: absolute;
+	opacity: 0.7;
+	filter:alpha(opacity=70);
 	top:20px;
 	left:20px;
 	cursor:pointer;
@@ -230,13 +251,13 @@ span.nobook {
 }
 .leftArrow {
 	left:120px;
-	top:430px;
+	top:250px;
 	background:url(../img/sprite.png) -216px -4px no-repeat;
 	display:inline-block;
 }
 .rightArrow {
-	left:1100px;
-	top:430px;
+	right:120px;
+	top:250px;
 	background:url(../img/sprite.png) -270px -4px no-repeat;
 }
 .leftArrow:hover,.rightArrow:hover {

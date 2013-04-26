@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang = "en" manifest = '/css/fs.appcache'>
+<html lang = "en" manifest="/css/fs.appcache">
 <head>
   <title>freestyle21的博客</title>
   <!-- meta -->
@@ -13,6 +13,7 @@
   <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
   
   <!-- link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">  
   <link rel = "stylesheet" href = "/css/font.css">
   <link rel = "stylesheet" href = "/css/freestyle.css">
   <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
@@ -60,7 +61,7 @@
       <!-- top -->
       <div id = "top">
         <div class = "header">
-          <a href = "#" class = "logo">
+          <a href = "http://freestyle21.cn" class = "logo">
             <h1>freestyle21</h1>
           </a>
           <div id = "navigation">
@@ -68,10 +69,10 @@
               <div class = "jiao"></div>
               <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
             </div>
-            <ul>
-              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
-              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
-              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            <ul class = 'breadcrumb'>
+              <li><a class = 'book' href = "">读书</a><span class = 'divider'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "divider">/</span></li>
+              <li><a class = 'msg' href = "">留言</a></li>
             </ul>
           </div>
         </div>
@@ -121,7 +122,7 @@
 
 <p>&ensp;&ensp;这里是Jekyll用以存放最终代码生成站点的根路径位置。也许把它加到你的.gitignore列表中会是个不错的主意。这个文件夹是Jekyll自动生成的，所以我们一般不用管。</p>
 
-<h3 id='id9'>其他文件/目录</h3>
+<h3 id='id239'>其他文件/目录</h3>
 
 <p>&ensp;&ensp;除了以上提到的文件之外，每一个其他的、不以下划线_开头的目录和文件都会被照原样传送到站点路径下。例如，你可以在网站根目录下面添加一个 css ,js,img目录，一个 favicon.ico ，等等等等。</p>
 
@@ -238,7 +239,7 @@
   <script src = '/js/jquery.js'></script>
   <script src = '/js/easing.js'  defer = "defer"></script>
   <script src = '/js/fs.js'  defer = "defer"></script>
-  
+  <script src='js/bootstrap.min.js'></script>  
   <script type = "text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-39513595-1']);

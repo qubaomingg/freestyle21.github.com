@@ -126,8 +126,8 @@ ul {
 	/* navigation */
 .tip {
 	position:absolute;
-	left:-144px;
-	bottom:73px;
+	left:-174px;
+	bottom:42px;
 	display:none;
 }
 .jiao {
@@ -135,7 +135,7 @@ ul {
 	width: 0;
 	position: relative;
 	top: -6px;
-	left: 163px;
+	left: 190px;
 	border-left:10px solid transparent;
 	border-top: 10px solid transparent;
 	border-right: 10px solid transparent;

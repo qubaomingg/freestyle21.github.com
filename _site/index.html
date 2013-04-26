@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang = "en" manifest = '/css/fs.appcache'>
+<html lang = "en" manifest="/css/fs.appcache">
 <head>
   <title>freestyle21的博客</title>
   <!-- meta -->
@@ -13,6 +13,7 @@
   <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
   
   <!-- link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">  
   <link rel = "stylesheet" href = "/css/font.css">
   <link rel = "stylesheet" href = "/css/freestyle.css">
   <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
@@ -60,7 +61,7 @@
       <!-- top -->
       <div id = "top">
         <div class = "header">
-          <a href = "#" class = "logo">
+          <a href = "http://freestyle21.cn" class = "logo">
             <h1>freestyle21</h1>
           </a>
           <div id = "navigation">
@@ -68,10 +69,10 @@
               <div class = "jiao"></div>
               <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
             </div>
-            <ul>
-              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
-              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
-              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            <ul class = 'breadcrumb'>
+              <li><a class = 'book' href = "">读书</a><span class = 'divider'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "divider">/</span></li>
+              <li><a class = 'msg' href = "">留言</a></li>
             </ul>
           </div>
         </div>
@@ -82,107 +83,119 @@
     <h2>成长梦，技术梦</h2>
     <p>这里记载着帅气的博主的技术成长过程，也会时而发下生活的牢骚</p>
   </div>
-  <div class = "article__list">
-    <div id = "artHori">
-      
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "/writings/road.html"></a>
+  <div class="article__body" >
+    <div class = "article__list">
+      <div id = "artHori">
         
-        <img src = "img/road.jpg">
-        <div name  =  'test' class = "artDetail">
-          <h3>路</h3>
-          <p>停顿下来，思考人生。</p>
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/mess.html"></a>
+          
+          <img src = "img/yaan1.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>杂杂杂杂杂</h3>
+            <p>五道小题+博客总结+面试准备  -_- !</p>
+          </div>
         </div>
-      </div>
-      
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "/writings/javascript-core.html"></a>
         
-        <img src = "img/JavaScript.jpg">
-        <div name  =  'test' class = "artDetail">
-          <h3>浅谈JavaScript的语言特性</h3>
-          <p>Javascript语言特性，闭包，作用域链，上下文，函数。</p>
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/road.html"></a>
+          
+          <img src = "img/yaan.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>路</h3>
+            <p>停顿下来，思考人生。</p>
+          </div>
         </div>
-      </div>
-      
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "/writings/jQueryCode.html"></a>
         
-        <img src = "img/dream.jpg">
-        <div name  =  'test' class = "artDetail">
-          <h3>从jQuery学到的皮毛</h3>
-          <p>最近学习了jQuery的源码，感触很深，记录之。</p>
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/javascript-core.html"></a>
+          
+          <img src = "img/yaan1.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>浅谈JavaScript的语言特性</h3>
+            <p>Javascript语言特性，闭包，作用域链，上下文，函数。</p>
+          </div>
         </div>
-      </div>
-      
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "/writings/efficient-css.html"></a>
         
-        <img src = "img/efficient-css.jpeg">
-        <div name  =  'test' class = "artDetail">
-          <h3>翻译-高效的CSS</h3>
-          <p>翻译的文章，高效的CSS。</p>
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/jQueryCode.html"></a>
+          
+          <img src = "img/yaan.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>从jQuery学到的皮毛</h3>
+            <p>最近学习了jQuery的源码，感触很深，记录之。</p>
+          </div>
         </div>
-      </div>
-      
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "/writings/learn-jekyll.html"></a>
         
-        <img src = "img/jekyll.png">
-        <div name  =  'test' class = "artDetail">
-          <h3>邂逅Jekyll</h3>
-          <p>Jekyll是一个简介的、特别针对博客平台的静态网站生成器。</p>
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/efficient-css.html"></a>
+          
+          <img src = "img/yaan1.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>翻译-高效的CSS</h3>
+            <p>翻译的文章，高效的CSS。</p>
+          </div>
         </div>
-      </div>
-      
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "/writings/taobao-uedtest.html"></a>
         
-        <img src = "img/ued.jpg">
-        <div name  =  'test' class = "artDetail">
-          <h3>淘宝UED的前端招聘测试题</h3>
-          <p>实现一个鼠标点击后产生的特殊效果。。</p>
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/learn-jekyll.html"></a>
+          
+          <img src = "img/yaan.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>邂逅Jekyll</h3>
+            <p>Jekyll是一个简介的、特别针对博客平台的静态网站生成器。</p>
+          </div>
         </div>
-      </div>
-      
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "/writings/learn-chromeF12.html"></a>
         
-        <img src = "img/chrome.jpg">
-        <div name  =  'test' class = "artDetail">
-          <h3>学会使用chrome的F12</h3>
-          <p>用了几年chrome，只是知道一些大体的简单应用，本文将教会你前端人常用的调试技能。</p>
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/taobao-uedtest.html"></a>
+          
+          <img src = "img/yaan1.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>淘宝UED的前端招聘测试题</h3>
+            <p>实现一个鼠标点击后产生的特殊效果。。</p>
+          </div>
         </div>
-      </div>
-      
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "/writings/change-css-style.html"></a>
         
-        <img src = "img/3way.jpg">
-        <div name  =  'test' class = "artDetail">
-          <h3>关于js修改三种css样式的方法</h3>
-          <p>用$('#myimg').style.left居然不能获取left属性，解释原因！</p>
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/learn-chromeF12.html"></a>
+          
+          <img src = "img/yaan.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>学会使用chrome的F12</h3>
+            <p>用了几年chrome，只是知道一些大体的简单应用，本文将教会你前端人常用的调试技能。</p>
+          </div>
         </div>
-      </div>
-      
-      <div class = "article">
-        <a target = 'blank' class  =  'postsite' href = "/writings/blank-injs.html"></a>
         
-        <img src = "img/justing.jpg">
-        <div name  =  'test' class = "artDetail">
-          <h3>Javascript中的各种括号</h3>
-          <p>最近看ECMAScript262时，看了好多括号，索性一下弄清楚完。</p>
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/change-css-style.html"></a>
+          
+          <img src = "img/yaan1.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>关于js修改三种css样式的方法</h3>
+            <p>用$('#myimg').style.left居然不能获取left属性，解释原因！</p>
+          </div>
         </div>
+        
+        <div class = "article">
+          <a target = 'blank' class  =  'postsite' href = "/writings/blank-injs.html"></a>
+          
+          <img src = "img/yaan.gif">
+          <div name  =  'test' class = "artDetail">
+            <h3>Javascript中的各种括号</h3>
+            <p>最近看ECMAScript262时，看了好多括号，索性一下弄清楚完。</p>
+          </div>
+        </div>
+        
       </div>
-      
     </div>
+    <span class = "leftArrow">
+      <a href = "#"></a>
+    </span>
+    <span class = "rightArrow">
+      <a href = "#"></a>
+    </span>  
   </div>
-  <span class = "leftArrow">
-    <a href = "#"></a>
-  </span>
-  <span class = "rightArrow">
-    <a href = "#"></a>
-  </span>
 </div>
 <!-- footer -->
 <div id = "footer">
@@ -202,11 +215,13 @@
     <div class = "footRight">
       <h4>
         <a target = 'blank' href = "http://weibo.com/21freestyle?wvr = 5&">微博</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target = 'blank' href = "/rss/feed.xml">RSS</a>
       </h4>
       <p class = "copyright">© FREESTYLE21 2012–2013</p>
     </div>
   </div>
-</div>  
+</div>
+  
     </div>
     
   </div>
@@ -215,7 +230,7 @@
   <script src = '/js/jquery.js'></script>
   <script src = '/js/easing.js'  defer = "defer"></script>
   <script src = '/js/fs.js'  defer = "defer"></script>
-  
+  <script src='js/bootstrap.min.js'></script>  
   <script type = "text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-39513595-1']);

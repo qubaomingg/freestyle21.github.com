@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang = "en" manifest = '/css/fs.appcache'>
+<html lang = "en" manifest="/css/fs.appcache">
 <head>
   <title>freestyle21的博客</title>
   <!-- meta -->
@@ -13,6 +13,7 @@
   <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
   
   <!-- link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">  
   <link rel = "stylesheet" href = "/css/font.css">
   <link rel = "stylesheet" href = "/css/freestyle.css">
   <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
@@ -60,7 +61,7 @@
       <!-- top -->
       <div id = "top">
         <div class = "header">
-          <a href = "#" class = "logo">
+          <a href = "http://freestyle21.cn" class = "logo">
             <h1>freestyle21</h1>
           </a>
           <div id = "navigation">
@@ -68,10 +69,10 @@
               <div class = "jiao"></div>
               <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
             </div>
-            <ul>
-              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
-              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
-              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            <ul class = 'breadcrumb'>
+              <li><a class = 'book' href = "">读书</a><span class = 'divider'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "divider">/</span></li>
+              <li><a class = 'msg' href = "">留言</a></li>
             </ul>
           </div>
         </div>
@@ -89,7 +90,7 @@
 
 <p>最近刚好在看ECMAScript262，又遇到这些问题。整理一下：</p>
 
-<h2 id='id1'>引入</h2>
+<h2 id='id231'>引入</h2>
 
 <p>先上一段代码：</p>
 <pre><code>
@@ -105,7 +106,7 @@
 
 <p>难道只是改变优先级？把括号去了只剩下1，结果也没有变化。所以，(1)应该和foo没有关系，即使放在很远的地方。是不是<em>1之类的呢？</em></p>
 
-<h2 id='id2'>深入</h2>
+<h2 id='id232'>深入</h2>
 
 <p>再看两个表达式：</p>
 <pre><code>
@@ -139,7 +140,7 @@
 </code></pre>
 <p>以上的括号，或者void的作用只是告诉编译器把函数当成FE（函数表达式）来处理而已 函数表达式中的函数名称在哪保存，可以去看下ECMAScript262-5中函数的部分。</p>
 
-<h2 id='id3'>括号对上下文作用域的影响</h2>
+<h2 id='id233'>括号对上下文作用域的影响</h2>
 <pre><code>
 	function Foo() {
 	    var a = 123;
@@ -218,7 +219,7 @@
   <script src = '/js/jquery.js'></script>
   <script src = '/js/easing.js'  defer = "defer"></script>
   <script src = '/js/fs.js'  defer = "defer"></script>
-  
+  <script src='js/bootstrap.min.js'></script>  
   <script type = "text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-39513595-1']);

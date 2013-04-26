@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang = "en" manifest = '/css/fs.appcache'>
+<html lang = "en" manifest="/css/fs.appcache">
 <head>
   <title>freestyle21的博客</title>
   <!-- meta -->
@@ -13,6 +13,7 @@
   <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
   
   <!-- link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">  
   <link rel = "stylesheet" href = "/css/font.css">
   <link rel = "stylesheet" href = "/css/freestyle.css">
   <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
@@ -60,7 +61,7 @@
       <!-- top -->
       <div id = "top">
         <div class = "header">
-          <a href = "#" class = "logo">
+          <a href = "http://freestyle21.cn" class = "logo">
             <h1>freestyle21</h1>
           </a>
           <div id = "navigation">
@@ -68,10 +69,10 @@
               <div class = "jiao"></div>
               <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
             </div>
-            <ul>
-              <li><a class = 'book' href = "">读书</a><span class = 'gap'>/</span></li>
-              <li><a class = 'surprise' href = "">惊喜</a><span class = "gap">/</span></li>
-              <li><a class = 'msg' href = "">留言</a><span class = "gap">/</span></li>
+            <ul class = 'breadcrumb'>
+              <li><a class = 'book' href = "">读书</a><span class = 'divider'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "divider">/</span></li>
+              <li><a class = 'msg' href = "">留言</a></li>
             </ul>
           </div>
         </div>
@@ -85,11 +86,11 @@
 <div id = 'midContent'>
     <div id = 'mainArticle'>
         <section>
-          <h2 id='id10'>译言：</h2>
+          <h2 id='id240'>译言：</h2>
 
 <p>&ensp;&ensp;&ensp;&ensp;逛微博的时候看到 <a href='http://weibo.com/u/2093492691'>@程序员的那些事</a> 推荐的一篇CSS的文章。细细看了下，写的很不错，就翻译过来，与诸前端们共享~ 原文地址在<a href='http://csswizardry.com/2011/09/writing-efficient-css-selectors/'>这里</a>，由于第一次翻译文章，有不准确的地方欢迎留言讨论~~</p>
 
-<h2 id='id11'>译文：</h2>
+<h2 id='id241'>译文：</h2>
 
 <p>高效的CSS已经不是一个新的话题了，也不是我一个非得重拾的话题，但它却是我在Sky公司工作之时，所感兴趣的，关注已久的话题。</p>
 
@@ -135,7 +136,7 @@
 
 <p><strong>注意：</strong> 这些数据可能在不同计算机和浏览器中间的差异较大。强烈地建议大家在自己的机子上测试一下。</p>
 
-<h3 id='id12'>组合选择器</h3>
+<h3 id='id242'>组合选择器</h3>
 
 <p>你可以有一个标准的选择器比如 #nav，来选择任何带有ID为&#8221;nav&#8221;的元素，或在你可以有一个组合选择器比如#nav a,来选择任何在ID为’nav’的元素里面的链接元素</p>
 
@@ -149,7 +150,7 @@
 
 <p>这些对CSS选择器的效率有很大的影响。</p>
 
-<h3 id='id13'>关键选择器</h3>
+<h3 id='id243'>关键选择器</h3>
 
 <p>关键选择器，正如前面讨论的一样，是一个复杂的CSS选择器中最右边部分。它是浏览器最先寻找的。</p>
 
@@ -209,7 +210,7 @@
 
 <p>简单的重述一次，你的关键选择器会决定浏览器的工作量，因此，我们应该重视一下关键选择器</p>
 
-<h3 id='id14'>过度限制选择器</h3>
+<h3 id='id244'>过度限制选择器</h3>
 
 <p>现在我们知道了什么是关键选择器，还有它是大部分工作的来源，但是我们可以更乐观一点。拥有一个明确的关键选择器最大的好处就是你可以避免使用过度限制选择器。一个过度限制选择器可能像：</p>
 <pre><code>
@@ -231,7 +232,7 @@
 
 <p>过度限制选择器使浏览器工作比它实际需要的更繁重，花费的时间更多。我们可以删掉不必需的限制，来使我们的选择器更简单和高效。</p>
 
-<h3 id='id15'>这些真的需要吗？</h3>
+<h3 id='id245'>这些真的需要吗？</h3>
 
 <p>最短的答案是:或许不是。</p>
 
@@ -239,7 +240,7 @@
 
 <p>浏览器将会在解析CSS的速度上变得更好，甚至在手机端。在一个网站上，你不太可能会觉察到一个低效的CSS选择器，但是….</p>
 
-<h3 id='id16'>但是</h3>
+<h3 id='id246'>但是</h3>
 
 <p>它确实发生了，浏览器还是不得不去做我们讨论的所有工作，无论它们变得多快。即使你不需要或者甚至不想实践任何一个，但是它都是我们值得学习的知识。请记住选择器可能会让你付出很大代价，你应该避免盯着一个看。这意味着如果你发现你自己在写像这样的：</p>
 <pre><code>
@@ -249,7 +250,7 @@
 
 <p>现在，在高效选择器的世界我还是一个新人。所以如果我忘记了什么，或者你有需要补充的，请在评论里面留言。</p>
 
-<h3 id='id17'>更多高效选择器</h3>
+<h3 id='id247'>更多高效选择器</h3>
 
 <p>我还不能完全介绍Steve Souders的网站和书籍，它们是如此之好，以至于值得你花更多时间来阅读和推荐。这个家伙只有他自己才了解自己！</p>
         </section>
@@ -282,7 +283,7 @@
   <script src = '/js/jquery.js'></script>
   <script src = '/js/easing.js'  defer = "defer"></script>
   <script src = '/js/fs.js'  defer = "defer"></script>
-  
+  <script src='js/bootstrap.min.js'></script>  
   <script type = "text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-39513595-1']);
