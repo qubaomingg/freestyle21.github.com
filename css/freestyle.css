@@ -250,13 +250,13 @@ span.nobook {
 	position:absolute;
 }
 .leftArrow {
-	left:120px;
+	left:90px;
 	top:250px;
 	background:url(../img/sprite.png) -216px -4px no-repeat;
 	display:inline-block;
 }
 .rightArrow {
-	right:120px;
+	right:90px;
 	top:250px;
 	background:url(../img/sprite.png) -270px -4px no-repeat;
 }
