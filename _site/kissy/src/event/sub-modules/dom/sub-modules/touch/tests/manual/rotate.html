@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <script src="/kissy/build/seed.js"></script>
+    <script src="../../../../../../../log.js"></script>
+</head>
+<body>
+
+<h1>open in ios safari test rotate event</h1>
+
+<a href="http://www.g.cn">google</a>
+
+<div id='t'
+     style='border:1px solid green;
+     width:200px;height:200px;margin:10px'>
+    rotate me
+</div>
+
+<a href="http://www.g.cn">google</a>
+
+<div style="height: 900px;"></div>
+<script src="../../src/handle.js"></script>
+<script src="../../src/multi-touch.js"></script>
+<script src="../../src/pinch.js"></script>
+<script src="../../src/double-tap.js"></script>
+<script src="../../src/gesture.js"></script>
+<script src="../../src/handle-map.js"></script>
+<script src="../../src/rotate.js"></script>
+<script src="../../src/single-touch.js"></script>
+<script src="../../src/swipe.js"></script>
+<script src="../../src/tap-hold.js"></script>
+<script src="../../src/tap.js"></script>
+<script src="../../src/touch.js"></script>
+
+<script>
+
+    KISSY.use('event', function (S, Event) {
+
+        Event.on('#t', "rotateEnd", function (e) {
+            log(e.type + ' : ' +
+                    e.originalEvent.type + ' : ' +
+                    e.originalEvent.changedTouches[0].target.nodeName + ' : ' +
+                    e.rotation + ' : ' + e.angle);
+            //S.log(e.type + ' : ' + e.rotation);
+        });
+
+        Event.on('#t', "rotate rotateStart", function (e) {
+            log(e.type + ' : ' +
+                    e.originalEvent.touches.length + ' : ' +
+                    e.rotation + ' : ' + e.angle);
+            //S.log(e.type + ' : ' + e.rotation);
+        });
+        var t = document.getElementById('t');
+        var o;
+        Event.on('#t', 'rotateStart', function (e) {
+            o = 0;
+            if (t.style.WebkitTransform) {
+                o = parseInt(t.style.WebkitTransform.replace(/rotate\(/, ''));
+            }
+        });
+        Event.on('#t', 'rotate', function (e) {
+            t.style.WebkitTransform = 'rotate(' + (o + parseInt(e.rotation)) % 360 + 'deg)';
+        });
+
+
+    });
+
+</script>
+</body>
+</html>

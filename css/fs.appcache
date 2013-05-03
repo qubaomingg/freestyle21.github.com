@@ -1,9 +1,10 @@
 CACHE MANIFEST
-# 2013-04-05 v3.2.4
+# 2013-04-05 v1.3.2
 /css/font.css
 /css/bootstrap.min.css
-/js/jquery.js
-/js/easing.js
+/js/easing-min.js
+/js/jquery-1.9.1.min.js
+/js/less.js
 ../favicon.ico
 NETWORK:
 *
