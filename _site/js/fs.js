@@ -131,7 +131,7 @@ window.onload = function() {
 		function Stop() {
 			audioSet['audio' + nowplay].pause();
 		}
-		Event.on('.surprise', 'click', function() {
+		S.Event.on('.surprise', 'click', function() {
 			if(DOM.text(this) == '惊喜') {
 				DOM.text(this,'停止');
 				if(nowplay >= musicArr.length) {

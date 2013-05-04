@@ -89,7 +89,7 @@
 <div id = 'midContent'>
     <div id = 'mainArticle'>
         <section>
-          <h2 id='id253'>前言</h2>
+          <h2 id='id161'>前言</h2>
 
 <p>&#160;&#160;&#160;&#160;&#160;在JavaScript中，作用域、上下文、闭包、函数等算是精华中的精华了。对于初级jser来说，是进阶必备。对于前端攻城师来说，只有静下心来，理解了这些精华，才能写出优雅的代码。</p>
 
@@ -99,9 +99,9 @@
 
 <p><a href='http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/'>http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/</a> <a href='http://benalman.com/news/2010/11/immediately-invoked-function-expression/'>http://benalman.com/news/2010/11/immediately-invoked-function-expression/</a> <a href='http://dmitrysoshnikov.com/ecmascript/javascript-the-core/'>http://dmitrysoshnikov.com/ecmascript/javascript-the-core/</a></p>
 
-<h2 id='id254'>语言特性</h2>
+<h2 id='id162'>语言特性</h2>
 
-<h3 id='id255'>函数表达式</h3>
+<h3 id='id163'>函数表达式</h3>
 <hr />
 <p>先看代码段：</p>
 <pre>
@@ -132,7 +132,7 @@
 
 <p><strong>老版本的浏览器不支持这个对象，但你可以通过json2.js来实现同样的功能。</strong></p>
 
-<h3 id='id256'>原型</h3>
+<h3 id='id164'>原型</h3>
 <hr /><pre><code> 
 	function Animal (){  
 		// ...
@@ -201,7 +201,7 @@
 
 <p>这里的主要规则是：对象的原型是对象的创建的时候创建的，并且在此之后不能修改为新的对象，如果依然引用到同一个对象，可以通过构造函数的显式prototype引用，对象创建以后，只能对原型的属性进行添加或修改。</p>
 
-<h3 id='id257'>变量对象</h3>
+<h3 id='id165'>变量对象</h3>
 <hr />
 <p>&#160;&#160;&#160;&#160;&#160;在函数执行上下文中，VO(variable object)是不能直接访问的，此时由活动对象(activation object)扮演VO的角色。 活动对象是在进入函数上下文时刻被创建的，它通过函数的arguments属性初始化。arguments属性的值是Arguments对象：</p>
 <pre><code>
@@ -307,7 +307,7 @@
 </code></pre>
 <p>活动对象总是作为this返回，值为null——（即伪代码的AO.bar()相当于null.bar()）。这里我们再次回到上面描述的例子，this设置为全局对象。</p>
 
-<h3 id='id258'>作用域链</h3>
+<h3 id='id166'>作用域链</h3>
 
 <p>通过函构造函数创建的函数的<span><span>scope</span></span>属性总是唯一的全局对象。</p>
 
@@ -359,7 +359,7 @@
 <li>在最后两个alert中，当前变量对象的“x”保持同一，“y”的值现在等于30，在with声明运行中已发生改变。</li>
 </ol>
 
-<h3 id='id259'>函数</h3>
+<h3 id='id167'>函数</h3>
 
 <p>关于圆括号的问题</p>
 
@@ -453,7 +453,7 @@
 
 <p>* 在代码中引用了自由变量</p>
 
-<h2 id='id260'>最后：</h2>
+<h2 id='id168'>最后：</h2>
 
 <p>ECMAScript是一种面向对象语言，支持基于原型的委托式继承。</p>
         </section>
