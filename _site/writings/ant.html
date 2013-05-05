@@ -1,0 +1,305 @@
+<!doctype html>
+<!-- manifest="/css/fs.appcache" -->
+<html lang = "en" >
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+
+  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
+  <meta name = "keywords" content = "前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name = "description" content = "freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。"
+  <meta name="author" content="freestyle21" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
+  
+  <!-- link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">  
+  <link rel="stylesheet" href="/css/bootstrap-default-min.css">
+  <link rel = "stylesheet" href = "/css/font.css">
+  <link rel="stylesheet/less" type="text/css" href="/css/freestyle.less">
+  <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
+  
+  <script type="text/javascript" src="/js/less.js"></script>
+  <!-- 高亮插件 -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class = "ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
+    
+  <div class = "contain">
+    <!-- message -->
+    <div class = "topMsg">
+      <span>Message</span>
+    </div>
+    <div class = "rightMsg">
+      <div class = "msgBefore">
+        <span>Message</span>
+
+        <p class = "msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class = "ds-thread"></div>
+      <script type = "text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id = "mainbody">
+      <!-- top -->
+      <div id = "top">
+        <div class = "header">
+          <a href = "http://freestyle21.cn" class = "logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id = "navigation">
+            <div class = "tip">
+              <div class = "jiao"></div>
+              <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul class = 'breadcrumb'>
+              <li><a class = 'book' href = "">读书</a><span class = 'divider'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "divider">/</span></li>
+              <li><a class = 'msg' href = "">留言</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <h1><a href="/writings/ant.html">Ant的故事</a></h1>
+        <p class="date">Monday, May 06, 2013</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          <h1 id='ant'>Ant的来历</h1>
+
+<p>前段时间在学习淘宝的前端框架Kissy，在项目开发指南中看到了Ant，由于以前听过，所以来了兴趣。正如上篇文章所说，前端实践非常重要，于是就从头到尾研究起Ant来。。</p>
+
+<p>说来，Ant来自Java，是一个基于Java的build工具。和Unix/Linux c中的make工具类似，不过由于Java的原因具有跨平台的优势。那么Ant和前端有半毛线关系么？答案是，哈哈~~</p>
+
+<p>对前端来说，Ant可以</p>
+
+<ul>
+<li>合并js和css文件</li>
+
+<li>压缩js和css文件</li>
+
+<li>生成jsDOC文档</li>
+
+<li>连接FTP，将代码上传到指定服务器</li>
+
+<li>自动上传到SVN，自动打包成zip文件 + &#8230;.</li>
+</ul>
+
+<p>当然这些都是网上抄来的，没有一一实验。喜欢的还是合并、压缩、文档，也都自己从0开始慢慢摸索了下，总结记录一下，方便对她有兴趣的朋友..</p>
+
+<h1 id='ant'>Ant的入门</h1>
+
+<h3 id='ant'>首先我们安装Ant的环境。</h3>
+
+<p>安装jdk的步骤就不细说，度娘那里有很多。</p>
+
+<p>下载Ant，传送门:<a href='http://apache.fayea.com/apache-mirror//ant/source/apache-ant-1.9.0-src.zip'>apache-ant-1.9.0</a> .解压到你喜欢的位置，我是F:\apache-ant-1.9.0.</p>
+
+<p>在path里面添加：F:\apache-ant-1.9.0.\bin</p>
+
+<p>在DOS里面输入ant，验证安装是否完成。出现下面的结果就算成功了。</p>
+
+<pre><code> Buildfile：build.xml does not exist! 
+ Build failed </code></pre>
+
+<h3 id='id188'>牛刀小试</h3>
+
+<p>新建test的java项目，里面建立src目录，在src里面写一个hello.java，内容如下：</p>
+
+<pre><code>public class HelloWorld {
+   public static void main(String[] args) {
+       System.out.println(&quot;hello world!&quot;);
+   }</code></pre>
+
+<p>}</p>
+
+<p>在test目录里面建立build.xml文件。内容如下：</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;project name =&quot;javacTest&quot; default=&quot;run&quot; basedir=&quot;.&quot;&gt;
+    
+    &lt;target name=&quot;compile&quot;&gt;
+        &lt;mkdir dir =&quot;${basedir}/build/classes&quot;/&gt;
+        &lt;javac srcdir =&quot;${basedir}/src&quot; destdir =&quot;${basedir}/build/classes&quot;/&gt;
+    &lt;/target&gt;
+    &lt;target name=&quot;run&quot;  depends =&quot;compile&quot;&gt;
+        &lt;java classname =&quot;HelloWorld&quot;&gt;
+            &lt;classpath&gt;
+               &lt;pathelement path=&quot;${basedir}/build/classes&quot;/&gt;
+            &lt;/classpath&gt;
+       &lt;/java&gt;
+    &lt;/target&gt;
+&lt;/project&gt;</code></pre>
+
+<p>用命令行进入test目录里面，执行ant。你会发现build里面多了classes目录，classes里面多了hello.class。在命令行里面会有hello world输出。如下图：</p>
+
+<p><img alt='1' src='/img/ant/ant.png' /></p>
+
+<p>这次不准备讲ant的api，有兴趣的童鞋可以去看<a href='http://ant.apache.org/manual/index.html'>官方文档</a>。这里我把遇到的讲一下，相信这样你也能掌握常见的语法了~</p>
+
+<p>上面的build.xml中，就是我们的主角Ant了。每个Ant都有且只能有一个project，多个target(可理解为任务块)，depends=&#8221;compile&#8221;指必须名字为compile的target先执行，他们存在依赖关系。其他的就不解释了。</p>
+
+<h1 id='ant'>Ant和前端。</h1>
+
+<h3 id='js'>合并js</h3>
+
+<p>在test目录里面建四个js文件内容依次为console.log(&#8220;hello, i am from 1/2/3/4&#8221;);然后建立build.xml内容为：</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;project name=&quot;concat&quot; default=&quot;build&quot;&gt;
+    &lt;property name=&quot;concat.note&quot; value=&quot;//合并js&quot; /&gt;
+    &lt;target name=&quot;build&quot;&gt;
+        &lt;echo&gt;生成src目录&lt;/echo&gt;
+        &lt;mkdir dir=&quot;src&quot;/&gt;
+        &lt;echo&gt;开始合并文件&lt;/echo&gt;
+        &lt;concat destfile=&quot;src/fs.js&quot;&gt;
+            &lt;header trimleading=&quot;yes&quot;&gt;${concat.note}
+            &lt;/header&gt;
+            &lt;path path=&quot;1.js&quot;/&gt;
+            &lt;path path=&quot;2.js&quot;/&gt;
+            &lt;path path=&quot;3.js&quot;/&gt;
+            &lt;path path=&quot;4.js&quot;/&gt;
+        &lt;/concat&gt;
+    &lt;/target&gt;
+&lt;/project&gt;</code></pre>
+
+<p>CMD切换到test目录，执行ant。输出</p>
+
+<p><img alt='2' src='/img/ant/ant2.png' /></p>
+
+<p>在src里面多了fs.js文件，内容为：</p>
+
+<p><img alt='3' src='/img/ant/concat.png' /></p>
+
+<p>现在解释上面的build.xml。property定义一个名为concat.note的变量，内容为&#8221;//合并js&#8221;，下面会用${concat.note}引用。header是给fs.js最上面加一行。下面的合并就那样，都看得懂，记住格式就好了。提示一点是header那里有换行，如果不换，自己试试后果，呵呵。</p>
+
+<p>有些童鞋就在想了，要是我有20个js，是不是要写20个path呢？当然不是！为了解决这个问题，我们的dadaType标签就闪亮登场啦~</p>
+
+<p>把path变成</p>
+
+<pre><code>&lt;fileset dir = &quot;./&quot; includes = &quot;**/*.js&quot;&gt;</code></pre>
+
+<p>就可以代替20个path！dataType常用除了我们见过的fileset/path，还有我们在压缩和生成文档要用的argument。fileset还有一个常用的语句，如下：</p>
+
+<pre><code>&lt;fileset dir = &quot;./&quot;&gt;
+    &lt;include name = &quot;**/*.js&quot; if = &quot;test&quot;&gt;
+    &lt;exclude name = &quot;my.js&quot; unless = &quot;my&quot;&gt;
+&lt;/fileset&gt;</code></pre>
+
+<p>如果设置了test属性，读取所有js，如果没有设置my属性，则排除my.js</p>
+
+<h3 id='js'>压缩js</h3>
+
+<p>先下载<a href='http://vdisk.weibo.com/s/AjhVv'>YUICompressor</a></p>
+
+<p>运行解压过后的install.cmd。(用管理员身份运行，否则会出错哦)</p>
+
+<p>然后随便右键一个文件就就会多一个Process with YUICompressor了。</p>
+
+<p>把刚才解压的YUICompressor放到test目录中，新建一个min文件夹。把build.xml改成如下：</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;project name=&quot;refund&quot; default=&quot;build&quot;&gt;
+&lt;dirname property=&quot;current.dir&quot; file=&quot;${ant.file.uploader}&quot;/&gt;
+    &lt;property name=&quot;src.dir&quot; location=&quot;${current.dir}/src/&quot;/&gt;
+    &lt;property name=&quot;yuicompressor.path&quot;   location=&quot;${current.dir}/yuicompressor/yuicompressor.jar&quot;/&gt;
+    &lt;target name=&quot;build&quot;&gt;
+        &lt;apply executable=&quot;java&quot; dest=&quot;${current.dir}/min&quot;&gt;
+            &lt;fileset dir=&quot;${src.dir}&quot; includes=&quot;*.js&quot;/&gt;
+            &lt;arg line=&quot;-jar&quot;/&gt;
+            &lt;arg path=&quot;${yuicompressor.path}&quot;/&gt;
+            &lt;arg value=&quot;-o&quot;/&gt;
+            &lt;targetfile/&gt;
+            &lt;mapper type=&quot;glob&quot; from=&quot;*.js&quot; to=&quot;*-min.js&quot;/&gt;
+        &lt;/apply&gt;
+    &lt;/target&gt;k
+&lt;/project&gt;</code></pre>
+
+<p>然后运行ant命令。在min文件夹里面就会出现：</p>
+
+<p><img alt='4' src='/img/ant/min.png' /></p>
+
+<p>解释上面的build.xml.dirname用来获取文件的目录路径。注意到里面有个变量指向yuicompressor.jar，这样才能用YUICompressor。这里的arg提供给apply一些参数。-jar为YUICompressor中的.jar路径，就是刚才提到的那个变量。mapper定义源文件和目标文件的关联方式，这里是把.js变成-min.js。</p>
+
+<p>生成文档的方式和压缩差不多，用的是jsdoc toolkit。偷下懒，这里就不演示了。</p>
+
+<p>对于我们来说，如果压缩的文件就那么两个，手动就好了。如果多了，就要用Ant了。合并的时候要注意我们的js的顺序，比如jquery一定要在bootstrap.js的前面，注意他们的依赖关系。</p>
+
+<p>本文的参考文章:</p>
+
+<p><a href='http://book.36ria.com/ant/index.html#index'>明河的电子书</a></p>
+
+<p><a href='http://ant.apache.org/manual/'>Apache Ant手册</a></p>
+
+<p><a href='http://www.onjava.com/pub/a/onjava/2003/12/17/ant_bestpractices.html'>Top 15 Ant Best Practices</a></p>
+        </section>
+    </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
+</div>
+
+  
+    </div>
+    
+  </div>
+  
+  <!-- script -->
+
+  <script src = '/js/jquery-1.9.1.min.js'></script>
+  <script src = '/js/easing-min.js'></script>
+  <script src='js/bootstrap.min.js'></script>  
+  <script src='/kissy/build/seed-min.js'></script>
+  <script src = '/js/fs.js'></script>
+  
+  <script type = "text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' ==  document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>
