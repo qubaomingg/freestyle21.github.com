@@ -1,0 +1,292 @@
+<!doctype html>
+<!-- manifest="/css/fs.appcache" -->
+<html lang = "en" >
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+
+  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
+  <meta name = "keywords" content = "前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name = "description" content = "freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。"
+  <meta name="author" content="freestyle21" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
+  
+  <!-- link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">  
+  <link rel="stylesheet" href="/css/bootstrap-default-min.css">
+  <link rel = "stylesheet" href = "/css/font.css">
+  <link rel="stylesheet/less" type="text/css" href="/css/freestyle.less">
+  <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
+  
+  <script type="text/javascript" src="/js/less.js"></script>
+  <!-- 高亮插件 -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class = "ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
+    
+  <div class = "contain">
+    <!-- message -->
+    <div class = "topMsg">
+      <span>Message</span>
+    </div>
+    <div class = "rightMsg">
+      <div class = "msgBefore">
+        <span>Message</span>
+
+        <p class = "msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class = "ds-thread"></div>
+      <script type = "text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id = "mainbody">
+      <!-- top -->
+      <div id = "top">
+        <div class = "header">
+          <a href = "http://freestyle21.cn" class = "logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id = "navigation">
+            <div class = "tip">
+              <div class = "jiao"></div>
+              <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul class = 'breadcrumb'>
+              <li><a class = 'book' href = "">读书</a><span class = 'divider'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "divider">/</span></li>
+              <li><a class = 'msg' href = "">留言</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <h1><a href="/writings/grab.html">从其他网站抓数据</a></h1>
+        <p class="date">Saturday, May 11, 2013</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          <h1 id='id252'>缘由</h1>
+
+<p>吃饭的时候和朋友聊天，谈到他上一个项目，他去抓其他网站的数据，然后用canvas画出走势图。吸引我的是前面的抓数据，以前从来没有尝试过，一定会很有意思了！</p>
+<br />
+<h1 id='id253'>开始</h1>
+
+<p>听他讲大致就是用jsonp去请求，然后读取json吧。感觉这种方式不太好，因为只有目标网站提供了相应接口，才能去请求，然后解析收到的数据。 自己尝试用jsonp去请求一些数据，于是找数据接口，不过好少。目前找到的下面几个： （浏览器中打开的json格式不太好看，请读者朋友把下面的json拷到<a href='http://jsonformatter.curiousconcept.com/'>http://jsonformatter.curiousconcept.com/</a></p>
+
+<p>朋友项目中用到的：</p>
+
+<p><a href='http://jry.baidao.com/api/hq/npdata.do'>http://jry.baidao.com/api/hq/npdata.do</a></p>
+
+<p>天气：</p>
+
+<p><a href='http://www.weather.com.cn/data/sk/101281601.html'>http://www.weather.com.cn/data/sk/101281601.html</a></p>
+
+<p><a href='http://www.weather.com.cn/data/cityinfo/101281601.html'>http://www.weather.com.cn/data/cityinfo/101281601.html</a></p>
+
+<p><a href='http://m.weather.com.cn/data/101281601.html'>http://m.weather.com.cn/data/101281601.html</a> //东莞天气</p>
+
+<p>&#8230;.</p>
+
+<p>新浪：</p>
+
+<p><a href='https://api.weibo.com/2/statuses/public_timeline.json?source=1105337522'>https://api.weibo.com/2/statuses/public_timeline.json?source=1105337522</a>//获取公共微博注意.最后为你的appkey。</p>
+
+<p><a href='https://api.weibo.com/2/account/get_uid.json?source=1105337522'>https://api.weibo.com/2/account/get_uid.json?source=1105337522</a>//获取授权用户UID.</p>
+
+<p><a href='https://api.weibo.com/2/statuses/friends_timeline.json?source=1105337522'>https://api.weibo.com/2/statuses/friends_timeline.json?source=1105337522</a> 获取当前登录用户及其所关注用户的最新微博</p>
+
+<p><a href='https://api.weibo.com/2/statuses/user_timeline.json?source=1105337522'>https://api.weibo.com/2/statuses/user_timeline.json?source=1105337522</a>//获取用户最新的微博</p>
+
+<p>&#8230;</p>
+
+<p>豆瓣：</p>
+
+<p><a href='http://api.douban.com/v2/user/freestyle21'>http://api.douban.com/v2/user/freestyle21</a>//获取用户信息</p>
+
+<p><a href='http://api.douban.com/shuo/v2/statuses/user_timeline/freestyle21'>http://api.douban.com/shuo/v2/statuses/user_timeline/freestyle21</a>//获取用户时间线</p>
+
+<p>&#8230;</p>
+
+<p>在用jsonp请求数据的时候，只需要把url换成上面的就可以了，然后在回调函数里面处理返回的json数据就好了。</p>
+
+<p>文章的标题叫做抓数据，但是到此为止好像只有请求数据，没有抓。。</p>
+<br />
+<h1 id='id254'>然后</h1>
+
+<p>尽管上面找的那些链接能够完成很多事情，但是，让我不爽的是提供接口的网站并不多。要是我想要虎扑上的比赛数据呢？要是我想要河畔最新的贴子呢？</p>
+
+<p>于是，又开始在网上找可以抓取任意网站数据的方法。在一篇文章中看到了火车头采集器，去下载了。把它的论坛上三个视频看了，感觉这个只是适合站长，不太适合普通开发者。不过功能真的是比较强大。这里不讲了，有兴趣的可以从<a href='http://bbs.locoy.com/spider-132850-1-1.html'>这里</a>去看下。</p>
+
+<p>然后接着查询。。印象中python和java比较适合干这样的事，但是对这两门语言都不太熟悉，故还是想从熟悉的东西着手。咨询几个朋友，原来php也可以抓取数据～～</p>
+
+<p>查看了几个例子，自己实验了一番，总结如下。</p>
+<br />
+<h2 id='fopen'>通过fopen来读取要抓取的网页</h2>
+
+<p>下面的例子来抓取我博客的title</p>
+
+<pre><code>&lt;?php
+    $file = fopen (&quot;http://freestyle21.cn/&quot;, &quot;r&quot;); 
+    if (!$file) { 
+        echo &quot;&lt;font color=red&gt;Unable to open remote file.&lt;/font&gt;\n&quot;; 
+        exit; 
+    } 
+    while (!feof ($file)) { 
+        $line = fgets ($file, 1024); 
+        if (eregi (&quot;&lt;title&gt;(.*)&lt;/title&gt;&quot;, $line, $out)) { 
+            $title = $out[1]; 
+            echo &quot;&quot;.$title.&quot;&quot;; 
+            break; 
+        } 
+    } 
+    fclose($file); 
+?&gt;  </code></pre>
+
+<p>获取我博客所有代码：</p>
+
+<pre><code>&lt;?php
+    $fp = fsockopen(&quot;freestyle21.cn&quot;, 80, $errno, $errstr, 30); 
+    if (!$fp) { 
+       echo &quot;$errstr ($errno)&lt;br/&gt;\n&quot;; 
+    } else { 
+       $out = &quot;GET / HTTP/1.1\r\n&quot;; 
+       $out .= &quot;Host: freestyle21.cn \r\n&quot;; 
+       $out .= &quot;Connection: Close \r\n\r\n&quot;; 
+       fputs($fp, $out); 
+       while (!feof($fp)) { 
+         echo fgets($fp, 128); 
+       } 
+       fclose($fp); 
+    }
+?&gt;</code></pre>
+
+<p>或者 <?php $urlstr = file_get_contents("http://freestyle21.cn");
+        $urlstr = htmlspecialchars($urlstr);
+        print_r($urlstr);?></p>
+<br />
+<h2 id='curldomdocumentdomxpath'>通过curl／DOMDocument／DOMXpath抓取数据</h2>
+
+<p>上面的那种方式或许还不能叫抓数据。因为对返回的HTML处理不够。 然后，我们知道在php中curl可以抓取下载html（也可以模拟登录，伪装客户端等），DOMDocument可以刚刚下载的HTML加载成DOM，DOMXPath则可以使用XPath语法进行数据的定位和采集。幸运的是，对于前端来说，三个都比较熟悉，所以就比较简单了。</p>
+<br />
+<h3 id='url'>抓博客中所有的链接url</h3>
+
+<pre><code>$target_url = &quot;http://freestyle21.cn&quot;;
+$ch = curl_init();
+
+//执行之前，设置一些参数
+curl_setopt($ch, CURLOPT_URL,$target_url);
+curl_setopt($ch, CURLOPT_FAILONERROR, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+$html = curl_exec($ch);
+
+if (!$html) {
+    echo &quot;&lt;br /&gt;cURL error number:&quot; .curl_errno($ch);
+    echo &quot;&lt;br /&gt;cURL error:&quot; . curl_error($ch);
+    exit;
+}
+
+//创建一个DomDocument对象，用于处理一个HTML
+$dom = new DOMDocument();
+
+//从一个字符串加载HTML
+@$dom-&gt;loadHTML($html);
+
+//使该HTML规范化
+$dom-&gt;normalize();
+
+//用DOMXpath加载DOM，用于查询
+$xpath = new DOMXPath($dom);
+
+//获取所有的a标签的地址
+$hrefs = $xpath-&gt;evaluate(&quot;/html/body//a//@href&quot;);
+
+for ($i = 0; $i &lt; $hrefs-&gt;length; $i++) {
+    $href = $hrefs-&gt;item($i);
+    $linktext = $href-&gt;nodeValue;
+    echo $linktext;
+    echo &quot;&lt;BR&gt;&quot;;
+}</code></pre>
+
+<p>结果如下；</p>
+
+<p><img alt='1' src='/img/grab/grab_link.png' /></p>
+
+<p>到此，要抓取给定网页的任意数据就比较简单了，最终任务转换到解析DOM。而这，又是没有前端都擅长的～</p>
+<br />
+<h1 id='id255'>总结</h1>
+
+<p>总的来说，用这篇文章中的方法抓取数据都不是最科学的，因为我们必须要读取所以的HTML，这样效率肯定比较低。最科学的方式还是不用下到本地服务器，直接读取。以后有需求了，还是学下Python和Java的抓取方式～～</p>
+        </section>
+    </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
+</div>
+
+  
+    </div>
+    
+  </div>
+  
+  <!-- script -->
+
+  <script src = '/js/jquery-1.9.1.min.js'></script>
+  <script src = '/js/easing-min.js'></script>
+  <script src='js/bootstrap.min.js'></script>  
+  <script src='/kissy/build/seed-min.js'></script>
+  <script src = '/js/fs.js'></script>
+  
+  <script type = "text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' ==  document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>
