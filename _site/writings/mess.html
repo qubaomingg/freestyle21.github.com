@@ -89,7 +89,7 @@
 <div id = 'midContent'>
     <div id = 'mainArticle'>
         <section>
-          <h1 id='id235'>套话</h1>
+          <h1 id='id135'>套话</h1>
 
 <p>很久没有写博客了。</p>
 
@@ -113,7 +113,7 @@
 
 <p>感谢大叔的翻译~</p>
 
-<h3 id='id236'>第一题</h3>
+<h3 id='id136'>第一题</h3>
 
 <pre><code>if (!(&quot;a&quot; in window)) {
     var a = 1;
@@ -124,7 +124,7 @@ alert(a);</code></pre>
 
 <p>解释：执行上下文分2个阶段：进入执行上下文和执行代码，在进入执行上下文的时候，创建变量对象VO里已经有了：函数的所有形参、所有的函数声明、所有的变量声明。</p>
 
-<h3 id='id237'>第二题</h3>
+<h3 id='id137'>第二题</h3>
 
 <pre><code>var a = 1,
     b = function a(x) {
@@ -141,7 +141,7 @@ alert(a);</code></pre>
 <pre><code>var f = function g(){};
 typeof g; // &quot;function&quot;</code></pre>
 
-<h3 id='id238'>第三题</h3>
+<h3 id='id138'>第三题</h3>
 
 <pre><code>function a(x) {
   return x * 2;
@@ -151,7 +151,7 @@ alert(a);</code></pre>
 
 <p>直接alert出func a的源码。不解释。</p>
 
-<h3 id='id239'>第四题</h3>
+<h3 id='id139'>第四题</h3>
 
 <pre><code>function b(x, y, a) {
     arguments[2] = 10;
@@ -171,7 +171,7 @@ b(1, 2);</code></pre>
 
 <p>这样没有实参吧两个联系起来，他们就是独立的，完全不一样。所以alert出来的是undefined。‘</p>
 
-<h3 id='id240'>第五题</h3>
+<h3 id='id140'>第五题</h3>
 
 <pre><code>function a() {
     alert(this);
@@ -182,13 +182,13 @@ a.call(null);</code></pre>
 
 <p>再次感谢大叔~~</p>
 <br />
-<h1 id='id241'>博客总结</h1>
+<h1 id='id141'>博客总结</h1>
 
 <p>你现在见到的是第三个风格的博客，不过还是不太满意，o(╯□╰)o</p>
 
 <p>这里总结下前面遇到的问题，长点记性。</p>
 
-<h4 id='id242'>一</h4>
+<h4 id='id142'>一</h4>
 
 <p>这个问题被弄了好久，大概精简下来就是下面的样子：</p>
 
@@ -247,7 +247,7 @@ console.log($(&#39;#niyao&#39;));</code></pre>
 
 <p>以后除了a标签之类的，还是少return false吧，还有委托事件，冒泡也要注意啊~</p>
 
-<h4 id='id243'>二</h4>
+<h4 id='id143'>二</h4>
 
 <p><img alt='4' src='/img/mess/ulli.png' /></p>
 
@@ -255,13 +255,13 @@ console.log($(&#39;#niyao&#39;));</code></pre>
 
 <p>另外，给每个li绑定事件极不高效，考虑在外层委托。</p>
 
-<h4 id='id244'>三</h4>
+<h4 id='id144'>三</h4>
 
 <p><img alt='5' src='/img/mess/callback.png' /></p>
 
 <p>漂亮的回调函数</p>
 
-<h4 id='id245'>四</h4>
+<h4 id='id145'>四</h4>
 
 <p><img alt='6' src='/img/mess/domerror.png' /></p>
 
@@ -271,7 +271,7 @@ console.log($(&#39;#niyao&#39;));</code></pre>
 <br />
 <h1 id='js'>关于js重复定义的问题</h1>
 
-<h4 id='id246'>热身</h4>
+<h4 id='id146'>热身</h4>
 
 <pre><code>function ni() {
 alert(&#39;sd&#39;);
@@ -295,7 +295,7 @@ x = 20;
 function x() {};
 alert(x); // 20</code></pre>
 
-<h4 id='id247'>基本类型覆盖</h4>
+<h4 id='id147'>基本类型覆盖</h4>
 
 <pre><code>var a=3;  
 function changea(){  
@@ -306,7 +306,7 @@ var a=4;//作用域链保存的a已经修改
 alert(a);//4  
 changea();//4  </code></pre>
 
-<h4 id='id248'>引用类型覆盖</h4>
+<h4 id='id148'>引用类型覆盖</h4>
 
 <pre><code>var a=new Object();  
 a.name=&quot;oldname&quot;;  
@@ -316,7 +316,7 @@ var a=new Object();//作用域链保存的a已经修改
 a.name=&quot;newName&quot;;  
 alert(b.name);//弹出是“oldname”  </code></pre>
 
-<h4 id='id249'>函数覆盖</h4>
+<h4 id='id149'>函数覆盖</h4>
 
 <pre><code>function a(){  
     return &quot;oldFunction\n&quot;;  
@@ -327,7 +327,7 @@ function a(){
 }  
 document.write(a());  //都是newFunction</code></pre>
 
-<h4 id='id250'>混合</h4>
+<h4 id='id150'>混合</h4>
 
 <pre><code>document.write(a());//forthFunction  
 function a()  {  
