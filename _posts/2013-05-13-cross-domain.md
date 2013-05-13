@@ -15,7 +15,7 @@ imgsrc: img/cross.jpg
 很好的一篇文章，推荐之：[http://www.cnblogs.com/rainman/archive/2011/02/20/1959325.html](http://www.cnblogs.com/rainman/archive/2011/02/20/1959325.html)
 
 
-通过这篇文章知道了，域名／协议／端口只要其中之一不同都不能跨域，另外二级域名也能跨。跨域的解决 ,有个经典的言论就是，凡是有src属性的东东，都可以用来跨域。比如img，iframe，script等。
+通过这篇文章知道了，域名／协议／端口只要其中之一不同都不能跨域，另外二级域名之间也不能跨。跨域的解决 ,有句经典的话就是，凡是有src属性的东东，都可以用来跨域。比如img，iframe，script等。
 
 
 如果练习的话，本机配置虚拟主机的教程在以前的[一篇文章](http://freestyleboy21.blog.163.com/blog/static/20840624120133139420259/?COLLCC=726912607&)。
