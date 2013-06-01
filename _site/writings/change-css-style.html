@@ -91,13 +91,13 @@
         <section>
           <p>&#160;&#160;&#160;&#160;晚上随便写了一个demo，要用js通过特定的方式来修改图片的定位，还有width和height等，完成预想的动画。</p>
 
-<h2 id='id108'>遇到的问题是：</h2>
+<h2 id='id56'>遇到的问题是：</h2>
 
 <p>最开始在.css文件里面设置了图片的position：absolute；left等属性，现在想要把他的left设置为left -=left+temp；即要获取元素的left。</p>
 
 <p>之前没有细想，每次都是$(&#8220;img&#8221;).style.left就可以了，不过这次alert出来的居然是空字符串。 现在想想 .style获取的应该是标签的style属性，然后依次获取其他子属性。所以.style.<strong>只能获取行内样式。。于是想方设法的去搞到.css里面的属性。</strong></p>
 
-<h2 id='id109'>深入</h2>
+<h2 id='id57'>深入</h2>
 
 <p><strong>怎么才能获取 head中style的css 或者 .css文件中的属性呢？</strong></p>
 
@@ -151,7 +151,7 @@
 <pre><code>
 	getstyle(".orig").display = "inline";
 </code></pre>
-<h2 id='id110'>总结：</h2>
+<h2 id='id58'>总结：</h2>
 
 <p>前面说的是怎样查询或修改外链的.css，不过，不行的是，我们不能这样做。 在ie和firefox里面确实可以实现，不过我们不提倡。</p>
 
