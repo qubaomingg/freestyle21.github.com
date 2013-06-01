@@ -1,0 +1,376 @@
+<!doctype html>
+<!-- manifest="/css/fs.appcache" -->
+<html lang = "en" >
+<head>
+  <title>freestyle21的博客</title>
+  <!-- meta -->
+
+  <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8" />
+  <meta name = "keywords" content = "前端，前端技术，博客,freestyle21，javascript，html，css，FE">
+  <meta name = "description" content = "freestyle21' blog.主要记录技术和心路成长历程，这里有有关于html,css,javascript,html5,css3,node,seajs等的内容。"
+  <meta name="author" content="freestyle21" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=2.3, user-scalable=no">
+  
+  <!-- link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">  
+  <link rel="stylesheet" href="/css/bootstrap-default-min.css">
+  <link rel = "stylesheet" href = "/css/font.css">
+  <link rel="stylesheet/less" type="text/css" href="/css/freestyle.less">
+  <link rel = "shortcut icon" href = "/favicon.ico" type = "image/x-icon" />
+  
+  <script type="text/javascript" src="/js/less.js"></script>
+  <!-- 高亮插件 -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <!--[if lt IE 9]>
+    <div class = "ltie">
+        <p>您的浏览器已经过时了，为了更好的浏览体验，请下载<a href = 'http://www.google.co.kr/intl/zh-CN/chrome/browser/'>chrome</a>或<a href = 'http://www.mozilla.org/en-US/firefox/new/' >firefox</a>浏览器 ~ ~ </p>
+    </div>
+  <![endif]--> 
+    
+  <div class = "contain">
+    <!-- message -->
+    <div class = "topMsg">
+      <span>Message</span>
+    </div>
+    <div class = "rightMsg">
+      <div class = "msgBefore">
+        <span>Message</span>
+
+        <p class = "msgBefore">
+          亲爱得朋友，有想对我说的，都可以留下~
+          在这里你可以问技术上的问题，</br>也可以讨论感情上的问题。。</br>
+          如果想我了，就大胆说吧， #^_^#</p>  
+      </div>
+      <div class = "ds-thread"></div>
+      <script type = "text/javascript">
+          var duoshuoQuery = {short_name:"freestyle21"};
+          (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = 'http://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+          })();
+      </script>
+      
+    </div>
+    <div id = "mainbody">
+      <!-- top -->
+      <div id = "top">
+        <div class = "header">
+          <a href = "http://freestyle21.cn" class = "logo">
+            <h1>freestyle21</h1>
+          </a>
+          <div id = "navigation">
+            <div class = "tip">
+              <div class = "jiao"></div>
+              <span class = "nobook">最近比较懒 以后来做，-_- !</span>  
+            </div>
+            <ul class = 'breadcrumb'>
+              <li><a class = 'book' href = "">读书</a><span class = 'divider'>/</span></li>
+              <li><a class = 'surprise' href = "">惊喜</a><span class = "divider">/</span></li>
+              <li><a class = 'msg' href = "">留言</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id = 'topTitle'>
+    <div id = 'topMeta'>
+        <h1><a href="/writings/canvas-game.html">Canvas动画</a></h1>
+        <p class="date">Sunday, June 02, 2013</p>
+    </div>
+</div>
+<div id = 'midContent'>
+    <div id = 'mainArticle'>
+        <section>
+          <h2 id='id323'>引题</h2>
+
+<p>最近忙完实验，在慢慢开始的学习HTML5 的canvas，很早就听过动态canvas的威名，一直没有机会和时间学习。这次系统学习HTML5和css3，自然不会放过这次机会。</p>
+
+<p>本文主要是总结学习canvas动画的一些基本知识，并不会介绍canvas，关于入门读者朋友可以回去翻翻书本。另外本文还会试着写几个实例，加深理解。</p>
+<br />
+<h2 id='canvas'>canvas动画基本思想</h2>
+
+<h3 id='_'>思想一 刷新重绘</h3>
+
+<p>我们平时看到的canvas游戏 里，人物运动、物体变化都是基于这个思想。比如绘制动画的圆，我们通过鼠标触动或者重力等外界因素改变圆的圆心坐标。下一步，通过</p>
+
+<pre><code>context.clearRect(0, 0, canvas.width, canvas.height) </code></pre>
+
+<p>把当前canvas的画面清空。然后，再通过</p>
+
+<pre><code>context.art(circle.x, circle.y, circle.radius, 0, Math.PI*2)</code></pre>
+
+<p>利用新的圆心坐标绘制新的圆。</p>
+
+<p>刷新重绘的思想是canvas游戏的核心，任何需要移动的物体都是通过这种方式。</p>
+
+<h3 id='_'>思想二 碰撞检测</h3>
+
+<p>碰撞检测用的比较比较频繁。比如和canvas上的圆交互的时候，需要检测点击的是哪个圆，只需循环判断触点坐标到圆心的距离与半径的关系即可。再比如迷宫游戏里面，移动人物的时候需要判断前方是否是墙壁，是墙壁的话就不能移动。这个碰撞检测的方法不太常见，是通过像素检测的方式。如果前方的像素是我们预定的墙壁的颜色，就不能移动了。</p>
+
+<h3 id='id324'>一些需要知道的东西</h3>
+
+<p>动画对于重绘速度有要求，通常每秒30次以上才不会导致出现间断的现象。由于绘制速度很快，可能你会觉得我们的画布会反应迟钝。但是，由于很多现代浏览器都使用了<strong>硬件加速</strong>等性能增强技术，把图像处理工作转移给显卡，从而节省了CPU。由此引申出一个css hack技术。开启硬件加速，css如下：</p>
+
+<pre><code>transform: translateZ(0);
+transform: translate3d(0, 0, 0);</code></pre>
+
+<p>圆圈绘图程序每次刷新画布，都会先使用clearRect清楚所有，再绘制所有(比上次多). 这样不会出现闪烁，因为Canvas针对这个问题进行了优化，它实际上会在绘图逻辑执行完成后才清除或绘制所有内容。</p>
+<br />
+<h2 id='canvas'>canvas动画实例</h2>
+
+<h3 id='_'>实例一 自由落体交互的小球</h3>
+
+<p>要不断的移动小球，正如上面所说，就需要不断重绘canvas</p>
+
+<pre><code>setTimeOut(&quot;drawFrame()&quot;, 20)</code></pre>
+
+<p>接下来看看drawFrame函数：</p>
+
+<pre><code>function drawFrame() {
+  //清空
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.beginPath();
+  //balls是一个存放我们小球的数组。
+  for(var i=0; i&lt;balls.length; i++) {
+
+    var ball = balls[i];
+    ball.x += ball.dx;
+    ball.y += ball.dy;
+
+    // 添加重力效果
+    if ((ball.y) &lt; canvas.height) ball.dy += 0.22;
+
+    // 添加摩擦力效果
+    ball.dx = ball.dx * 0.998;
+
+    // 碰到墙反弹
+    if ((ball.x + ball.radius &gt; canvas.width) || (ball.x - ball.radius &lt; 0)) {
+      ball.dx = -ball.dx;
+    }
+    // 碰到地反弹注意0.96哦！
+    if ((ball.y + ball.radius &gt; canvas.height) || (ball.y - ball.radius &lt; 0)) { 
+      ball.dy = -ball.dy*0.96; 
+    }
+
+    context.fillStyle = &quot;white&quot;;
+    
+    // Draw 开始绘制球
+    context.arc(ball.x, ball.y, ball.radius, 0, Math.PI*2);
+    context.lineWidth = 1;
+    context.fill();
+    context.stroke(); 
+  }
+  setTimeout(&quot;drawFrame()&quot;, 20);
+}</code></pre>
+
+<p>drawFrame函数是动画的核心，处理外力对小球的影响。考虑了重力摩擦力等。然后不断调整小球的坐标，刷新重绘。</p>
+
+<p>下面是我们处理鼠标交互的函数</p>
+
+<pre><code>function canvasClick(e) {
+  // 触点位置
+  var clickX = e.pageX - canvas.offsetLeft;
+  var clickY = e.pageY - canvas.offsetTop;
+
+
+  // 边界检测，看点击哪个球。
+  for(var i in balls)
+  {
+    var ball = balls[i];
+    if ((clickX &gt; (ball.x-ball.radius)) &amp;&amp; (clickX &lt; (ball.x+ball.radius)))
+    {
+      if ((clickY &gt; (ball.y-ball.radius)) &amp;&amp; (clickY &lt; (ball.y+ball.radius)))
+      {
+        // 改变小球的速度。
+        ball.dx -= 2;
+        ball.dy -= 3;
+        return;
+      }
+    }
+  }
+}</code></pre>
+
+<p>最后是增加小球和清空画布：</p>
+
+<pre><code>function addBall() {
+  var radius = parseFloat(document.getElementById(&quot;ballSize&quot;).value);
+  var ball = new Ball(50,50,1,1,radius);
+  balls.push(ball);
+}
+
+function clearBalls() {
+  // 清空数组，下次重绘的就是空得了。
+  balls = [];
+}</code></pre>
+
+<p>最终结果：</p>
+<canvas height='200' id='ball' width='600'>your brower cannot support canvas</canvas><div>
+    <button onclick='addBall()'> Add Ball </button>
+    <button onclick='clearBalls()'> Clear Canvas </button>
+</div>
+<h3 id='_'>实例二 散落的粒子</h3>
+
+<p>这次，写一个无数粒子构成的名字，鼠标接触马上散落各处的例子。</p>
+
+<p>无数粒子是用canvas画的圆，不过半径我写成了1px。这里就不展示了。</p>
+
+<p>下面看核心函数，处理小球运动的轨迹。</p>
+
+<pre><code>function updateBalls(canvas, balls, timeDiff, mousePos) {
+    var context = canvas.getContext(&#39;2d&#39;);
+  	var collisionDamper = 0.3;//碰撞减缓
+  	var floorFriction = 0.0005 * timeDiff;//摩擦力
+  	var mouseForceMultiplier = 1 * timeDiff;//Multiplier 乘数
+  	var restoreForce = 0.002 * timeDiff;
+
+    //和上个例子一样，循环小球数组，改变每个小球的圆心坐标。
+  	for(var n = 0; n &lt; balls.length; n++) {
+        var ball = balls[n];
+	        
+        // 改变圆心坐标
+  	    ball.y += ball.vy;
+        ball.x += ball.vx;
+        // 恢复力，最后要静止。
+  	    if(ball.x &gt; ball.origX) {
+  		      ball.vx -= restoreForce;
+        } else {
+  		      ball.vx += restoreForce;
+        }
+
+        if(ball.y &gt; ball.origY) {
+  		      ball.vy -= restoreForce;
+        } else {
+  		      ball.vy += restoreForce;
+        }
+
+        // 鼠标给的力
+        var mouseX = mousePos.x;
+  	    var mouseY = mousePos.y;
+  	    var distX = ball.x - mouseX;//判断左右的。
+  	    var distY = ball.y - mouseY;
+        var radius = Math.sqrt(Math.pow(distX, 2) + Math.pow(distY, 2));
+        var totalDist = Math.abs(distX) + Math.abs(distY);
+        var forceX = (Math.abs(distX) / totalDist) * (1 / radius) *   mouseForceMultiplier;
+  	    var forceY = (Math.abs(distY) / totalDist) * (1 / radius) * mouseForceMultiplier;
+
+  	    if(distX &gt; 0) {
+      		 // 如果从左边触动小球
+      		 ball.vx += forceX;
+        } else {
+  		     ball.vx -= forceX;
+        }
+        if(distY &gt; 0) {
+      		 // 从上方触动小球
+      		 ball.vy += forceY;
+        } else {
+  		     ball.vy -= forceY;
+        }
+
+        // 考虑地板摩擦力
+        if(ball.vx &gt; 0) {
+  		      ball.vx -= floorFriction;
+        } else if(ball.vx &lt; 0) {
+  		      ball.vx += floorFriction; 
+        }
+  	    if(ball.vy &gt; 0) {
+  		      ball.vy -= floorFriction;
+        } else if(ball.vy &lt; 0) {
+  		      ball.vy += floorFriction;
+  	    }
+
+  	    // 碰到地板反弹
+        if(ball.y &gt; (canvas.height - ball.radius)) {
+    		   ball.y = canvas.height - ball.radius - 2;
+    		   ball.vy *= -1;
+    		   ball.vy *= (1 - collisionDamper);
+        }
+
+        // 碰到上顶反弹
+  	    if(ball.y &lt; (ball.radius)) {
+    		   ball.y = ball.radius + 2;
+    		   ball.vy *= -1;
+    		   ball.vy *= (1 - collisionDamper);
+        }
+
+        // 碰到右边反弹
+        if(ball.x &gt; (canvas.width - ball.radius)) {
+    		   ball.x = canvas.width - ball.radius - 2;
+    		   ball.vx *= -1;
+    		   ball.vx *= (1 - collisionDamper);
+       }
+
+        // 碰到左边反弹
+        if(ball.x &lt; (ball.radius)) {
+    		   ball.x = ball.radius + 2;
+    		   ball.vx *= -1;
+    		   ball.vx *= (1 - collisionDamper);
+        }
+    }</code></pre>
+
+<p>}</p>
+
+<p>就像注释的一样，考虑了反弹、地板摩擦力、鼠标力、恢复力等。通过这个函数改变小球的位置。</p>
+
+<p>剩下其他几个不太重要的函数就不写了，主要是循环小球数组重绘，寻找鼠标触点位置等，和第一个差不多。</p>
+
+<p>效果：</p>
+<canvas height='200' id='canvasball' width='600'>your brower cannot support canvas</canvas><script src='../js/canvasinit.js'>
+  
+</script><script src='../js/canvasgame.js'>
+  
+</script>
+        </section>
+    </div>
+</div>
+<div id = 'MsgOrLink'>
+    <div class="MsgBody">
+        
+        <div class="ds-thread"></div>
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"freestyle21"};
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';ds.async = true;
+              ds.src = 'http://static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] 
+              || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    </div>
+</div>
+
+  
+    </div>
+    
+  </div>
+  
+  <!-- script -->
+
+  <script src = '/js/jquery-1.9.1.min.js'></script>
+  <script src = '/js/easing-min.js'></script>
+  <script src='js/bootstrap.min.js'></script>  
+  <script src='/kissy/build/seed-min.js'></script>
+  <script src = '/js/fs.js'></script>
+  
+  <script type = "text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39513595-1']);
+    _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' ==  document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+</body>
+</html>
