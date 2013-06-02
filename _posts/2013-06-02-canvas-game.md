@@ -263,7 +263,7 @@ drawFrame函数是动画的核心，处理外力对小球的影响。考虑了�
 
 剩下其他几个不太重要的函数就不写了，主要是循环小球数组重绘，寻找鼠标触点位置等，和第一个差不多。
 
-效果：
+效果（本来想写freestyle的，太多了，懒得去复制后面的。）：
 
 <canvas id="canvasball" width="600" height="200">your brower cannot support canvas</canvas>
 
