@@ -3,6 +3,7 @@ layout: post
 title: 实习之始
 description: 腾讯实习开始，记录前期生活，感受。
 category: life
+imgsrc: img/foot.jpg
 ---
 
 今天终于有时间安静下来，看看书，听听音乐，写写文字。
