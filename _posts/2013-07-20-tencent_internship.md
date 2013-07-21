@@ -2,7 +2,7 @@
 layout: post
 title: 实习之始
 description: 腾讯实习开始，记录前期生活、感受。
-category: life
+category: [life]
 imgsrc: img/foot.jpg
 ---
 
