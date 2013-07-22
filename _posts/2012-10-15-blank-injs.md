@@ -29,7 +29,7 @@ imgsrc: img/road.jpg
 
 google了一下Group Operation：a means of controlling precedence(优先级) of evaluation in expressions.
 
-难道只是改变优先级？把括号去了只剩下1，结果也没有变化。所以，(1)应该和foo没有关系，即使放在很远的地方。是不是*1之类的呢？
+难道只是改变优先级？把括号去了只剩下1，结果也没有变化。所以，(1)应该和foo没有关系，即使放在很远的地方。是不是1之类的呢？
 
 ##深入
 

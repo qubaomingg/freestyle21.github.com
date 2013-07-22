@@ -1,4 +1,3 @@
-
   window.requestAnimFrame = (function(callback) {
       return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
           function(callback) {
@@ -193,14 +192,13 @@
     var canvassimple;
     var contextsimple;
 
-    window.onload = function() {
-      canvassimple = document.getElementById("ball");
-      contextsimple = canvassimple.getContext("2d");
+    
+    canvassimple = document.getElementById("ball");
+    contextsimple = canvassimple.getContext("2d");
 
-      canvassimple.onmousedown = canvasClick;
+    canvassimple.onmousedown = canvasClick;
 
-      setTimeout("drawFrame()", 20);
-    };
+    setTimeout("drawFrame()", 20);
 
     function addBall() {
       var radius = '10';

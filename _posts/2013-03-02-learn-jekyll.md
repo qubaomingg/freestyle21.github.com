@@ -19,7 +19,7 @@ It takes a template directory (representing the raw form of a website), runs it 
 
 ![jekyllstruct](/img/jekyll/jekyllstruct.png)
 
-###_config.yml
+###  config.yml
 
 &ensp;&ensp;保存Jekyll配置的文件。虽然绝大部分选项可以通过命令行参数指定，但将它们写入配置文件可以使你在每次执行时不必记住它们。
 比如里面写:
@@ -38,20 +38,20 @@ It takes a template directory (representing the raw form of a website), runs it 
 
     
 
-###_includes
+### includes
 
 该目录存放可以与_layouts和_posts混合、匹配并重用的文件。
 用的不多，没有深入接触。。。
 
-###_layouts
+### layouts
 
 &ensp;&ensp;该目录存放用来插入帖子的网页布局模板。页面布局基于类似博客平台的“一个帖子接一个帖子”的原则，通过YAML前置数据定义。Liquid标签用于在页面上插入帖子的文本内容。这个用的特多，可以大大减少代码量。
 
-###_posts
+### posts
 
 &ensp;&ensp;该目录下存放的可以说成是你的“动态内容”。这些文件的格式很重要，它们的命名模式必须遵循 year-month-date-title.markdown。每一个帖子的固定链接URL可以作弹性的调整，但帖子的发布日期和转换所使用的标记语言会根据且仅根据文件名中的相应部分来识别。
 
-###_site
+### site
 
 &ensp;&ensp;这里是Jekyll用以存放最终代码生成站点的根路径位置。也许把它加到你的.gitignore列表中会是个不错的主意。这个文件夹是Jekyll自动生成的，所以我们一般不用管。
 

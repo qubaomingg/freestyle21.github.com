@@ -14,7 +14,7 @@ imgsrc: img/3way.jpg
 最开始在.css文件里面设置了图片的position：absolute；left等属性，现在想要把他的left设置为left -=left+temp；即要获取元素的left。
 
 之前没有细想，每次都是$("img").style.left就可以了，不过这次alert出来的居然是空字符串。
-现在想想 .style获取的应该是标签的style属性，然后依次获取其他子属性。所以.style.**只能获取行内样式。。于是想方设法的去搞到.css里面的属性。
+现在想想 .style获取的应该是标签的style属性，然后依次获取其他子属性。所以.style.只能获取行内样式。。于是想方设法的去搞到.css里面的属性。
 
 ##深入
 
